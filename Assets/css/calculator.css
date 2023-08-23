@@ -1,0 +1,29 @@
+
+
+.calculator {
+  background-color: #f8f9fa;
+}
+
+.calculator .main-nav-end {
+  margin-left: 2rem;
+}
+
+.calculator-header {
+  background-color: #0F0346;
+} 
+
+.calculator-select {
+  border: none;
+}
+
+.calculator-form {
+  max-width: 90%;
+}
+
+.btn-submit {
+  background-color: #3d346a;
+  border-radius: .75rem;
+  color: #FFFFFF;
+  font-size: .8rem;
+  margin-left: auto;
+}

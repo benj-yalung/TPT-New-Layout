@@ -1,0 +1,153 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+@font-face {
+    font-family: Ampersand;
+    src: url("../assets/fonts/amsterdam/amsterdam-four-ttf.ttf");
+}
+
+
+
+@font-face {
+    font-family: Kollektif;
+    src: url("../assets/fonts/kollektif/Kollektif.ttf");
+}
+
+
+/* GENERAL STYLING */
+
+*,
+*:after,
+*:before {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+:root{
+    --custom_primary: #0F0346;
+}
+
+
+.custom-btn-white{
+    text-decoration: none;
+    color: var(--custom_primary) !important;
+    font-size: 22px;
+    padding: 5px 28px !important;
+    border-radius: 27px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+.col-login-form, .col-banner-img{
+    padding:0px;
+    width: 50%;
+}
+.login-container-row{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+
+
+
+/* BOOTSTRAP HEADER/NAV STYLING */
+
+#header {
+    background-color: var(--custom_primary);
+    overflow: hidden;
+}
+
+.navbar {
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+h2.logo {
+    font-size: 28px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* h2.center-logo {
+    margin: 0 25px;
+} */
+
+#navbarSupportedContent {
+    justify-content: space-around;
+}
+
+ul.navbar-nav {}
+
+ul.navbar-nav li.nav-item {
+    margin-right: 25px;
+}
+
+ul.navbar-nav li.nav-item:last-child {
+    margin-right: 0;
+}
+
+ul.navbar-nav li.nav-item a.nav-link {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: #EDF828;
+}
+
+ul.navbar-nav li.nav-item a.nav-link:hover {
+    color: 292567;
+}
+
+
+/* FOOTER */
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0px;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-container p{
+    margin-bottom: 0;
+}
+
+footer{
+    background-color: var(--custom_primary);
+}
+
+
+@media only screen and (max-width: 576px){
+    .footer-container{
+        font-size: 12px;
+    }
+}

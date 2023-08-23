@@ -1,0 +1,354 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+@font-face {
+    font-family: Ampersand;
+    src: url("../assets/fonts/amsterdam/amsterdam-four-ttf.ttf");
+}
+
+
+@font-face {
+    font-family: Kollektif;
+    src: url("../assets/fonts/kollektif/Kollektif.ttf");
+}
+
+/* LOGIN */
+#input-field-login{
+    height: 35px;
+}
+
+.title-heading h2 {
+    font-size: 30px;
+    line-height: 35px;
+    color: #737373;
+    font-weight: 700;
+}
+
+.title-heading h2:nth-child(2) {
+    font-weight: 500;
+}
+
+/* .google-btn {
+    padding: 15px 0px;
+} */
+
+#google-btn {
+    background-color: white;
+    border: unset;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #737373;
+    cursor: pointer;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+}
+#google-btn img {
+    margin-right: 18px;
+}
+
+/* .login-form{
+    width: 80%;
+} */
+
+.form-input-field {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+
+.login-form label {
+    color: #737373;
+    font-size: 20px;
+    line-height: 31px;
+    padding: 0px 0px 9px 0px;
+}
+
+.login-form input {
+    font-size: 20px;
+    color: #737373;
+    border: 1px solid #d3d3d3;
+    border-radius: 34px;
+    padding: 12px 24px;
+}
+
+.form-wrap {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.forgot-btn {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    color: #0f0346;
+    line-height: 28px;
+}
+
+.form-checkbox {
+    font-size: 18px;
+    font-weight: 400;
+    color: #737373;
+    line-height: 28px;
+}
+
+input#rememberMe {
+    width: 18px;
+    height: 18px;
+}
+
+.form-login-btn {
+    padding: 30px 0px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-login {
+    background: linear-gradient(254deg, rgba(48,226,252,1) 0%, rgba(159,77,253,1) 98%);
+    border: unset;
+    font-size: 18px;
+    color: white;
+    width: 100px;
+    
+    box-shadow: 0 0.0625rem 0.5375rem 0 rgba(27, 29, 36, 0.55);
+    height: 30px;
+}
+.login-form-box{
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    padding-right: 150px;
+    padding-left: 50px;
+}
+#input-field{
+    height: 40px;
+}
+.btn-signUp {
+    background-color: white;
+    font-size: 18px;
+    text-decoration: underline;
+    color: #737373;
+ 
+    border: 1px solid #737373;
+    width: 100px;
+    height: 30px;
+}
+
+.banner-box {
+    background: linear-gradient(254deg, rgba(48,226,252,1) 0%, rgba(159,77,253,1) 98%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.box-title-heading,
+.box-sub-heading {
+    color: white;
+    text-align: center;
+}
+
+.banner-box h2:nth-child(1){
+    font-size: 50px;
+    font-weight: 500;
+    font-family: 'Ampersand';
+    line-height: 160px;
+}
+
+.banner-box h2:nth-child(2){
+    font-size: 94px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+    line-height: 62px;
+}
+
+.banner-box h2:nth-child(3){
+    font-size: 180px;
+    font-family: 'Bebas Neue', cursive;
+    line-height: 180px;
+}
+
+p.box-sub-heading {
+    width: 70%;
+    font-weight: 400;
+    font-family: 'Kollektif';
+}
+
+.divider {
+    border: 3px solid white;
+    width: 107px;
+    margin: 0px 0px 24px;
+}
+
+
+.col-banner-img,
+.col-login-form{
+    display: grid;
+    place-items: center;
+    background-color:#f8f8f7 ;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .login-container{
+        padding: 3rem 0;
+    }
+
+    .banner-box h2:nth-child(1){
+        font-size: 32px;
+        font-weight: 500;
+        font-family: 'Ampersand';
+        line-height: initial;
+    }
+
+    .banner-box h2:nth-child(2){
+        font-size: 40px;
+        font-family: 'Bebas Neue', cursive;
+        font-weight: 400;
+        line-height: initial;
+    }
+
+    .banner-box h2:nth-child(3){
+        font-size: 100px;
+        font-family: 'Bebas Neue', cursive;
+        line-height: initial;
+    }
+
+    p.box-sub-heading {
+        width: 70%;
+        font-weight: 400;
+        font-family: 'Kollektif';
+    }
+
+    .divider {
+        border: 3px solid white;
+        width: 107px;
+        margin: 0px 0px 24px;
+    }
+    
+    .form-login-btn{
+        width: 100%;
+    }
+
+    .banner-box,
+    .login-form-box{
+        box-sizing: border-box;
+        overflow: hidden;
+        height: 500px;
+        width: 500px;
+    }
+
+    .title-heading h2{
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .google-btn{
+        padding-bottom: 0;
+        display: grid;
+        justify-content: center;
+    }
+
+    .form-input-field{
+        margin: 20px 0;
+    }
+
+    .form-login-btn{
+        padding: 0;
+    }
+    
+    .login-form{
+        width: 100%;
+    }
+
+
+
+}
+
+@media only screen and (max-width: 991px){
+    .nav-item-btn{
+        display: grid;
+        place-items: center;
+    }
+    
+    .custom-btn-white{
+        width: 200px;
+        font-size: 20px;
+    }
+
+    .navbar-nav-bottom{
+        display: none !important;
+    }
+}
+
+
+@media only screen and (max-width: 576px){
+    .login-container-row{
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .form-wrap-options{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .banner-box,
+    .login-form-box{
+        height: auto;
+        width: auto;
+    }
+
+    .banner-box h2:nth-child(1){
+        font-size: 18px;
+    }
+
+    .banner-box h2:nth-child(2){
+        font-size: 24px;
+    }
+
+    .banner-box h2:nth-child(3){
+        font-size: 70px;
+    }
+
+    .divider{
+        margin: 0px 0px .7rem;
+    }
+}
+
+@media only screen and (max-width: 425px){
+
+    .banner-box h2:nth-child(1){
+        font-size: 12px;
+    }
+
+    .banner-box h2:nth-child(2){
+        font-size: 18px;
+    }
+
+    .banner-box h2:nth-child(3){
+        font-size: 40px;
+    }
+
+    p.box-sub-heading{
+        font-size: 12px;
+    }
+
+    .form-login-btn{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .btn-login{
+        padding: 10px 42px;
+    }
+}

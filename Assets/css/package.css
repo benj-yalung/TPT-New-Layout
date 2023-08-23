@@ -1,0 +1,16 @@
+
+
+.package__label {
+  font-size: .9rem;
+  font-weight: 500;
+}
+
+.package__input {
+  background-color: #FFFFFF;
+  border-radius: 4rem;
+  border: 1px solid rgb(202, 202, 202) !important;
+}
+
+.weight-black {
+  font-weight: 800;
+}

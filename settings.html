@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Dashboard | Talent Pro Tutor</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./Assets/img/logo-removebg-preview.png" type="image/x-icon">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./Assets/css/dashboard.css">
+  <link rel="stylesheet" href="./Assets/css/settings.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+
+  <!-- Google Font Link for Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="layer"></div>
+<!-- ! Body -->
+<a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+<div class="page-flex">
+  <!-- ! Sidebar -->
+  <!-- ! Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-start">
+      <div class="sidebar-head">
+        <a href="./index.html" class="logo-wrapper" title="Home">
+          <img src="./Assets/img/logo-removebg-preview.png" alt="Site Logo" width="100">
+        </a>
+      </div>
+      <div class="sidebar-body">
+        <ul class="sidebar-body-menu">
+          <li>
+            <a class="show-cat-btn" href="dashboard.html">
+              <i class="icon fa fa-th-large" aria-hidden="true"></i>Dashboard
+            </a>
+          </li>
+
+          <li>
+            <a class="show-cat-btn" href="tutor.html">
+              <i class="icon fa fa-user" aria-hidden="true"></i>
+              Find Tutor
+            </a>
+          </li>
+          <li>
+            <a class="show-cat-btn" href="chat.html">
+              <i class="icon fa fa-comment" aria-hidden="true"></i>
+              Messages
+            </a>
+
+          </li>
+
+          <li>
+            <a class="show-cat-btn" href="./help.html">
+              <i class="icon fa fa-question" aria-hidden="true"></i>
+              Help
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <ul class="sidebar-body-menu" style="color: white;">
+        <li>
+          <a class="show-cat-btn" href="settings.html">
+            <i class="icon setting fa fa-wrench" aria-hidden="true"></i>Settings
+          </a>
+        </li>
+      </ul>
+    </div>
+  </aside>
+  <div class="main-wrapper">
+    <!-- ! Main nav -->
+    <nav class="main-nav--bg">
+      <div class="container main-nav">
+        <div class="main-nav-start">
+          <div class="search-wrapper">
+            <input type="text" placeholder="Search" required>
+            <i data-feather="search" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="main-nav-end">
+          <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+            <span class="sr-only">Toggle menu</span>
+            <span class="icon menu-toggle--gray" aria-hidden="true"></span>
+          </button>
+
+          <div class="notification-wrapper">
+            <button class="gray-circle-btn dropdown-btn" title="To messages" type="button">
+              <span class="sr-only">To messages</span>
+              <span class="icon notification active" aria-hidden="true"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
+              </span>
+            </button>
+            <ul class="users-item-dropdown notification-dropdown dropdown">
+              <li>
+                <a href="##">
+                  <div class="notification-dropdown-icon info">
+                    <i data-feather="check"></i>
+                  </div>
+                  <div class="notification-dropdown-text">
+                    <span class="notification-dropdown__title">System just updated</span>
+                    <span class="notification-dropdown__subtitle">The system has been successfully upgraded. Read more
+                      here.</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="##">
+                  <div class="notification-dropdown-icon danger">
+                    <i data-feather="info" aria-hidden="true"></i>
+                  </div>
+                  <div class="notification-dropdown-text">
+                    <span class="notification-dropdown__title">The cache is full!</span>
+                    <span class="notification-dropdown__subtitle">Unnecessary caches take up a lot of memory space and
+                      interfere ...</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="##">
+                  <div class="notification-dropdown-icon info">
+                    <i data-feather="check" aria-hidden="true"></i>
+                  </div>
+                  <div class="notification-dropdown-text">
+                    <span class="notification-dropdown__title">New Subscriber here!</span>
+                    <span class="notification-dropdown__subtitle">A new subscriber has subscribed.</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="link-to-page" href="##">Go to Notifications page</a>
+              </li>
+            </ul>
+          </div>
+
+          <button class="gray-circle-btn dropdown-btn" type="button" title="Switch theme">
+            <span class="icon message" aria-hidden="true">  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+            </span>
+          </button>
+
+          <div class="nav-user-wrapper">
+            <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
+              <span class="sr-only">My profile</span>
+              <span class="nav-user-img">
+                <picture><source srcset="./Assets/img/profile.png" type="image/webp"><img src="./Assets/img/profile.png" alt="User name"></picture>
+              </span>
+            </button>
+            <ul class="users-item-dropdown nav-user-dropdown dropdown">
+              <li><a href="##">
+                  <i data-feather="user" aria-hidden="true"></i>
+                  <span>Profile</span>
+                </a></li>
+              <li><a href="##">
+                  <i data-feather="settings" aria-hidden="true"></i>
+                  <span>Account settings</span>
+                </a></li>
+              <li><a class="danger" href="##">
+                  <i data-feather="log-out" aria-hidden="true"></i>
+                  <span>Log out</span>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>    <!-- ! Main -->
+    <main class="main users settings-page" id="skip-target">
+      <div class="settings-menu">
+        <ul class="settings-menu-list">
+          <li class="settings-menu-item settings-menu-item--1"><a href="#settings-profile">Profile</a></li>
+          <li class="settings-menu-item settings-menu-item--2"><a href="#settings-billing">Billing</a></li>
+          <li class="settings-menu-item settings-menu-item--3"><a href="#settings-security">Security</a></li>
+          <li class="settings-menu-item settings-menu-item--4"><a href="#settings-completed-courses">Completed Courses</a></li>
+        </ul>
+      </div>
+      <div class="settings-container">
+        <div id="settings-profile" class="settings-profile">
+          <div class="settings-profile-banner">
+            <img src="./Assets/img/profile.png" alt="">
+            <div class="settings-profile-banner-info">
+              <h2 class="change-profile-banner-name">Natisha Wolf</h2>
+              <a href="" class="change-profile-img-btn">Change Photo</a>
+            </div>
+          </div>
+          <div class="settings-profile-info">
+            <h3>Profile</h3>
+            <form action="">
+              <div class="profile-info-body">
+                <div class="full-name">
+                  <label for="fName">Full Name</label>
+                  <input type="text" name="fName" id="fName">
+                </div>
+
+                <div class="settings-email">
+                  <label for="email">Email Address</label>
+                  <input type="email" name="email" id="email">
+                </div>
+
+                <div class="settings-language">
+                  <label for="pLanguage">Preferred Language</label>
+                  <input type="text" name="pLanguage" id="pLanguage">
+                </div>
+
+                <div class="settings-study-field">
+                  <label for="fieldStudy">Field of Study</label>
+                  <input type="text" name="fieldStudy" id="fieldStudy">
+                </div>
+
+                <div class="settings-birthday">
+                  <label for="birthdate">Birthday</label>
+                  <input type="date" name="birthdate" id="birthdate">
+                </div>
+            </div>
+            </form>
+          </div>
+        </div>
+        <div id="settings-billing" class="settings-billing">
+          <div class="settings-billing-info">
+            <h3>Billing Information</h3>
+            <form action="">
+              <div class="profile-info-body">
+                <div class="settings-card-holder-name">
+                  <label for="cardHolder">Card Holder Name</label>
+                  <input type="text" name="cardHolder" id="cardHolder">
+                </div>
+
+                <div class="settings-card-number">
+                  <label for="cardNumber">Card Holder Name</label>
+                  <input type="text" name="cardNumber" id="cardNumber">
+                </div>
+
+                <div class="settings-card-expiration">
+                  <label for="cardExpiration">Expiration Date</label>
+                  <input type="text" name="cardExpiration" id="cardExpiration">
+                </div>
+
+                <div class="settings-card-cvc">
+                  <label for="cardCVC">CVC</label>
+                  <input type="text" name="cardCVC" id="cardCVC">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="settings-security" class="settings-security">
+          <div class="settings-security-info">
+            <h3>Security</h3>
+            <form action="">
+              <div class="profile-info-body">
+                <div class="settings-new-password">
+                  <label for="newPass">New Password</label>
+                  <input type="text" name="newPass" id="newPass">
+                </div>
+
+                <div class="settings-new-password-confirm">
+                  <label for="newPassConfirm">Confirm New Password</label>
+                  <input type="text" name="newPassConfirm" id="newPassConfirm">
+                </div>
+
+                <div class="settings-old-password">
+                  <label for="oldPass">Old Password</label>
+                  <input type="text" name="oldPass" id="oldPass">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="settings-completed-courses" class="settings-completed-courses">
+
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Icons library -->
+<script src="plugins/feather.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="./Assets/js/dashboard.js"></script>
+</body>
+</html>
+
+
+<script>
+  (function () {
+    window.addEventListener("resize", (e) => {
+      const windowWidth = window.innerWidth;
+      if(windowWidth < 768){
+        settingNavMove();
+      }else{
+        resetNav()
+      }
+    });
+
+
+    function settingNavMove(){
+      $('.settings-menu').insertBefore('.settings-profile-info')
+    }
+
+    function resetNav(){
+      $('.settings-menu').insertBefore('.settings-container')
+      console.log('hahaha')
+    }
+
+  })();
+</script>

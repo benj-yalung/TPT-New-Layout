@@ -1,0 +1,267 @@
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+@font-face {
+    font-family: Ampersand;
+    src: url("../assets/fonts/amsterdam/amsterdam-four-ttf.ttf");
+}
+
+
+@font-face {
+    font-family: Kollektif;
+    src: url("../assets/fonts/kollektif/Kollektif.ttf");
+}
+
+/* REGISTRATION */
+
+.registration-page{
+    background: url('../img/register-background.png');
+}
+
+.registration_main{
+    display: grid;
+    place-items: center;
+}
+
+.registration_main .container .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-form{
+    max-width: 900px;
+    min-width: 250px;
+    width: 600px;
+}
+
+.registration-form form{
+    background-color: #e7f2fa;
+}
+
+.registration-form .form-header{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+}
+
+.registration-form .form-header .form-header__heading{
+    color: #737373;
+}
+
+.registration-form .form-header .form-header__back{
+    text-decoration: none;
+    color: #0F0346;
+    box-sizing: border-box;
+    border: 1px solid #0F0346;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.registration-form .form-header .form-header__signUp{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    background-color: #0F0346;
+    border-radius: 20px;
+}
+
+.registration-form .form-body{
+    padding: 1.5rem 2.5rem;
+}
+
+.reg-module{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.reg-teacher, .reg-student{
+    padding: .8rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 40%;
+    cursor: pointer;
+}
+
+.student_module_img, .teacher_module_img {
+    height: 80%;
+}
+
+.registration-form form{
+    border-radius: 20px;
+}
+
+.registration-form .form-header{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.reg-name,
+.reg-password{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reg-name div label,
+.reg-password div label{
+    font-size: 1rem;
+    color: #737373;
+    margin: .6rem 0;
+}
+
+.registration-form form input{
+    border-radius: 20px;
+    padding: 10px 15px;
+    background-color: #fff;
+    outline: none;
+    border: 1px solid #737373;
+}
+
+.form-body .reg-username,
+.form-body .reg-email,
+.form-body .reg-language{
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-form form label{
+    margin: .6rem 0;
+}
+
+.reg-name div,
+.reg-password div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 20px;
+    width: 45%;
+}
+
+.register_submit_button{
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0 0;
+}
+
+.register_submit_button button{
+    border: none;
+    outline: none;
+    background: url('/Assets/img/register-background.png') center no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: .5rem;
+}
+
+.col.col-img{
+    display: grid;
+    place-items: center;
+}
+
+.login-container,
+.registration-container{
+    margin-top: 80px;
+}
+
+
+@media only screen and (max-width: 991px){
+    .registration_main{
+        height: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .registration-form{
+        max-width: 500px;
+    }
+}
+
+
+@media only screen and (max-width: 500px){
+    .registration-form{
+        max-width: 420px;
+        margin: 2rem 0;
+    }
+
+    .reg-module{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .reg-teacher, .reg-student{
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+        padding: .8rem;
+    }
+
+    .reg-password{
+        flex-direction: column;
+    }
+
+    .reg-password > div{
+        width: 100%;
+    }
+
+    .main-registration{
+        height: auto;
+    }
+
+    .reg-name{
+        flex-direction: column;
+    }
+
+    .reg-name > div{
+        width: 100%;
+    }
+
+    .form-header__heading{
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+@media only screen and (max-width: 480px){
+    .registration-form{
+        max-width: 400px;
+    }
+}
+
+@media only screen and (max-width: 420px){
+    .registration-form{
+        max-width: 360px;
+    }
+
+    .registration-form .form-body{
+        padding: 1rem 1.5rem;
+    }
+
+    .form-header__heading{
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+@media only screen and (max-width: 380px){
+    .registration-form{
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .registration-form{
+        max-width: 280px;
+    }
+}

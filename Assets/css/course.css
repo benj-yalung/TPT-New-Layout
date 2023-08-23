@@ -1,0 +1,315 @@
+/* external css: flickity.css */
+
+.carousel {
+    background: transparent;
+    width: 100%;
+  }
+  
+  .carousel-cell {
+    width: 25%;
+    height: 250px;
+    margin-right: 10px;
+    /* background: #8C8; */
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+    text-align: center;
+    display: grid;
+    place-items: center;
+  }
+  
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+  }
+  
+  .carousel-cell-inner{
+    grid-gap: 20px;
+    background-color: #fff;
+    width: 70%;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 6px 25px 46px -30px rgba(0,0,0,0.44);
+    -webkit-box-shadow: 6px 25px 46px -30px rgba(70, 33, 33, 0.44);
+    -moz-box-shadow: 6px 25px 46px -30px rgba(0,0,0,0.44);
+  }
+  
+  .flickity-viewport{
+    height: 300px !important;
+    background-color: none !important;
+    /* margin-top: -20px; */
+  }
+  
+  .flickity-slider{
+   display: grid;
+   place-items: center;
+   background: transparent !important;
+   width: 97%!important;
+  }
+  
+  /* .flickity-prev-next-button.next {
+    right: -10px !important;
+  }
+  
+  .flickity-prev-next-button.previous{
+    left: -10px !important;
+  } */
+  
+  .find-courses,
+  .career-development{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F7F9FA;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    margin-top: 10px;
+  }
+
+  
+  .course-page{
+    padding-bottom: 0;
+    /* padding-top: 2.5rem; */
+    padding-top: 0;
+    background-color: #fff;
+  }
+  
+  .find-courses .carousel-heading,
+  .career-development .carousel-heading{
+    color: #171717;
+    font-size: 24px;
+    font-weight: 900;
+  }
+  
+  
+  /* carousel header */
+  
+  .carousel-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+  }
+  
+  
+  /* SEARCH BAR */
+  
+  .search-filter{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .search-filter li{
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  .search-filter > .active{
+    color: #718ed4;
+  }
+
+
+  .search-filter__grid,
+  .search-filter__list{
+    cursor: pointer;
+    transition: 100ms;
+  }
+
+  .search-filter__grid:hover,
+  .search-filter__list:hover{
+    color: #718ed4;
+  }
+
+  /* MODAL */
+
+  /* 1. Ensure this sits above everything when visible */
+.modal {
+    position: fixed;
+    z-index: 10000; /* 1 */
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.modal.is-visible {
+    visibility: visible;
+    display: grid;
+    place-items: center;
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsla(0, 0%, 0%, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s;
+}
+
+.modal.is-visible .modal-overlay {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.modal-wrapper {
+  position: absolute;
+  z-index: 9999;
+  background-color: #fff;
+  box-shadow: 0 0 1.5em hsla(0, 0%, 0%, 0.35);
+  width: 60%;
+  max-height: 590px;
+  overflow-y: scroll;
+}
+
+.modal-transition {
+  transition: all 0.3s 0.12s;
+  transform: translateY(-10%);
+  opacity: 0;
+}
+
+.modal.is-visible .modal-transition {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-header,
+.modal-content {
+  padding: 1em;
+}
+
+.modal-content{
+  padding-right: 0;
+}
+
+.modal-header {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.06);
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-header_right{
+    display: inherit;
+    gap: 2rem;
+}
+
+.modal-header_filter{
+    display: inherit;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.fc-modal-item,
+.cd-modal-item{
+  background: #92adef;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  color: #aaa;
+  background: none;
+  border: 0;
+}
+
+.modal-close:hover {
+  color: #777;
+}
+
+.modal-heading {
+  font-size: 1.125em;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.modal-content > *:first-child {
+  margin-top: 0;
+}
+
+.modal-content > *:last-child {
+  margin-bottom: 0;
+}
+
+.btn_modal_times{
+    cursor: pointer
+}
+
+.courses-text{
+  color: #fff;
+}
+
+.courses-text h3{
+  color: #fff;
+}
+
+.program-text h3{
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.start-now-btn{
+  border-radius: 20px;
+  padding: 1rem;
+  background-color: #3de0f9;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+/* Modal courses list */
+
+.find-courses-list li:nth-child(odd) {
+background-color: #fff;
+}
+
+.find-courses-list li{
+    padding: 1rem;
+}
+
+.hide{
+  display: none;
+}
+
+.enrolled-course-container{
+  width: 100%;
+}
+
+.find-tutor-conatiner{
+  padding: 1rem 2.5rem;
+}
+
+
+@media only screen and (max-width: 1200px){
+  .find-tutor-conatiner{
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 991px){
+  .modal-content{
+    padding-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .find-tutor-inner{
+    width: 100%;
+  }
+}

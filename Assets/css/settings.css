@@ -1,0 +1,277 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.settings-page{
+    /* height: 100vh; */
+    /* padding-left: 253px; */
+    display: flex;
+    padding: 2.5rem;
+}
+
+.settings-main-nav{
+    /* padding-left: 253px; */
+    z-index: 2;
+}
+
+/* .settings-sidebar{
+    position: fixed;
+    z-index: 3;
+} */
+
+.settings-container{
+  width: 100%;
+}
+
+i.icon.setting.fa.fa-wrench.active {
+  margin-right: 5px;
+}
+
+/* .settings-container {  
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 400px 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "settings-menu settings-profile"
+      "settings-menu settings-billing"
+      "settings-menu settings-security"
+      "settings-menu settings-completed-courses";
+    padding: 2.5rem 0;
+    padding-right: 2.5rem;
+  } */
+  
+  .settings-menu { 
+        grid-area: settings-menu;
+        position: relative;
+    }
+  
+  /* .settings-profile {  display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "."
+      ".";
+    grid-area: settings-profile;
+  } */
+  
+  .settings-billing { grid-area: settings-billing; }
+  
+  .settings-security { grid-area: settings-security; }
+  
+  .settings-completed-courses { grid-area: settings-completed-courses; }
+  
+
+  .settings-menu-list{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 0 1.5rem; */
+    /* padding-left: 2.5rem; */
+    top: 25%;
+  }
+
+  .settings-menu-item{
+    cursor: pointer;
+  }
+
+  .settings-menu-item:not(:last-child){
+    margin-bottom: 1.5rem;
+  }
+  
+  .settings-profile-banner{
+    width: 100%;
+    background: linear-gradient(254deg, rgba(48,226,252,1) 0%, rgba(159,77,253,1) 98%);
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .settings-profile-banner-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  .change-profile-banner-name{
+    font-size: 38px;
+    color: #fff;
+  }
+
+  .change-profile-img-btn{
+    display: inline-block;
+    border-radius: 20px;
+    background-color: #3de0f9;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    height: 40px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .settings-profile-info,
+  .settings-billing-info,
+  .settings-security-info{
+    padding: 2.5rem;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+
+  .settings-profile-info form,
+  .settings-billing-info form,
+  .settings-security-info form{
+    padding: 1.5rem 0;
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+
+  .profile-info-body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.full-name,
+.settings-email,
+.settings-language,
+.settings-study-field,
+.settings-birthday,
+.settings-card-expiration,
+.settings-card-cvc{
+    width: 50%;
+    margin-bottom: 1.5rem;
+}
+
+.settings-card-expiration{
+    padding-right: 1rem;
+}
+
+.settings-card-holder-name,
+.settings-card-number,
+.settings-new-password,
+.settings-new-password-confirm,
+.settings-old-password{
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.full-name input,
+.settings-email input,
+.settings-language input,
+.settings-study-field input,
+.settings-birthday input{
+    margin-top: 1rem;
+    display: block;
+    width: 80%;
+}
+
+.settings-email input,
+.settings-study-field input{
+    width: 100%;
+}
+
+.settings-card-holder-name input,
+.settings-card-number input{
+    margin-top: 1rem;
+    display: block;
+    width: 100%;
+}
+
+.settings-card-expiration input,
+.settings-card-cvc input,
+.settings-new-password input,
+.settings-new-password-confirm input,
+.settings-old-password input{
+    margin-top: 1rem;
+    display: block;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 1199px){
+  .settings-page{
+    padding: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .settings-menu .settings-menu-list {
+    flex-direction: row;
+  }
+
+  .settings-menu-list li{
+    display: grid;
+    place-content: center;
+    margin: 0 !important;
+    padding: 1rem;
+  }
+
+  .settings-profile-info, .settings-billing-info, .settings-security-info{
+    padding: 0;
+  }
+
+  .settings-page{
+    padding: 1rem;
+  }
+}
+
+
+@media only screen and (max-width: 576px){
+  .settings-container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .full-name,
+  .settings-email,
+  .settings-language,
+  .settings-study-field,
+  .settings-birthday,
+  .settings-card-expiration,
+  .settings-card-cvc{
+    width: 100%;
+  }
+
+  .full-name input, 
+  .settings-email input, 
+  .settings-language input, 
+  .settings-study-field input, 
+  .settings-birthday input{
+    width: 100%;
+  }
+
+  .settings-card-expiration{
+    padding-right: 0;
+  }
+
+  .change-profile-banner-name{
+    font-size: 28px;
+  }
+
+  .settings-profile-banner img{
+    width: 100px;
+    height: 100px;
+  }
+
+  .settings-profile{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .settings-menu-list li{
+    padding: .5rem;
+    text-align: center;
+  }
+}

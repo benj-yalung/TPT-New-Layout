@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Dashboard | Talent Pro Tutor</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./Assets/img/logo-removebg-preview.png" type="image/x-icon">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./Assets/css/dashboard.css">
+  <link rel="stylesheet" href="./Assets/css/help.css">
+</head>
+
+<body>
+  <div class="layer"></div>
+<!-- ! Body -->
+<a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+<div class="page-flex">
+  <!-- ! Sidebar -->
+  <!-- ! Sidebar -->
+  <!-- ! Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-start">
+        <div class="sidebar-head">
+            <a href="./index.html" class="logo-wrapper" title="Home">
+            <img src="./Assets/img/logo-removebg-preview.png" alt="Site Logo" width="100">
+            </a>
+        </div>
+        <div class="sidebar-body">
+            <ul class="sidebar-body-menu">
+                <li>
+                    <a class="show-cat-btn" href="dashboard.html">
+                      <i class="icon fa fa-th-large" aria-hidden="true"></i>Dashboard
+                    </a>
+                </li>
+               
+                <li>
+                  <a class="show-cat-btn" href="tutor.html">
+                      <i class="icon fa fa-user" aria-hidden="true"></i>
+                      Find Tutor
+                  </a>
+                </li>
+                <li>
+                    <a class="show-cat-btn" href="chat.html">
+                      <i class="icon fa fa-comment" aria-hidden="true"></i>
+                        Messages
+                    </a>
+                  
+                </li>
+                
+                <li>
+                  <a class="show-cat-btn" href="./help.html">
+                      <i class="icon fa fa-question" aria-hidden="true"></i>
+                      Help
+                  </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar-footer">
+      <ul class="sidebar-body-menu" style="color: white;">
+          <li>
+            <a class="show-cat-btn" href="settings.html">
+                <i class="icon setting fa fa-wrench" aria-hidden="true" ></i>Settings
+            </a>
+          </li>
+      </ul>
+    </div>
+  </aside> 
+  <div class="main-wrapper help-main-wrapper">
+    <!-- ! Main nav -->
+    <nav class="main-nav--bg">
+      <div class="container main-nav">
+        <div class="main-nav-start">
+          <div class="search-wrapper">
+            <input type="text" placeholder="Search" required>
+            <i data-feather="search" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="main-nav-end">
+          <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+            <span class="sr-only">Toggle menu</span>
+            <span class="icon menu-toggle--gray" aria-hidden="true"></span>
+          </button>
+
+          <div class="notification-wrapper">
+            <button class="gray-circle-btn dropdown-btn" title="To messages" type="button">
+              <span class="sr-only">To messages</span>
+              <span class="icon notification active" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
+   
+              </span>
+            </button>
+            <ul class="users-item-dropdown notification-dropdown dropdown">
+              <li>
+                <a href="##">
+                  <div class="notification-dropdown-icon info">
+                    <i data-feather="check"></i>
+                  </div>
+                  <div class="notification-dropdown-text">
+                    <span class="notification-dropdown__title">System just updated</span>
+                    <span class="notification-dropdown__subtitle">The system has been successfully upgraded. Read more
+                      here.</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="##">
+                  <div class="notification-dropdown-icon danger">
+                    <i data-feather="info" aria-hidden="true"></i>
+                  </div>
+                  <div class="notification-dropdown-text">
+                    <span class="notification-dropdown__title">The cache is full!</span>
+                    <span class="notification-dropdown__subtitle">Unnecessary caches take up a lot of memory space and
+                      interfere ...</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="##">
+                  <div class="notification-dropdown-icon info">
+                    <i data-feather="check" aria-hidden="true"></i>
+                  </div>
+                  <div class="notification-dropdown-text">
+                    <span class="notification-dropdown__title">New Subscriber here!</span>
+                    <span class="notification-dropdown__subtitle">A new subscriber has subscribed.</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="link-to-page" href="##">Go to Notifications page</a>
+              </li>
+            </ul>
+          </div>
+
+          <button class="gray-circle-btn dropdown-btn" type="button" title="Switch theme">
+            <span class="icon message" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+            </span>
+          </button>
+
+          <div class="nav-user-wrapper">
+            <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
+              <span class="sr-only">My profile</span>
+              <span class="nav-user-img">
+                <picture><source srcset="./Assets/img/profile.png" type="image/webp"><img src="./Assets/img/profile.png" alt="User name"></picture>
+              </span>
+            </button>
+            <ul class="users-item-dropdown nav-user-dropdown dropdown">
+              <li><a href="##">
+                  <i data-feather="user" aria-hidden="true"></i>
+                  <span>Profile</span>
+                </a></li>
+              <li><a href="##">
+                  <i data-feather="settings" aria-hidden="true"></i>
+                  <span>Account settings</span>
+                </a></li>
+              <li><a class="danger" href="##">
+                  <i data-feather="log-out" aria-hidden="true"></i>
+                  <span>Log out</span>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>    <!-- ! Main -->
+    <main class="main users help-page" id="skip-target">
+        <div class="help_container">
+          <div class="help_column help_left-side">
+            <div class="search-question_block">
+              <h3>Search for a question</h2>
+              <h4>Type your question or search keyword</h3>
+              <div class="search-wrapper search-help">
+                <input type="text" placeholder="Search question..." required>
+                <i data-feather="search" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="help_side-nav">
+              <ul>
+                <li class="help_active">
+                  <a href="##">Getting Started</a>
+                  <i data-feather="chevron-right" aria-hidden="true"></i>
+                </li>
+                <li class="">
+                  <a href="##">Billing Information</a>
+                  <i data-feather="chevron-right" aria-hidden="true"></i>
+                </li>
+                <li class="">
+                  <a href="##">How to reset my password?</a>
+                  <i data-feather="chevron-right" aria-hidden="true"></i>
+                </li>
+                <li class="">
+                  <a href="##">How to enroll in a course?</a>
+                  <i data-feather="chevron-right" aria-hidden="true"></i>
+                </li>
+                <li class="">
+                  <a href="##">How to cancel a course?</a>
+                  <i data-feather="chevron-right" aria-hidden="true"></i>
+                </li>
+                <li class="">
+                  <a href="##">Where can I find a tutor?</a>
+                  <i data-feather="chevron-right" aria-hidden="true"></i>
+                </li>
+                <li class="">
+                  <a href="##">How do I create a meeting?</a>
+                  <i data-feather="chevron-right" aria-hidden="true"></i>
+                </li>
+                <li class="">
+                  <a href="##">Where can I view my grades?  </a>
+                  <i data-feather="chevron-right" aria-hidden="true"></i>
+                </li>
+              </ul>
+            </div>
+            <div class="need_help_block">
+              <h2>Do you still need help?</h2>
+              <button>Contact Us</button>
+            </div>
+          </div>
+          <div class="help_column help_tab">
+            <div class="help_nav_head">
+              <div class="help_nav_head-wrapper">
+                <div class="help_nav_head-col nav-tabs">
+                  <button id="FAQs_Tab" class="btn_tabs tabs_active" onclick="openTab('FAQs')">FAQs</button>
+                  <button id="MyTicket_Tab" class="btn_tabs" onclick="openTab('MyTicket')">My Tickets</button>
+                  <button id="ResolvedTicket_Tab" class="btn_tabs" onclick="openTab('ResolvedTicket')">Resolved Tickets</button>
+                </div>
+                <div class="help_nav_head-col contact-us">
+                  <button id="Contact_Tab" class="btn_tabs contact-us_btn" onclick="openTab('ContactUs')">Contact Us</button>
+                </div>
+              </div>
+            </div>
+            <div class="help_nav_content">
+              <div id="FAQs" class="tab_content">
+                <div class="tab_content_header">
+                  <button class="btn_createTicket">Create Ticket</button>
+                  <div class="tab_filter">
+                    <button>
+                      <i data-feather="sliders" aria-hidden="true"></i>
+                      <p>Filter</p>
+                    </button>
+                  </div>
+                </div>
+                <div class="tab_content_body">
+                  <div class="ticket_card">
+                    <div class="ticket_card_head">
+                      <h3>Ticket #45298</h3>
+                    </div>
+                    <div class="ticket_card_body">
+                      <div class="ticket_name">
+                        <h2>How do I reset my password?</h2>
+                      </div>
+                      <div class="ticket_desc">
+                        <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ticket_card">
+                    <div class="ticket_card_head">
+                      <h3>Ticket #45298</h3>
+                    </div>
+                    <div class="ticket_card_body">
+                      <div class="ticket_name">
+                        <h2>How do I reset my password?</h2>
+                      </div>
+                      <div class="ticket_desc">
+                        <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ticket_card">
+                    <div class="ticket_card_head">
+                      <h3>Ticket #45298</h3>
+                    </div>
+                    <div class="ticket_card_body">
+                      <div class="ticket_name">
+                        <h2>How do I reset my password?</h2>
+                      </div>
+                      <div class="ticket_desc">
+                        <p>ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="MyTicket" class="tab_content" style="display:none">
+                <h2>My Ticket</h2>
+              </div>
+              <div id="ResolvedTicket" class="tab_content" style="display:none">
+                <h2>Resolved Ticket</h2>
+              </div>
+              <div id="ContactUs" class="tab_content" style="display:none">
+                <h2>Contact Us</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
+  </div>
+</div>
+
+<!-- Icons library -->
+<script src="plugins/feather.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="./Assets/js/dashboard.js"></script>
+
+<script>
+  function openTab(TabName) {
+    var i;
+    var x = document.getElementsByClassName("tab_content");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    document.getElementById(TabName).style.display = "block";  
+  }
+</script>
+
+</body>
+</html>
