@@ -1,11 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tutor's Profile | Talent Pro Tutor</title>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="../Assets/css/dashboard.css">
+    <link rel="stylesheet" href="../Assets/css/dashboard-tab.css">
+    <link rel="stylesheet" href="../Assets/css/profile.css">
+    <link rel="stylesheet" href="../Assets/css/utilities.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- Google Font Link for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+      <!-- JQUERY -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="d-flex">
+      <header>
+        <nav class="sidebar">
+          <div class="sidebar-start">
+            <div class="sidebar-head">
+              <a href="../index.html" class="logo-wrapper" title="Home">
+                <img src="../Assets/img/logo-removebg-preview.png" alt="Site Logo" width="100">
+              </a>
+            </div>
+            <div class="sidebar-body">
+              <ul class="sidebar-body-menu ps-0">
+                <li>
+                  <a class="show-cat-btn text-decoration-none" href="../dashboard.html">
+                    <i class="icon fa fa-th-large" aria-hidden="true"></i>Dashboard
+                  </a>
+                </li>
   
-</body>
+                <li>
+                  <a class="show-cat-btn text-decoration-none" href="../tutor.html">
+                    <i class="icon fa fa-user" aria-hidden="true"></i>
+                    Find Tutor
+                  </a>
+                </li>
+                <li>
+                  <a class="show-cat-btn text-decoration-none" href="../chat.html">
+                    <i class="icon fa fa-comment" aria-hidden="true"></i>
+                    Messages
+                  </a>
+                </li>
+                <li>
+                  <a class="show-cat-btn text-decoration-none" href="../help.html">
+                    <i class="icon fa fa-question" aria-hidden="true"></i>
+                    Help
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="sidebar-footer">
+            <ul class="sidebar-body-menu ps-0" style="color: white;">
+              <li>
+                <a class="show-cat-btn text-decoration-none" href="../settings.html">
+                  <i class="icon setting fa fa-wrench" aria-hidden="true"></i>Settings
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main class="w-100 min-vh-100 bg-light pb-5 ">
+        <!-- Searchbar -->
+        <div class="px-5 ps-5 bg-light">
+          <div class="main-nav ps-4">
+            <div class="main-nav-end d-flex w-100 justify-content-end">
+              <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+                <span class="sr-only">Toggle menu</span>
+                <span class="icon menu-toggle--gray" aria-hidden="true"></span>
+              </button>
+              <div class="notification-wrapper">
+                <button class="gray-circle-btn dropdown-btn" title="To messages" type="button">
+                  <span class="sr-only">To messages</span>
+                  <span class="icon notification active" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <button class="gray-circle-btn dropdown-btn" type="button" title="Switch theme">
+                <span class="icon message" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+                </span>
+              </button>
+              <div class="nav-user-wrapper">
+                <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
+                  <span class="sr-only">My profile</span>
+                  <span class="nav-user-img">
+                    <picture>
+                      <source srcset="../Assets/img/profile.png" type="image/webp"><img src="Assets/img/profile.png"
+                        alt="User name">
+                    </picture>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Profile -->
+        <div class="px-5 pt-3">
+          <div class="bg-light">
+            <div class="px-5">
+              <div class="px-5">
+                <div class="profile p-relative bg-white d-flex align-items-start pt-3 px-5 pb-5">
+                  <img src="../Assets/img/Lesson-Dashboard-img.jpg" alt="Elizabeth Sutton" class="z-index-2 p-relative mt-5 profile__avatar">
+                  <div class="profile__personal p-relative ms-4 mt-4 z-index-2">
+                    <h1 class="fs-1 fw-bold pt-3 mb-2 text-white">Elizabeth Sutton</h1>
+                    <a class="profile__email text-decoration-none"  href="mailto:elizabethsutton@tptutor.com">elizabethsutton@tptutor.com</a>
+                    <p>(123) 456 7890</p>
+                    <div class="mt-5">
+                      <div class="text-dark pt-2 mb-2">
+                        <h2 class="weight-black fs-5 mb-0 profile__info-heading">Education</h2>
+                        <p class="profile__info-text text-secondary">Bachelor of Arts Major in Philosophy - Stanford University</p>
+                      </div>
+                      <div class="text-dark mb-2">
+                        <h2 class="weight-black fs-5 mb-0 profile__info-heading">Qualification</h2>
+                        <p class="profile__info-text text-secondary">Experienced, certified reading, writing, vocabulary, and grammar tutor</p>
+                      </div>
+                      <div class="text-dark mb-2">
+                        <h2 class="weight-black fs-5 mb-1 profile__info-heading">Language Spoken</h2>
+                        <p class="profile__info-text text-secondary mb-1">English</p>
+                        <p class="profile__info-text text-secondary mb-1">Spanish</p>
+                        <p class="profile__info-text text-secondary mb-1">French</p>
+                      </div>
+                      <div class="text-dark mb-2">
+                        <h2 class="weight-black fs-5 mb-1 profile__info-heading">Subjects</h2>
+                        <p class="profile__info-text text-secondary mb-1">Math</p>
+                        <p class="profile__info-text text-secondary mb-1">English</p>
+                        <p class="profile__info-text text-secondary mb-1">Reading</p>
+                        <p class="profile__info-text text-secondary mb-1">Writing</p>
+                      </div>
+                      <div class="text-dark mb-2">
+                        <h2 class="weight-black fs-5 mb-1 profile__info-heading">Schedule</h2>
+                        <p class="profile__info-text text-secondary mb-1">Sunday 5 AM - 2 PM</p>
+                        <p class="profile__info-text text-secondary mb-1">Monday 5 AM - 2 PM</p>
+                        <p class="profile__info-text text-secondary mb-1">Tuesday 5 AM - 2 PM</p>
+                        <p class="profile__info-text text-secondary mb-1">Wednesday 5 AM - 2 PM</p>
+                        <p class="profile__info-text text-secondary mb-1">Thursday 5 AM - 2 PM</p>
+                        <p class="profile__info-text text-secondary mb-1">Friday 5 AM - 2 PM</p>
+                        <p class="profile__info-text text-secondary mb-1">Saturday Unavailable</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="px-5 mt-3">
+            <div class="ms-auto max-w profile__calculate px-5">
+              <a href="../tutor/calculator.html" class="light-button fw-bold text-decoration-none py-3 px-2 d-block">Calculate Tutoring Package</a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Icons library -->
+    <script src="../plugins/feather.min.js"></script>
+    <!-- Custom scripts -->
+    <script src="../Assets/js/dashboard.js"></script>
+  </body>
+
 </html>

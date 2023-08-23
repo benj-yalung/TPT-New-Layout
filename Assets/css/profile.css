@@ -1,0 +1,46 @@
+
+
+.profile::before {
+  content: "";
+  background: url("../img/profile-bg.png") no-repeat;
+  background-size: 108%;
+  background-position: 15% 55%;
+  background-color: #4a4173;
+  border-radius: 1rem;
+  height: 12rem;
+  inset: 0 auto auto 0;
+  position: absolute;
+  width: 100%;
+}
+
+.profile__avatar {
+  max-width: 45%;
+  object-fit: cover;
+  min-height: 38rem;
+}
+
+.profile__personal {
+  color: #d6d6d6;
+}
+
+.profile__email {
+  color: #d6d6d6;
+}
+
+.profile__info-heading {
+  max-width: max-content;
+  position: relative;
+}
+
+.profile__info-heading::after {
+  content: "";
+  border: .5rem solid transparent;
+  border-top-color: rgb(97, 97, 97);
+  inset: 40% -1.5rem auto auto;
+  position: absolute;
+  transform: scaleX(.6);
+}
+
+.profile__calculate {
+  max-width: max-content;
+}
