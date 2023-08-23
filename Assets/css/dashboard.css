@@ -1246,7 +1246,6 @@ label {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2938,7 +2937,9 @@ label {
     flex-direction: column;
 }
 }
-
+.weight-black {
+    font-weight: 800;
+  }
 
 @media only screen and (max-width: 1440px){
     /* DASHBOARD */
