@@ -1,955 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Dashboard | Talent Pro Tutor</title>
-    <!-- Favicon -->
-    <!-- <link rel="shortcut icon" href="./Assets/img/logo-removebg-preview.png" type="image/x-icon"> -->
-    <link rel="shortcut icon" href="./Assets/img/logo-removebg-preview.png" type="image/x-icon">
 
     <!-- Custom styles -->
-    <link rel="stylesheet" href="./Assets/css/dashboard.css">
-    <link rel="stylesheet" href="./Assets/css/dashboard-tab.css">
-    <link rel="stylesheet" href="./Assets/css/tutor-page.css">
-    <script src="./Assets/js/calendar.js" defer></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="Assets/css/dashboard.css">
+    <link rel="stylesheet" href="Assets/css/dashboard-tab.css">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
-        integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css"
-        integrity="sha512-yDUXOUWwbHH4ggxueDnC5vJv4tmfySpVdIcN1LksGZi8W8EVZv4uKGrQc0pVf66zS7LDhFJM7Zdeow1sw1/8Jw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Google Font Link for Icons -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+      <link rel="stylesheet" href="Assets/css/tutor.css">
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./Assets/css/dashboard.css">
-    <link rel="stylesheet" href="./Assets/css/grade.css">
-    <!-- JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-</head>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    
+  </head>
 
-<body class="page-dashboard">
-    <div class="layer"></div>
-    <!-- ! Body -->
-    <a class="skip-link sr-only" href="#skip-target">Skip to content</a>
-    <div class="page-flex page-flex-dashboard">
-        <!-- ! Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-start">
-                <div class="sidebar-head">
-                    <a href="./index.html" class="logo-wrapper" title="Home">
-                        <img src="./Assets/img/logo-removebg-preview.png" alt="Site Logo" width="100">
-                    </a>
-                </div>
-                <div class="sidebar-body">
-                    <ul class="sidebar-body-menu">
-                        <li>
-                            <a class="show-cat-btn" href="dashboard.html">
-                                <i class="icon fa fa-th-large" aria-hidden="true"></i>Dashboard
-                            </a>
-                        </li>
-<!-- comment -->
-                        <li>
-                            <a class="show-cat-btn" href="tutor.html">
-                                <i class="icon fa fa-user" aria-hidden="true"></i>
-                                Find Tutor
-                            </a>
-                        </li>
-                        <li>
-                            <a class="show-cat-btn" href="chat.html">
-                                <i class="icon fa fa-comment" aria-hidden="true"></i>
-                                Messages
-                            </a>
-
-                        </li>
-
-                        <li>
-                            <a class="show-cat-btn" href="./help.html">
-                                <i class="icon fa fa-question" aria-hidden="true"></i>
-                                Help
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+  <body>
+    <div class="d-flex">
+      <header>
+        <nav class="sidebar">
+          <div class="sidebar-start">
+            <div class="sidebar-head">
+              <a href="./index.html" class="logo-wrapper" title="Home">
+                <img src="Assets/img/logo-removebg-preview.png" alt="Site Logo" width="100">
+              </a>
             </div>
-            <div class="sidebar-footer">
-                <ul class="sidebar-body-menu" style="color: white;">
-                    <li>
-                        <a class="show-cat-btn" href="settings.html">
-                            <i class="icon setting fa fa-wrench" aria-hidden="true"></i>Settings
-                        </a>
-                    </li>
-                </ul>
+            <div class="sidebar-body">
+              <ul class="sidebar-body-menu ps-0">
+                <li>
+                  <a class="show-cat-btn text-decoration-none" href="dashboard.html">
+                    <i class="icon fa fa-th-large" aria-hidden="true"></i>Dashboard
+                  </a>
+                </li>
+  
+                <li>
+                  <a class="show-cat-btn text-decoration-none" href="tutor.html">
+                    <i class="icon fa fa-user" aria-hidden="true"></i>
+                    Find Tutor
+                  </a>
+                </li>
+                <li>
+                  <a class="show-cat-btn text-decoration-none" href="chat.html">
+                    <i class="icon fa fa-comment" aria-hidden="true"></i>
+                    Messages
+                  </a>
+  
+                </li>
+  
+                <li>
+                  <a class="show-cat-btn text-decoration-none" href="./help.html">
+                    <i class="icon fa fa-question" aria-hidden="true"></i>
+                    Help
+                  </a>
+                </li>
+              </ul>
             </div>
-        </aside>
-        <div class="main-wrapper main-wrapper-dashboard">
-            <div class="container-tutor-top-wrapper">
-                <div class="container-tutor-top-nav">
-
-                    <div class="row-upper-nav">
-                        <div class="">
-
-                            <div class="search-wrapper">
-                                <input type="text" placeholder="Search Tutor">
-                                <i data-feather="search" aria-hidden="true"></i>
-                            </div>
-
-                        </div>
-                        <div class="">
-                            <label for="Best-Match">Sort</label><br>
-                            <select id="Best-Match" name="Best-Match">
-                                <option value="none" selected disabled hidden>Best Match</option>
-                                <option value="volvo">Option 1</option>
-                                <option value="saab">Option 2</option>
-                                <option value="fiat">Option 3</option>
-                                <option value="audi">Option 4</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row-filter">
-                        <p> Filter</p>
-                        <p> Clear Filter</p>
-                    </div>
-                    <div class="row-filter">
-                        <div class="col-availability">
-
-                            <label for="">Availability</label>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn  btn-border">Su</button>
-                                <button type="button" class="btn  btn-border">M</button>
-                                <button type="button" class="btn  btn-border">Tu</button>
-                                <button type="button" class="btn  btn-border">W</button>
-                                <button type="button" class="btn  btn-border">F</button>
-                                <button type="button" class="btn  btn-border">Sa</button>
-
-
-                            </div>
-                            <br>
-
-                            <input type="range" id="age" name="age" min="1" max="3" step="1">
-                            <div class="time-range color-blue">
-                                <p class="padding-r-time">7:00 AM</p>
-                                <p>11:00PM</p>
-                            </div>
-                        </div>
-                        <div class="col-students-level">
-                            <label for="">Student's Level</label>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-border">Elementary</button>
-                                <button type="button" class="btn btn-border">Highschool</button>
-                                <button type="button" class="btn btn-border">College</button>
-
-
-                            </div>
-                            <br>
-                            <label for="Best-Match">Subject</label>
-                            <select id="Best-Match" name="Best-Match">
-                                <option value="none" selected disabled hidden>English</option>
-                                <option value="volvo">Option 1</option>
-                                <option value="saab">Option 2</option>
-                                <option value="fiat">Option 3</option>
-                                <option value="audi">Option 4</option>
-                            </select>
-                        </div>
-                        <div class="col-range-input">
-
-                            <div class="time-range-2">
-                                <p class="padding-r-time">Tutor Age</p>
-                                <p class=" color-blue">30 and up</p>
-                            </div>
-                            <input type="range" id="age" name="age" min="1" max="3" step="1">
-                            <div class="time-range-2">
-                                <p class="padding-r-time">Hourly Rate:</p>
-                                <p class=" color-blue">$10 and up</p>
-                            </div>
-                            <input type="range" id="age" name="age" min="1" max="3" step="1">
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="sidebar-footer">
+            <ul class="sidebar-body-menu ps-0" style="color: white;">
+              <li>
+                <a class="show-cat-btn text-decoration-none" href="settings.html">
+                  <i class="icon setting fa fa-wrench" aria-hidden="true"></i>Settings
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main class="w-100 min-vh-100 ">
+        <!-- Searchbar -->
+        <div class="px-5 ps-5 bg-light">
+          <div class="main-nav ps-4">
+            <div class="main-nav-start ms-5 ps-4">
+              <div class="search-wrapper">
+                <input type="text" placeholder="Search" required>
+                <i data-feather="search" aria-hidden="true"></i>
+              </div>
             </div>
-
-
-            <main class="main users chart-page" id="skip-target">
-
-
-            </main>
-            <div class="num-tutors">
-                <h2 class="main-title">3,123 Tutors</h2>
-                <h2 class="main-title color-gray"> &nbsp; Available</h2>
-
+            <div class="main-nav-end">
+              <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+                <span class="sr-only">Toggle menu</span>
+                <span class="icon menu-toggle--gray" aria-hidden="true"></span>
+              </button>
+              <div class="notification-wrapper">
+                <button class="gray-circle-btn dropdown-btn" title="To messages" type="button">
+                  <span class="sr-only">To messages</span>
+                  <span class="icon notification active" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
+                  </span>
+                </button>
+              </div>
+              <button class="gray-circle-btn dropdown-btn" type="button" title="Switch theme">
+                <span class="icon message" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+            
+                </span>
+              </button>
+              <div class="nav-user-wrapper">
+                <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
+                  <span class="sr-only">My profile</span>
+                  <span class="nav-user-img">
+                    <picture>
+                      <source srcset="Assets/img/profile.png" type="image/webp"><img src="Assets/img/profile.png"
+                        alt="User name">
+                    </picture>
+                  </span>
+                </button>
+              </div>
             </div>
-
-
-            <div class="">
-
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                aria-controls="flush-collapseOne">
-                                <div class="accordion-header">
-                                    <div class="img-lesson-dashboard">
-                                        <img src="./Assets/img/profile.png" alt="Subject profile"
-                                            class="subject-profile img-fluid">
-                                    </div>
-                                    <div>
-
-                                        <div class="acc-head-name-container">
-                                            <p class="acc-head-name color-blue">Elizabeth Sutton</p>
-                                            <i class="fa-solid fa-circle-check" style="color: #4aff3d;"
-                                                class="check-icon"></i>
-                                            <p class="padding-l text-weight-600 bg-check">Background check passed</p>
-
-                                        </div>
-                                        <div>
-                                            <p class="sub-desc-tutor color-gray">Experienced, certified reading,
-                                                writing,
-                                                vocabulary, and grammar tutor</p>
-                                        </div>
-                                        <div>
-                                            <p class="sub-desc-2-tutor">As an English teacher who has taught writing to
-                                                over 1K students during my career, I am certainly
-                                                qualified to proofread. My grammar skills are
-                                                strong, and my instruction is guaranteed. <a href=""
-                                                    class="readmore">read
-                                                    more...</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="side-info-ratings ">
-                                        <p class="color-blue usd padd-b-5-10">$100/hour</p>
-                                        <div class="head-hour w-max-cont">
-                                            <p> <b>5.0 </b></p>
-                                            <p class="color-gray padd-b-5-10"> (1,553)</p>
-                                        </div>
-                                        <div class="padd-b-5-10"><i class="fa-sharp fa-solid fa-star padding-l"
-                                                style="color: #ffc107;"></i>
-                                            <i class="fa-sharp fa-solid fa-star padding-5" style="color: #ffc107;"></i>
-                                            <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                style="color: #ffc107;"></i>
-                                            <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                style="color: #ffc107;"></i>
-                                            <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                style="color: #ffc107;"></i>
-                                        </div>
-                                        <div class="head-hour padd-b-5-10 marg-b-10">
-                                            <p class="r-time">Response time: </p>
-                                            <p class="r-time">55 minutes </p>
-                                        </div>
-
-                                        <a class="contact">Contact</a>
-
-
-                                    </div>
-                            </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse"
-                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <div class="acc-body-content">
-                                    <h2 class="padd-h2-tutor-name">Elizabeth Sutton</h2>
-                                    <h2 class="padd-b-h2">Bio
-                                        <i id="icon-expand-bio" class="fa-solid fa-sort-down"
-                                            style="color: #737373;"></i>
-                                    </h2>
-                                    <div id="bio-div">
-                                        As a certified veteran teacher with over 18 years of English grammar, reading,
-                                        and
-                                        writing experience, I am
-                                        confident of my qualifications to tutor students in grades 1-8.
-                                        From 2006 - 2016, I taught ELA (reading, grammar, and writing) in Plano ISD,
-                                        including
-                                        those in the PACE (gifted
-                                        and talented) program, also known as TAG. During that time, students showed
-                                        significant
-                                        gains on the Writing
-                                        STAAR and on their reading and language MAP tests as a result of my specific,
-                                        direct
-                                        instruction. In addition, I am
-                                        highly experienced with the WORDLY WISE vocabulary program for all grades, and
-                                        with
-                                        teaching Greek and Latin
-                                        word roots, as well as CogAT test prep for the verbal and non-verbal areas.
-                                        From 2006-2016, I taught ELA at a Texas public school.
-                                        From 2016-2018, I taught writing, vocabulary, and grammar at a private school in
-                                        Dallas.
-                                        From 2018-present, I have tutored both in person and online. My online students
-                                        are
-                                        located across the United
-                                        States and on other continents. Currently, I have logged over 1,000 online
-                                        hours.
-                                        Every student has individual needs, and my assessment process as well as my wide
-                                        array
-                                        of instructional
-                                        strategies will identify your strengths and target your weaker areas. While I
-                                        enjoy
-                                        teaching students in a classroom
-                                        setting, the small group or one-on-one instruction that tutoring provides allows
-                                        me
-                                        to
-                                        support learners in the
-                                        specific areas and at the specific pace they require to achieve success.
-                                        I have received extensive professional development both recently and in the
-                                        past.
-                                        These
-                                        opportunities have
-                                        equipped me to provide research-based instructional strategies in reading and
-                                        writing
-                                        for students of all ages.
-                                        During my career, I have taught over 1.2K students; I'm confident I can help you
-                                        or
-                                        your
-                                        child.
-                                        My ratings consistently show significant improvement in student performance. I
-                                        would
-                                        be
-                                        happy to share them with
-                                        you. Thank you
-                                    </div>
-                                </div>
-                                <div class="acc-body-content">
-                                    <h2 id="icon-expand-educ" class="padd-b-h2">Education<i id="icon-expand-bio"
-                                            class="fa-solid fa-sort-down" style="color: #737373;"></i></h2>
-                                    <div id="educ-div">
-                                        <ul>
-                                            <li>Wagner College</li>
-                                            <li>English</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="acc-body-content">
-                                    <h2 id="icon-expand-sub" class="padd-b-h2">Subjects<i id="icon-expand-bio"
-                                            class="fa-solid fa-sort-down" style="color: #737373;"></i></h2>
-                                    <div id="sub-div">
-                                        <ul>
-                                            <li>Math</li>
-                                            <li>English</li>
-                                            <li>Reading</li>
-                                            <li>Writing</li>
-                                            <li>Social Studies</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="acc-body-content">
-                                    <h2 id="icon-expand-sched" class="padd-b-h2">Schedule<i id="icon-expand-bio"
-                                            class="fa-solid fa-sort-down" style="color: #737373;"></i></h2>
-                                    <div id="sched-div">
-                                        <ul>
-                                            <li> Sunday 5 AM - 2 PM </li>
-                                            <li>Monday 5 AM - 2 PM </li>
-                                            <li> Tuesday 5 AM - 2 PM</li>
-                                            <li> Wednesday 5 AM - 2 PM</li>
-                                            <li> Thursday 5 AM - 2 PM</li>
-                                            <li> Friday 5 AM - 2 PM</li>
-                                            <li> Saturday Unavailable</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="acc-body-content">
-                                    <h2 id="icon-expand-testi" class="padd-b-h2">Testimonial<i id="icon-expand-bio"
-                                            class="fa-solid fa-sort-down" style="color: #737373;"></i></h2>
-                                    <div id="testi-div">
-                                        <div class=" content-body-testimonial w-max-cont">
-
-                                            <p> <b>5.0 </b> </p>
-                                            <p class="color-gray"> (1,553)</p>
-                                            <div class="padd-b-5-10"><i class="fa-sharp fa-solid fa-star padding-l"
-                                                    style="color: #ffc107;"></i>
-                                                <i class="fa-sharp fa-solid fa-star padding-5"
-                                                    style="color: #ffc107;"></i>
-                                                <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                    style="color: #ffc107;"></i>
-                                                <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                    style="color: #ffc107;"></i>
-                                                <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                    style="color: #ffc107;"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="prog-div">
-                                                <p> <b> 5 star</b> </p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 95%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(248)</p>
-                                            </div>
-                                            <div class="prog-div">
-                                                <p> <b> 4 star</b> </p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 2%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(2)</p>
-                                            </div>
-                                            <div class="prog-div">
-                                                <p> <b> 3 star </b></p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 0%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(0)</p>
-                                            </div>
-                                            <div class="prog-div">
-                                                <p> <b> 2 star</b> </p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 0%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(0)</p>
-                                            </div>
-                                            <div class="prog-div">
-                                                <p> <b> 1 star </b></p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 0%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(0)</p>
-                                            </div>
-                                        </div>
-                                        <h3 class="h3-testi color-gray">Incredible Tutor!</h3>
-                                        <p class="testi-b-content color-gray">Linda is amazing! My daughter has shown
-                                            incredible improvements in English
-                                            because of Linda. My daughter’s
-                                            Middle School English grade has improved three whole letter grades. I also
-                                            credit Linda with changing my
-                                            daughter’s perspective on English. Prior to beginning tutoring with Linda,
-                                            my
-                                            daughter hated English; now my
-                                            daughter says it is one of her favorite subjects. Linda is the best!!!
-                                            -Erik</p>
-                                        <h3 class="h3-testi color-gray">Excellent teacher!</h3>
-                                        <p class="testi-b-content color-gray">My kid is a 6th grader in GT program. My
-                                            kid needs help to improve his reading
-                                            and writing to an advanced level, so
-                                            Linda designed a customized lesson plan for him. Linda combined multiple
-                                            activities to cover several topics in one hour lesson. She always keeps my
-                                            kid
-                                            engaged during the whole session. My kid likes her classes and has
-                                            improved a lot, especially in writing. He improved his writing skills by
-                                            choosing better vocabulary and using a
-                                            variety of sentences formats. He also learned how to better organize his
-                                            essay.
-                                            I’d recommend Linda if your kids
-                                            need help or a boost in Language Arts. Thank you, Linda!
-                                            -Shelly</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <a href="/tutor/calculator.html" data-target="tutorLinks" class="fs-6 fw-bold text-light tutor__calculate px-2 py-3 d-block">Calculate Tutoring Package</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                aria-controls="flush-collapseTwo">
-                                <div class="accordion-header">
-                                    <div class="img-lesson-dashboard">
-                                        <img src="./Assets/img/profile.png" alt="Subject profile"
-                                            class="subject-profile img-fluid">
-                                    </div>
-                                    <div>
-
-                                        <div class="acc-head-name-container">
-                                            <p class="acc-head-name color-blue">Elizabeth Sutton</p>
-                                            <i class="fa-solid fa-circle-check" style="color: #4aff3d;"
-                                                class="check-icon"></i>
-                                            <p class="padding-l text-weight-600 bg-check">Background check passed</p>
-
-                                        </div>
-                                        <div>
-                                            <p class="sub-desc-tutor color-gray">Experienced, certified reading,
-                                                writing,
-                                                vocabulary, and grammar tutor</p>
-                                        </div>
-                                        <div>
-                                            <p class="sub-desc-2-tutor">As an English teacher who has taught writing to
-                                                over 1K students during my career, I am certainly
-                                                qualified to proofread. My grammar skills are
-                                                strong, and my instruction is guaranteed. <a href=""
-                                                    class="readmore">read
-                                                    more...</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="side-info-ratings ">
-                                        <p class="color-blue usd padd-b-5-10">$100/hour</p>
-                                        <div class="head-hour w-max-cont">
-                                            <p> <b>5.0 </b></p>
-                                            <p class="color-gray padd-b-5-10"> (1,553)</p>
-                                        </div>
-                                        <div class="padd-b-5-10"><i class="fa-sharp fa-solid fa-star padding-l"
-                                                style="color: #ffc107;"></i>
-                                            <i class="fa-sharp fa-solid fa-star padding-5" style="color: #ffc107;"></i>
-                                            <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                style="color: #ffc107;"></i>
-                                            <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                style="color: #ffc107;"></i>
-                                            <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                style="color: #ffc107;"></i>
-                                        </div>
-                                        <div class="head-hour padd-b-5-10 marg-b-10">
-                                            <p class="r-time">Response time: </p>
-                                            <p class="r-time">55 minutes </p>
-                                        </div>
-
-                                        <a class="contact">Contact</a>
-
-
-                                    </div>
-                            </button>
-                        </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <div class="acc-body-content">
-                                    <h2 class="padd-h2-tutor-name">Elizabeth Sutton</h2>
-                                    <h2 class="padd-b-h2">Bio
-                                        <i id="icon-expand-bio-2" class="fa-solid fa-sort-down"
-                                            style="color: #737373;"></i>
-                                    </h2>
-                                    <div id="bio-div-2">
-                                        As a certified veteran teacher with over 18 years of English grammar, reading,
-                                        and
-                                        writing experience, I am
-                                        confident of my qualifications to tutor students in grades 1-8.
-                                        From 2006 - 2016, I taught ELA (reading, grammar, and writing) in Plano ISD,
-                                        including
-                                        those in the PACE (gifted
-                                        and talented) program, also known as TAG. During that time, students showed
-                                        significant
-                                        gains on the Writing
-                                        STAAR and on their reading and language MAP tests as a result of my specific,
-                                        direct
-                                        instruction. In addition, I am
-                                        highly experienced with the WORDLY WISE vocabulary program for all grades, and
-                                        with
-                                        teaching Greek and Latin
-                                        word roots, as well as CogAT test prep for the verbal and non-verbal areas.
-                                        From 2006-2016, I taught ELA at a Texas public school.
-                                        From 2016-2018, I taught writing, vocabulary, and grammar at a private school in
-                                        Dallas.
-                                        From 2018-present, I have tutored both in person and online. My online students
-                                        are
-                                        located across the United
-                                        States and on other continents. Currently, I have logged over 1,000 online
-                                        hours.
-                                        Every student has individual needs, and my assessment process as well as my wide
-                                        array
-                                        of instructional
-                                        strategies will identify your strengths and target your weaker areas. While I
-                                        enjoy
-                                        teaching students in a classroom
-                                        setting, the small group or one-on-one instruction that tutoring provides allows
-                                        me
-                                        to
-                                        support learners in the
-                                        specific areas and at the specific pace they require to achieve success.
-                                        I have received extensive professional development both recently and in the
-                                        past.
-                                        These
-                                        opportunities have
-                                        equipped me to provide research-based instructional strategies in reading and
-                                        writing
-                                        for students of all ages.
-                                        During my career, I have taught over 1.2K students; I'm confident I can help you
-                                        or
-                                        your
-                                        child.
-                                        My ratings consistently show significant improvement in student performance. I
-                                        would
-                                        be
-                                        happy to share them with
-                                        you. Thank you
-                                    </div>
-                                </div>
-                                <div class="acc-body-content">
-                                    <h2 id="icon-expand-educ-2" class="padd-b-h2">Education<i id="icon-expand-bio"
-                                            class="fa-solid fa-sort-down" style="color: #737373;"></i></h2>
-                                    <div id="educ-div-2">
-                                        <ul>
-                                            <li>Wagner College</li>
-                                            <li>English</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="acc-body-content">
-                                    <h2 id="icon-expand-sub-2" class="padd-b-h2">Subjects<i id="icon-expand-bio"
-                                            class="fa-solid fa-sort-down" style="color: #737373;"></i></h2>
-                                    <div id="sub-div-2">
-                                        <ul>
-                                            <li>Math</li>
-                                            <li>English</li>
-                                            <li>Reading</li>
-                                            <li>Writing</li>
-                                            <li>Social Studies</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="acc-body-content">
-                                    <h2 id="icon-expand-sched-2" class="padd-b-h2">Schedule<i id="icon-expand-bio"
-                                            class="fa-solid fa-sort-down" style="color: #737373;"></i></h2>
-                                    <div id="sched-div-2">
-                                        <ul>
-                                            <li> Sunday 5 AM - 2 PM </li>
-                                            <li>Monday 5 AM - 2 PM </li>
-                                            <li> Tuesday 5 AM - 2 PM</li>
-                                            <li> Wednesday 5 AM - 2 PM</li>
-                                            <li> Thursday 5 AM - 2 PM</li>
-                                            <li> Friday 5 AM - 2 PM</li>
-                                            <li> Saturday Unavailable</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="acc-body-content">
-                                    <h2 id="icon-expand-testi-2" class="padd-b-h2">Testimonial<i id="icon-expand-bio"
-                                            class="fa-solid fa-sort-down" style="color: #737373;"></i></h2>
-                                    <div id="testi-div-2">
-                                        <div class=" content-body-testimonial w-max-cont">
-
-                                            <p> <b>5.0 </b> </p>
-                                            <p class="color-gray"> (1,553)</p>
-                                            <div class="padd-b-5-10"><i class="fa-sharp fa-solid fa-star padding-l"
-                                                    style="color: #ffc107;"></i>
-                                                <i class="fa-sharp fa-solid fa-star padding-5"
-                                                    style="color: #ffc107;"></i>
-                                                <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                    style="color: #ffc107;"></i>
-                                                <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                    style="color: #ffc107;"></i>
-                                                <i class="fa-sharp fa-solid fa-star padding-l-5"
-                                                    style="color: #ffc107;"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="prog-div">
-                                                <p> <b> 5 star</b> </p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 95%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(248)</p>
-                                            </div>
-                                            <div class="prog-div">
-                                                <p> <b> 4 star</b> </p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 2%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(2)</p>
-                                            </div>
-                                            <div class="prog-div">
-                                                <p> <b> 3 star </b></p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 0%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(0)</p>
-                                            </div>
-                                            <div class="prog-div">
-                                                <p> <b> 2 star</b> </p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 0%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(0)</p>
-                                            </div>
-                                            <div class="prog-div">
-                                                <p> <b> 1 star </b></p>
-                                                <div class="progress">
-
-                                                    <div class="progress-bar bg-warning" role="progressbar"
-                                                        style="width: 0%" aria-valuenow="90" aria-valuemin="0"
-                                                        aria-valuemax="100"></div>
-
-                                                </div>
-                                                <p>(0)</p>
-                                            </div>
-                                        </div>
-                                        <h3 class="h3-testi color-gray">Incredible Tutor!</h3>
-                                        <p class="testi-b-content color-gray">Linda is amazing! My daughter has shown
-                                            incredible improvements in English
-                                            because of Linda. My daughter’s
-                                            Middle School English grade has improved three whole letter grades. I also
-                                            credit Linda with changing my
-                                            daughter’s perspective on English. Prior to beginning tutoring with Linda,
-                                            my
-                                            daughter hated English; now my
-                                            daughter says it is one of her favorite subjects. Linda is the best!!!
-                                            -Erik</p>
-                                        <h3 class="h3-testi color-gray">Excellent teacher!</h3>
-                                        <p class="testi-b-content color-gray">My kid is a 6th grader in GT program. My
-                                            kid needs help to improve his reading
-                                            and writing to an advanced level, so
-                                            Linda designed a customized lesson plan for him. Linda combined multiple
-                                            activities to cover several topics in one hour lesson. She always keeps my
-                                            kid
-                                            engaged during the whole session. My kid likes her classes and has
-                                            improved a lot, especially in writing. He improved his writing skills by
-                                            choosing better vocabulary and using a
-                                            variety of sentences formats. He also learned how to better organize his
-                                            essay.
-                                            I’d recommend Linda if your kids
-                                            need help or a boost in Language Arts. Thank you, Linda!
-                                            -Shelly</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <a href="/tutor/calculator.html" data-target="tutorLinks" class="fs-6 fw-bold text-light tutor__calculate px-2 py-3 d-block">Calculate Tutoring Package</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-
+          </div>
         </div>
+        <!-- Filters -->
+        <div class="pt-3 filters px-4 ps-5 bg-light pb-5">
+          <div class="px-4">
+            <h2 class="fw-bold ps-5 ms-3 text-secondary">Filter</h2>
+            <div class="mt-4 row px-5">
+              <div class="col-4 d-flex flex-column pe-4">
+                <label for="tutorSubject" class="mb-2">Subject</label>
+                <select name="tutorSubject" id="tutorSubject" class="p-2 w-100">
+                  <option value="english">English</option>
+                  <option value="english">English</option>
+                  <option value="english">English</option>
+                </select>
+              </div>
+              <fieldset class="col-4 d-flex flex-column pe-4">
+                <legend class="mb-2 fs-6">Student's Level</legend>
+                <div class="row">
+                  <div class="col-4 filter__radio-container">
+                    <input class="sr-only" type="radio" name="studentLevel" id="studentElementary">
+                    <label for="studentElementary" class="p-2 w-100 text-center">Elementary</label>
+                  </div>
+                  <div class="col-4 filter__radio-container">
+                    <input class="sr-only" type="radio" name="studentLevel" id="studentHighschool">
+                    <label for="studentHighschool" class="p-2 w-100 text-center">Highschool</label>
+                  </div>
+                  <div class="col-4 filter__radio-container">
+                    <input class="sr-only" type="radio" name="studentLevel" id="studentCollege">
+                    <label for="studentCollege" class="p-2 w-100 text-center">College</label>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="col-4 d-flex flex-column">
+                <legend class="mb-2 fs-6">Availability</legend>
+                <div class="d-flex">
+                  <div class="filter__checkbox-container">
+                    <input class="sr-only" type="checkbox" name="availabilitySunday" id="availabilitySunday">
+                    <label for="availabilitySunday" class="p-2">Su</label>
+                  </div>
+                  <div class="filter__checkbox-container">
+                    <input class="sr-only" type="checkbox" name="availabilityMonday" id="availabilityMonday">
+                    <label for="availabilityMonday" class="p-2">M</label>
+                  </div>
+                  <div class="filter__checkbox-container">
+                    <input class="sr-only" type="checkbox" name="availabilityTuesday" id="availabilityTuesday">
+                    <label for="availabilityTuesday" class="p-2">Tu</label>
+                  </div>
+                  <div class="filter__checkbox-container">
+                    <input class="sr-only" type="checkbox" name="availabilityWednesday" id="availabilityWednesday">
+                    <label for="availabilityWednesday" class="p-2">W</label>
+                  </div>
+                  <div class="filter__checkbox-container">
+                    <input class="sr-only" type="checkbox" name="availabilityThursday" id="availabilityThursday">
+                    <label for="availabilityThursday" class="p-2">Th</label>
+                  </div>
+                  <div class="filter__checkbox-container">
+                    <input class="sr-only" type="checkbox" name="availabilityFriday" id="availabilityFriday">
+                    <label for="availabilityFriday" class="p-2">F</label>
+                  </div>
+                  <div class="filter__checkbox-container">
+                    <input class="sr-only" type="checkbox" name="availabilitySaturday" id="availabilitySaturday">
+                    <label for="availabilitySaturday" class="p-2">Sa</label>
+                  </div>
+                </div>
+                <div class="mt-4 w-75">
+                  <div id="slider-range"></div>
+                  <p>
+                    <input type="text" id="amount" readonly style="border:0; color:#494ce9;" class="bg-transparent ps-4 ">
+                  </p>
+                   
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <!-- Tutors -->
+        <div class="tutors mt-1 px-5 bg-light">
+          <div class="px-4">
+            <h2 class="fs-5 weight-black pt-3 pb-4 ps-5 mb-3">3,123 Tutors <span class="text-secondary">Available</span></h2>
+            <div class="ps-4 pe-5">
+              <div class="d-flex flex-column px-4 pe-5">
+                <div class="tutor w-100 px-4 py-5 bg-white mb-2 d-flex align-items-center">
+                  <img class="tutor__avatar rounded-circle me-4" src="./Assets/img/tutor.png" alt="Elizabeth Suton">
+                  <div>
+                    <h3 class="fw-bold text-primary fs-5 mb-1">Elizabeth Sutton</h3>
+                    <p class="text-secondary fs-6 mb-1 lh-sm">
+                      <span class="fw-bold">Tutoring experience:</span>
+                      4 years
+                    </p>
+                    <p class="text-secondary fs-6 mb-1 lh-sm">
+                      <span class="fw-bold">Education:</span>
+                      Bachelor of Arts Major in Philosophy - Stanford University
+                    </p>
+                    <p class="text-secondary fs-6 mb-1 lh-sm">
+                      <span class="fw-bold">Qualification:</span>
+                      Experienced, certified reading, writing, vocabulary, and grammar tutor
+                    </p>
+                  </div>
+                  <div>
+                    <a class="tutor__link text-white py-2 px-5 text-decoration-none ms-3" href="./tutor/profile.html">View full profile</a>
+                  </div>
+                </div>
+                <div class="tutor w-100 px-4 py-5 bg-white mb-2 d-flex align-items-center">
+                  <img class="tutor__avatar rounded-circle me-4" src="./Assets/img/tutor.png" alt="Elizabeth Suton">
+                  <div>
+                    <h3 class="fw-bold text-primary fs-5 mb-1">Ben Fatola</h3>
+                    <p class="text-secondary fs-6 mb-1 lh-sm">
+                      <span class="fw-bold">Tutoring experience:</span>
+                      6 years
+                    </p>
+                    <p class="text-secondary fs-6 mb-1 lh-sm">
+                      <span class="fw-bold">Education:</span>
+                      Childhood Education: English - BA St. Francis College, USA
+                    </p>
+                    <p class="text-secondary fs-6 mb-1 lh-sm">
+                      <span class="fw-bold">Qualification:</span>
+                      Experienced and Engaging Educator--SAT, ACT, AP English, College Essay
+                    </p>
+                  </div>
+                  <div>
+                    <a class="tutor__link text-white py-2 px-5 text-decoration-none ms-3" href="./tutor/profile.html">View full profile</a>
+                  </div>
+                </div>
+                <div class="tutor w-100 px-4 py-5 bg-white mb-2 d-flex align-items-center">
+                  <img class="tutor__avatar rounded-circle me-4" src="./Assets/img/tutor.png" alt="Elizabeth Suton">
+                  <div>
+                    <h3 class="fw-bold text-primary fs-5 mb-1">Sarah Monreal</h3>
+                    <p class="text-secondary fs-6 mb-1 lh-sm">
+                      <span class="fw-bold">Tutoring experience:</span>
+                      2 years
+                    </p>
+                    <p class="text-secondary fs-6 mb-1 lh-sm">
+                      <span class="fw-bold">Education:</span>
+                      Ph. D. in English-Rhetoric, Writing, & Culture. North Dakota State University - Graduate School
+                    </p>
+                    <p class="text-secondary fs-6 mb-1 lh-sm">
+                      <span class="fw-bold">Qualification:</span>
+                      Berkeley PhD, Harvard Author - Writing Coach for College Essays
+                    </p>
+                  </div>
+                  <div>
+                    <a class="tutor__link text-white py-2 px-5 text-decoration-none ms-3" href="./tutor/profile.html">View full profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-
-    </div>
-
+    <script>
+      $( function() {
+      $( "#slider-range" ).slider({
+        range: true,
+        min: 1,
+        max: 11,
+        values: [ 4, 11 ],
+        slide: function( event, ui ) {
+          $( "#amount" ).val( ui.values[ 0 ] + ":00 AM           " + ui.values[ 1 ] + ":00 PM" );
+        }
+      });
+      $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+        ":00 AM          " + $( "#slider-range" ).slider( "values", 1 )  + ":00 PM");
+    } );
+    </script>
     <!-- Icons library -->
     <script src="plugins/feather.min.js"></script>
     <!-- Custom scripts -->
-    <script src="./Assets/js/dashboard.js"></script>
-
-    <!-- Chart JS library -->
-    <script src="plugins/chart.min.js"></script>
-    <script src="Assetts/js/tutor-components.js"></script>
-</body>
-
-<script>
-
-    const tutorLinks = document.querySelectorAll("[data-target='tutorLinks']")
-  
-    tutorLinks.forEach(link => {
-        
-        link.href = window.location.href.replace("tutor.html", "") + "tutor/calculator.html" 
-    })
-
-    var ctx = document.getElementById('myChartNew').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            datasets: [{
-                data: [79, 21],
-                backgroundColor: [
-                    'rgba(40, 237, 252)',
-                    'rgba(113, 142, 212)'
-                ],
-                borderWidth: 0,
-                height: 150,
-                width: 150
-            }]
-        }
-    });
-    var myChart2 = new Chart(ctx2, {
-        type: 'doughnut',
-        data: {
-            datasets: [{
-                data: [79, 21],
-                backgroundColor: [
-                    'rgba(40, 237, 252)',
-                    'rgba(113, 142, 212)'
-                ],
-                borderWidth: 0,
-                height: 150,
-                width: 150
-            }]
-        }
-    });
-    var myChart3 = new Chart(ctx3, {
-        type: 'doughnut',
-        data: {
-            datasets: [{
-                data: [79, 21],
-                backgroundColor: [
-                    'rgba(40, 237, 252)',
-                    'rgba(113, 142, 212)'
-                ],
-                borderWidth: 0,
-                height: 150,
-                width: 150
-            }]
-        }
-    });
-
-</script>
-<script src="plugins/feather.min.js"></script>
-
-<!-- Custom scripts -->
-<script src="./Assets/js/dashboard.js"></script>
-
-<script>
-    const accSingleTriggers = document.querySelectorAll(".accordion-header");
-
-    accSingleTriggers.forEach((trigger) =>
-        trigger.addEventListener("click", toggleAccordion)
-    );
-
-    function toggleAccordion() {
-        const items = document.querySelectorAll(".accordion-item");
-        const thisItem = this.parentNode;
-
-        items.forEach((item) => {
-            if (thisItem == item) {
-                thisItem.classList.toggle("active");
-                return;
-            }
-            item.classList.remove("active");
-        });
-    }
-
-    $(document).ready(function () {
-        var bio = document.getElementById("bio-div");
-        var educ = document.getElementById("educ-div");
-        var sub = document.getElementById("sub-div");
-        var sched = document.getElementById("sched-div");
-        var testi = document.getElementById("testi-div");
-        var bio = document.getElementById("bio-div-2");
-        var educ = document.getElementById("educ-div-2");
-        var sub = document.getElementById("sub-div-2");
-        var sched = document.getElementById("sched-div-2");
-        var testi = document.getElementById("testi-div-2");
-
-
-
-
-        $("#icon-expand-bio").click(function () {
-            if (bio.style.display == "none") {
-                bio.style.display = "block";
-            } else {
-                bio.style.display = "none";
-            }
-
-        });
-        $("#icon-expand-educ").click(function () {
-            if (educ.style.display == "none") {
-                educ.style.display = "block";
-            } else {
-                educ.style.display = "none";
-            }
-
-        });
-        $("#icon-expand-sub").click(function () {
-            if (sub.style.display == "none") {
-                sub.style.display = "block";
-            } else {
-                sub.style.display = "none";
-            }
-
-        });
-        $("#icon-expand-sched").click(function () {
-            if (sched.style.display == "none") {
-                sched.style.display = "block";
-            } else {
-                sched.style.display = "none";
-            }
-
-        });
-        $("#icon-expand-testi").click(function () {
-            if (testi.style.display == "none") {
-                testi.style.display = "block";
-            } else {
-                testi.style.display = "none";
-            }
-
-        });
-
-
-
-
-
-        
-        $("#icon-expand-bio-2").click(function () {
-            if (bio.style.display == "none") {
-                bio.style.display = "block";
-            } else {
-                bio.style.display = "none";
-            }
-
-        });
-        $("#icon-expand-educ-2").click(function () {
-            if (educ.style.display == "none") {
-                educ.style.display = "block";
-            } else {
-                educ.style.display = "none";
-            }
-
-        });
-        $("#icon-expand-sub-2").click(function () {
-            if (sub.style.display == "none") {
-                sub.style.display = "block";
-            } else {
-                sub.style.display = "none";
-            }
-
-        });
-        $("#icon-expand-sched-2").click(function () {
-            if (sched.style.display == "none") {
-                sched.style.display = "block";
-            } else {
-                sched.style.display = "none";
-            }
-
-        });
-        $("#icon-expand-testi-2").click(function () {
-            if (testi.style.display == "none") {
-                testi.style.display = "block";
-            } else {
-                testi.style.display = "none";
-            }
-
-        });
-
-    });
-</script>
+    <script src="Assets/js/dashboard.js"></script>
+  </body>
 
 </html>
