@@ -1,0 +1,31 @@
+
+
+.profile__avatar {
+  object-fit: cover;
+  height: 20rem;
+  width: 20rem;
+}
+
+.profile__avatar-label {
+  border: 1px solid rgb(71, 71, 71);
+  border-radius: 1rem;
+}
+
+.tabs__choice {
+  background-color: #9f4bf8;
+  color: #FFFFFF;
+}
+
+.tabs__button-add {
+  background-color: #718ed4;
+  border-radius: 1rem;
+}
+
+.weight-medium {
+  font-weight: 500;
+}
+
+.tabs__choice[aria-selected="true"] {
+  background-color: #FFFFFF;
+  color: #000000;
+}
