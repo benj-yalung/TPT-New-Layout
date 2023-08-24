@@ -1,0 +1,40 @@
+
+
+.profile {
+
+}
+
+.profile__header {
+  background-color: #93a9dd;
+  border-radius: .75rem;
+}
+
+.profile__avatar {
+  object-fit: cover;
+  height: 7rem;
+  max-width: 7rem;
+}
+
+.profile__avatar-label {
+  border-radius: 1rem;
+}
+
+.profile__subheading {
+  color: #4d4d4d;
+}
+
+.profile__input,
+.profile__textarea {
+  border-radius: 2rem;
+  border: 1px solid rgb(185, 185, 185) !important;
+  color: #757575;
+  min-height: auto;
+}
+
+.profile__textarea {
+  border-radius: 1rem;
+}
+.profile__reset {
+  background-color: #93a9dd;
+  border-radius: 2rem;
+}
