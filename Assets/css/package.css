@@ -11,6 +11,10 @@
   border: 1px solid rgb(202, 202, 202) !important;
 }
 
+.package__header {
+  background-color: #0F0346;
+}
+
 .weight-black {
   font-weight: 800;
 }

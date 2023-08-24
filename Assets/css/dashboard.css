@@ -536,7 +536,7 @@ ol, ul {
     font-style: normal;
 }
 .icon {
-    display: inline-block;
+    display: grid;
     background-repeat: no-repeat;
     background-position: center center;
 }
