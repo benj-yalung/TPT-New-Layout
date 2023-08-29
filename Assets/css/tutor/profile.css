@@ -12,7 +12,7 @@
 }
 
 .tabs__choice {
-  background-color: #9f4bf8;
+  background-color: #94aade;
   color: #FFFFFF;
 }
 
@@ -28,4 +28,38 @@
 .tabs__choice[aria-selected="true"] {
   background-color: #FFFFFF;
   color: #000000;
+}
+
+.tabs__form {
+  display: none;
+}
+
+.tabs__contents.editable .tabs__data {
+  display: none;
+}
+
+.tabs__contents.editable .tabs__form {
+  display: block;
+}
+
+.tabs__edit-button {
+  background: none;
+  width: 1.5rem;
+}
+
+.form__button {
+  background: none;
+
+}
+
+.form__button--cancel {
+
+}
+
+.form__button--save {
+
+}
+
+.hidden {
+  display: none;
 }

@@ -1,6 +1,7 @@
 const element = (el) => document.querySelector(el)
 const elements = (els) => document.querySelectorAll(els)
 
+// Dummy
 const profileData = [
   [
     {
@@ -90,9 +91,14 @@ const profileData = [
 ]
 
 const profileTablist = element(".tabs__selections");
-const profileTabs = elements(".tabs__choice");
+const tabsChoice = elements(".tabs__choice");
 const profileHolder = element(".tabs__contents");
 const tabsDataContainer = element("[data-target='tabsData']")
+const tabsContents = elements("[data-target='tabsContent']")
+const editFormButtons = elements("[data-target='tabsEdit']")
+const cancelFormButtons = elements("[data-target='formCancel']")
+const saveFormButtons = elements("[data-target='formSave']")
+const dateAddRowButton = element("[data-target='dateAddRow']")
 let profileTabIndex = 0;
 
 const changeTab = event =>{
@@ -106,12 +112,12 @@ const changeTab = event =>{
       profileTabIndex = profileTabIndex > 3? 0: profileTabIndex;
     }
   }
-  profileTabs[profileTabIndex].focus();
+  tabsChoice[profileTabIndex].focus();
 }
 // for using arrow to change tabs
 profileTablist.addEventListener("keydown", changeTab);
 
-const changeprofiledprofile = target =>{
+const changeTabContent = target =>{
   tabsDataContainer.innerHTML = ""
   const index = target.dataset.index
   profileHolder.setAttribute("aria-labelledby", target.id);
@@ -150,20 +156,60 @@ const changeprofiledprofile = target =>{
     addButton.textContent = "Add"
     tabsDataContainer.appendChild(addButton)
   }
-
 }
 
 const changeprofile = (event) =>{
   if (event.target.getAttribute("aria-selected") == "true") return
 
-  profileTabs.forEach(tab => tab.setAttribute("aria-selected", "false"));
+  tabsChoice.forEach(tab => tab.setAttribute("aria-selected", "false"));
   
   event.target.setAttribute("aria-selected", "true");
   profileHolder.classList.add("hide");
-  changeprofiledprofile(event.target);
+  changeTabContent(event.target);
   profileHolder.classList.remove("hide");
 }
 
-profileTabs.forEach(tab =>{
-  tab.addEventListener("click", changeprofile);
+// Changing the tab content
+tabsChoice.forEach((tabChoice, tabChoiceIndex) =>{
+  tabChoice.addEventListener("click", event => {
+
+    if (event.target.getAttribute("aria-selected") == "true") return
+
+    tabsChoice.forEach(tab => tab.setAttribute("aria-selected", "false"))
+    event.target.setAttribute("aria-selected", "true")
+    tabsContents[tabChoiceIndex].classList.remove("hidden")
+
+    tabsContents.forEach((tabContent, tabContentIndex) => {
+      if ( tabContentIndex!==tabChoiceIndex ) {
+        tabContent.classList.add("hidden")
+        tabContent.classList.remove("editable")
+      } 
+    })
+  })
+})
+
+// Changing avatar
+const previewImage = () => {
+  const oFReader = new FileReader();
+  const profileAvatar = element("[data-target='profileAvatar']")
+  oFReader.readAsDataURL(profileAvatar.files[0])
+
+  oFReader.onload = oFREvent => {
+    const avatarPreview = element("[data-target='avatarPreview']")
+    avatarPreview.src = oFREvent.target.result
+  };
+};
+
+// Making the tabsContent editable
+editFormButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    tabsContents[index].classList.toggle("editable")
+  })
+})
+
+// Cancelling the editing of the form
+cancelFormButtons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    tabsContents[index].classList.remove("editable")
+  })
 })
