@@ -48,11 +48,6 @@ body {
 }
 
 
-
-
-
-
-
 .col-login-form, .col-banner-img{
     padding:0px;
     width: 50%;
@@ -61,14 +56,6 @@ body {
     display: flex;
     flex-direction: row;
 }
-
-
-
-
-
-
-
-
 
 
 /* BOOTSTRAP HEADER/NAV STYLING */
