@@ -22,7 +22,7 @@ profileAvatar.addEventListener("change", () => {
 
 // Tab interface
 const tabsSelection = element("[data-target='tabsSelection']");
-const tabsChoice = elements("[data-target='tabsChoices']");
+const tabsChoice = elements("[data-target='tabsChoice']");
 const tabsContents = elements("[data-target='tabsContent']")
 let profileTabIndex = 0;
 
