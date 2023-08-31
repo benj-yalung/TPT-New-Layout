@@ -1,5 +1,46 @@
 
 
+export const personalInformationShowcaseData = [
+  {
+    heading: "Email address",
+    content: "elizabethsutton@tptutor.com"
+  },
+  {
+    heading: "Phone number",
+    content: "(123) 456 7890"
+  },
+  {
+    heading: "Date of Birth",
+    content: "10/8/1998"
+  }
+]
+
+export const personalInformationFormData = [
+  {
+    heading: "Email address",
+    name: "email",
+    content: "elizabethsutton@tptutor.com",
+    type: "text"
+  },
+  {
+    heading: "Phone number",
+    name: "phoneNumber",
+    content: "(123) 456 7890",
+    type: "text"
+  },
+  {
+    heading: "Date of Birth",
+    name: "dateOfBirth",
+    content: "1998-10-08",
+    type: "date"
+  },
+  {
+    heading: "Identification",
+    name: "identification",
+    type: "file"
+  }
+]
+
 export const qualificationData =  [
   {
     heading: "Education",

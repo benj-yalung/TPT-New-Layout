@@ -32,7 +32,13 @@
   padding: .35rem 0;
 }
 
+.hidden {
+  display: none;
+}
 
+.min-w-100 {
+  min-width: 100%;
+}
 
 @media (min-width: 1000px) {
   .flex__desktop {

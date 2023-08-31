@@ -1,4 +1,6 @@
 import { 
+  personalInformationFormData,
+  personalInformationShowcaseData,
   qualificationData, 
   qualificationFormData, 
   scheduleData} from "./data.js"
@@ -22,25 +24,22 @@ profileAvatar.addEventListener("change", () => {
 
 // Tab interface
 const tabsSelection = element("[data-target='tabsSelection']");
-const tabsChoice = elements("[data-target='tabsChoices']");
+const tabsChoice = elements("[data-target='tabsChoice']");
 const tabsContents = elements("[data-target='tabsContent']")
 let profileTabIndex = 0;
 
-const changeTab = event =>{
-    
+tabsSelection.addEventListener("keydown", event => {
   if (event.keyCode == 37 || event.keyCode == 39) {
     if (event.keyCode == 37) {
-      profileTabIndex--;
-      profileTabIndex = profileTabIndex < 0? 3 : profileTabIndex;
+      profileTabIndex--
+      profileTabIndex = profileTabIndex < 0? 3 : profileTabIndex
     } else if (event.keyCode == 39) {
-      profileTabIndex++;
-      profileTabIndex = profileTabIndex > 3? 0: profileTabIndex;
+      profileTabIndex++
+      profileTabIndex = profileTabIndex > 3? 0: profileTabIndex
     }
   }
-  tabsChoice[profileTabIndex].focus();
-}
-// for using arrow to change tabs
-tabsSelection.addEventListener("keydown", changeTab);
+  tabsChoice[profileTabIndex].focus()
+})
 
 // Changing the tab content
 tabsChoice.forEach((tabChoice, tabChoiceIndex) =>{
@@ -118,29 +117,139 @@ const createShowcaseListField = ( headingName, data, columnWidth ) => {
   return container
 }
 
+// Default container for each form field
+const createDefaultFormFieldContainer = () => {
+  const container = Object.assign(document.createElement("div"), {
+    classList: "row px-5 mt-2",
+  })
+
+  return container
+}
+
+// Default container for each form field
+const createDefaultFormFieldLabel = ( heading, name ) => {
+  const label = Object.assign(document.createElement("label"), {
+    classList: "weight-black text-dark fs-6 col-3 px-0",
+    textContent: heading + ":"
+  })
+  label.setAttribute('for', name)
+
+  return label
+}
+
+// Default container for each form field
+const createDefaultFormFieldInput = ( name, content, type ) => {
+  const input = Object.assign(document.createElement("input"), {
+    classList: "input__text--default col-9 fs-6 px-0 weight-medium px-2",
+    id: name,
+    name,
+    type,
+    value: content?? ""
+  })
+
+  return input
+}
+
 // Personal information selection
 const personalInformation = {
+  showcase: [...personalInformationShowcaseData],
+  formData: [...personalInformationFormData],
+  oldFormData: [...personalInformationFormData],
+  tabContent: element("[data-target='personalInformationTabContent']"),
   form: element("[data-target='personalInformation']"),
-  tabsData: element("[data-target='tabsData1']")
+  formInner: element("[data-target='personalInformationInner']"),
+  tabsData: element("[data-target='tabsData1']"),
+  edit: element("[data-target='editPersonalInformation']"),
+  cancel: element("[data-target='formCancelPersonalInformation']")
 }
+
+const clearPersonalInformationShowcaseFields = () => {
+  personalInformation.tabsData.innerHTML = ""
+}
+
+const clearPersonalInformationFormFields = () => {
+  personalInformation.formInner.innerHTML = ""
+}
+
+const renderPersonalInformationShowcaseFields = () =>{
+  personalInformation.showcase.forEach(data => {
+    if ( !data.content || !data.heading ) return
+
+    personalInformation.tabsData.append(Array.isArray(data.content)? createShowcaseListField(`${ data.heading }:`, data.content) : createShowcaseField(`${ data.heading }:`, data.content))
+  })
+}
+
+renderPersonalInformationShowcaseFields()
+
+const renderPersonalInformationFormFields = () => {
+  personalInformation.formData.forEach(formData => {
+    const container = createDefaultFormFieldContainer()
+    const label = createDefaultFormFieldLabel(formData.heading, formData.name)
+    const input = createDefaultFormFieldInput(formData.name, formData.type==="file"? "" : formData.content, formData.type)
+
+    switch(formData.type) {
+      case "text": {
+        input.addEventListener("change", event => {
+          personalInformation.formData = personalInformation.formData.map(innerFormData => {
+      
+            return innerFormData.name===formData.name? {
+              ...innerFormData,
+              content: event.target.value
+            } : innerFormData
+          })
+        })
+
+        break
+      } 
+      case "file": {
+        input.addEventListener("change", event => {
+          personalInformation.formData = personalInformation.formData.map(innerFormData => {
+      
+            return innerFormData.name===formData.name? {
+              ...innerFormData,
+              content: event.target.files[0].name
+            } : innerFormData
+          })
+        })
+
+        break
+      }
+    }
+    
+    container.append(label, input)
+    personalInformation.formInner.append(container)
+  })
+}
+
+personalInformation.edit.addEventListener("click", () => {
+  personalInformation.tabContent.classList.add("editable")
+  clearPersonalInformationFormFields()
+  renderPersonalInformationFormFields()
+})
+
+personalInformation.cancel.addEventListener("click", () => {
+  personalInformation.tabContent.classList.remove("editable")
+  personalInformation.formData = [...personalInformation.oldFormData]
+  clearPersonalInformationShowcaseFields()
+  renderPersonalInformationShowcaseFields()
+})
 
 personalInformation.form.addEventListener("submit", event => {
   event.preventDefault()
-  element("[data-target='cEmailAddress']").textContent = event.target.email.value
-  element("[data-target='cPhoneNumber']").textContent = event.target.phoneNumber.value
-  element("[data-target='cDateOfBirth']").textContent = new Date(event.target.dateOfBirth.value).toLocaleDateString("en-GB")
-  tabsContents[event.target.dataset.index].classList.remove("editable")
-  const identification = event.target.identification
-
-  if ( !identification.files.length ) return
-  
-  personalInformation.tabsData.append(createShowcaseField("Identification", identification.files[0].name))
+  personalInformation.showcase = personalInformation.formData.map(formData => ({
+    heading: formData.heading,
+    content: formData.content
+  }))
+  personalInformation.oldFormData = [...personalInformation.formData]
+  personalInformation.tabContent.classList.remove('editable')
+  clearPersonalInformationShowcaseFields()
+  renderPersonalInformationShowcaseFields()
 })
 
 // Education & Qualification selection
 const qualification = {
   data: [ ...qualificationData ],
-  showCase: [],
+  showcase: [],
   formData: [...qualificationFormData],
   oldFormData: [...qualificationFormData],
   tabsData: element("[data-target='tabsData2']"),
@@ -454,7 +563,7 @@ defaultQualificationConfiguration()
 
 qualification.form.addEventListener("submit", event => {
   event.preventDefault()
-  qualification.showCase = []
+  qualification.showcase = []
 
   qualification.formData.forEach(formData => {
     switch(formData.type) {
@@ -474,14 +583,14 @@ qualification.form.addEventListener("submit", event => {
           return
         }
 
-        qualification.showCase.push(result)
+        qualification.showcase.push(result)
 
         return
       }
       case "select": {
         if ( formData.content === "------" ) return
 
-        qualification.showCase.push({
+        qualification.showcase.push({
           heading: formData.heading,
           content: formData.content
         })
@@ -497,14 +606,14 @@ qualification.form.addEventListener("submit", event => {
 
         if ( !result.content.length ) return
 
-        qualification.showCase.push(result)
+        qualification.showcase.push(result)
 
         return 
       }
       case "file": {
         if ( !formData.content ) return
 
-        qualification.showCase.push({
+        qualification.showcase.push({
           heading: formData.showCaseHeading?? formData.heading,
           content: formData.content
         })
@@ -514,7 +623,7 @@ qualification.form.addEventListener("submit", event => {
     }
   })
 
-  qualification.data = [...qualification.showCase]
+  qualification.data = [...qualification.showcase]
   qualification.oldFormData = [...qualification.formData]
 
   emptyQualificationShowcase()
