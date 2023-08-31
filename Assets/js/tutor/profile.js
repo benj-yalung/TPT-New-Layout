@@ -6,7 +6,7 @@ import {
   element,
   elements } from "../utilities.js"
 
-
+ 
 // Changing avatar
 const profileAvatar = element("[data-target=profileAvatar]")
 
