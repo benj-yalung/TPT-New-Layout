@@ -749,7 +749,6 @@ button {
     -webkit-transition: .3s all;
     -o-transition: .3s all;
     transition: .3s all;
-    border: 2px solid transparent;
 }
 .transparent-btn:focus, button:focus {
     outline: 0;
@@ -2933,9 +2932,7 @@ label {
     flex-direction: column;
 }
 }
-.weight-black {
-    font-weight: 800;
-  }
+
 
 @media only screen and (max-width: 1440px){
     /* DASHBOARD */

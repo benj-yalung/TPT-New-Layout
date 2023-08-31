@@ -2,9 +2,10 @@ import {
   qualificationData, 
   qualificationFormData, 
   scheduleData} from "./data.js"
+import { 
+  element,
+  elements } from "../utilities.js"
 
-const element = (el) => document.querySelector(el)
-const elements = (els) => document.querySelectorAll(els)
 
 // Changing avatar
 const profileAvatar = element("[data-target=profileAvatar]")
@@ -19,11 +20,10 @@ profileAvatar.addEventListener("change", () => {
   };
 })
 
-const profileTablist = element(".tabs__selections");
-const tabsChoice = elements(".tabs__choice");
+// Tab interface
+const tabsSelection = element("[data-target='tabsSelection']");
+const tabsChoice = elements("[data-target='tabsChoices']");
 const tabsContents = elements("[data-target='tabsContent']")
-const editFormButtons = elements("[data-target='tabsEdit']")
-const cancelFormButtons = elements("[data-target='formCancel']")
 let profileTabIndex = 0;
 
 const changeTab = event =>{
@@ -40,7 +40,7 @@ const changeTab = event =>{
   tabsChoice[profileTabIndex].focus();
 }
 // for using arrow to change tabs
-profileTablist.addEventListener("keydown", changeTab);
+tabsSelection.addEventListener("keydown", changeTab);
 
 // Changing the tab content
 tabsChoice.forEach((tabChoice, tabChoiceIndex) =>{
@@ -60,6 +60,9 @@ tabsChoice.forEach((tabChoice, tabChoiceIndex) =>{
     })
   })
 })
+
+const editFormButtons = elements("[data-target='tabsEdit']")
+const cancelFormButtons = elements("[data-target='formCancel']")
 
 // Making the tabsContent editable
 editFormButtons.forEach((button, index) => {
@@ -115,12 +118,14 @@ const createShowcaseListField = ( headingName, data, columnWidth ) => {
   return container
 }
 
-// Handles the form submissions
-const personalInformationForm = element("[data-target='personalInformation']")
+// Personal information selection
+const personalInformation = {
+  form: element("[data-target='personalInformation']"),
+  tabsData: element("[data-target='tabsData1']")
+}
 
-personalInformationForm.addEventListener("submit", event => {
+personalInformation.form.addEventListener("submit", event => {
   event.preventDefault()
-  const tabsData = document.querySelector("[data-target='tabsData1']")
   element("[data-target='cEmailAddress']").textContent = event.target.email.value
   element("[data-target='cPhoneNumber']").textContent = event.target.phoneNumber.value
   element("[data-target='cDateOfBirth']").textContent = new Date(event.target.dateOfBirth.value).toLocaleDateString("en-GB")
@@ -129,7 +134,7 @@ personalInformationForm.addEventListener("submit", event => {
 
   if ( !identification.files.length ) return
   
-  tabsData.append(createShowcaseField("Identification", identification.files[0].name))
+  personalInformation.tabsData.append(createShowcaseField("Identification", identification.files[0].name))
 })
 
 // Education & Qualification selection
@@ -180,7 +185,7 @@ const renderQualificationFormInner = () => {
             const input = Object.assign(document.createElement("input"), {
               type: "text",
               value: inputData.value,
-              classList: "d-block mb-2 px-2 weight-medium col-11",
+              classList: "input__text--default d-block mb-2 px-2 weight-medium col-11",
               name: formData.name + inputIdx
             })
             input.addEventListener("change", event => {
@@ -270,7 +275,7 @@ const renderQualificationFormInner = () => {
         })
         label.setAttribute('for', formData.name)
         const input = Object.assign(document.createElement("input"), {
-          classList: "col-9 fs-6 px-0 weight-medium px-2",
+          classList: "input__text--default col-9 fs-6 px-0 weight-medium px-2",
           id: formData.name,
           name: formData.name,
           type: "text",
@@ -301,7 +306,7 @@ const renderQualificationFormInner = () => {
         })
         label.setAttribute("for", formData.name)
         const select = Object.assign(document.createElement("select"), {
-          classList: "col-9 rounded-2 py-1 weight-medium",
+          classList: "input__text--default col-9 rounded-2 py-1 weight-medium",
           name: formData.name,
           id: formData.name
         })
@@ -394,7 +399,7 @@ const renderQualificationFormInner = () => {
         })
         label.setAttribute("for", formData.name)
         const input = Object.assign(document.createElement("input"), {
-          classList: "col-8 fs-6 px-0 weight-medium px-2",
+          classList: "input__text--default col-8 fs-6 px-0 weight-medium px-2",
           id: formData.name,
           name: formData.name,
           type: "file"
@@ -535,13 +540,13 @@ const copyScheduleDataToFormData = () => {
 copyScheduleDataToFormData()
 
 // Adds default dom
-const rerenderScheduleShowcaseFields = () => {
+const renderScheduleShowcaseFields = () => {
   schedule.data.forEach(data => schedule.tabsData.append(createShowcaseField(`${data.date}:`, data.time)))
 }
 
-rerenderScheduleShowcaseFields()
+renderScheduleShowcaseFields()
 
-const rerenderScheduleFormInner = () => {
+const renderScheduleFormInner = () => {
   schedule.inner.innerHTML = ""
   
   schedule.formData.forEach((data, index) => schedule.inner.append(createEditableScheduleField(data, index)))
@@ -555,7 +560,7 @@ const defaultScheduleConfiguration = () => {
 
   editFormButtons[2].addEventListener("click", () =>{
     tabsContents[2].classList.add("editable")
-    rerenderScheduleFormInner()
+    renderScheduleFormInner()
   })
 }
 
@@ -567,28 +572,28 @@ const createEditableScheduleField = ( data, index ) => {
     classList: "row ps-5 pe-3 mt-2 align-items-start",
     innerHTML: `
     <div class="col-6 row align-items-center">
-    <label class="col-4 weight-black text-dark fs-6 px-0" for="schedDate${ index }">Select day:</label>
-    <select class="col-7 rounded-2 py-1 weight-medium" name="schedDate${ index }" id="schedDate${ index }" data-target="scheduleSelect${ index }">
-    <option value=""></option>
-      <option value="Monday" ${ data.date==="Monday"? "Selected": "" }>Monday</option>
-      <option value="Tuesday" ${ data.date==="Tuesday"? "Selected": "" }>Tuesday</option>
-      <option value="Wednesday" ${ data.date==="Wednesday"? "Selected": "" }>Wednesday</option>
-      <option value="Thursday" ${ data.date==="Thursday"? "Selected": "" }>Thursday</option>
-      <option value="Friday" ${ data.date==="Friday"? "Selected": "" }>Friday</option>
-      <option value="Saturday" ${ data.date==="Saturday"? "Selected": "" }>Saturday</option>
-      <option value="Sunday" ${ data.date==="Sunday"? "Selected": "" }>Sunday</option>
-    </select>
-  </div>
-  <div class="col-5 row align-items-center pe-0">
-    <label class="weight-black col-2 text-dark fs-6 px-0" for="time${ index }">Time:</label>
-    <input class="fs-6 col-10 px-0 weight-medium px-2" id="time${ index }" name="time${ index }" type="text" value="${ data.time }" data-target='scheduleTime${ index }'>
-  </div>
-  <div class="col-1 px-0">
-    <button class="bg-transparent rounded-circle d-block ms-auto" type="button" data-target="removeDateRow">
-      <span class="sr-only">Remove date</span>
-      <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
-    </button>
-  </div>
+      <label class="col-4 weight-black text-dark fs-6 px-0" for="schedDate${ index }">Select day:</label>
+      <select class="input__text--default col-7 rounded-2 py-1 weight-medium" name="schedDate${ index }" id="schedDate${ index }" data-target="scheduleSelect${ index }">
+      <option value=""></option>
+        <option value="Monday" ${ data.date==="Monday"? "Selected": "" }>Monday</option>
+        <option value="Tuesday" ${ data.date==="Tuesday"? "Selected": "" }>Tuesday</option>
+        <option value="Wednesday" ${ data.date==="Wednesday"? "Selected": "" }>Wednesday</option>
+        <option value="Thursday" ${ data.date==="Thursday"? "Selected": "" }>Thursday</option>
+        <option value="Friday" ${ data.date==="Friday"? "Selected": "" }>Friday</option>
+        <option value="Saturday" ${ data.date==="Saturday"? "Selected": "" }>Saturday</option>
+        <option value="Sunday" ${ data.date==="Sunday"? "Selected": "" }>Sunday</option>
+      </select>
+    </div>
+    <div class="col-5 row align-items-center pe-0">
+      <label class="weight-black col-2 text-dark fs-6 px-0" for="time${ index }">Time:</label>
+      <input class="input__text--default fs-6 col-10 px-0 weight-medium px-2" id="time${ index }" name="time${ index }" type="text" value="${ data.time }" data-target='scheduleTime${ index }'>
+    </div>
+    <div class="col-1 px-0">
+      <button class="bg-transparent rounded-circle d-block ms-auto" type="button" data-target="removeDateRow">
+        <span class="sr-only">Remove date</span>
+        <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
+      </button>
+    </div>
     `
   })
   fieldContainer.dataset.target = "dateRow"
@@ -603,7 +608,7 @@ const createEditableScheduleField = ( data, index ) => {
 
   fieldContainer.querySelector("[data-target='removeDateRow']").addEventListener("click", () => {
     schedule.formData = schedule.formData.filter((_, filterIndex) => filterIndex!==index)
-    rerenderScheduleFormInner()
+    renderScheduleFormInner()
   })
 
   return fieldContainer
@@ -622,7 +627,7 @@ schedule.addRowButton.addEventListener("click", () => {
     time: ""
   }
   schedule.formData.push(newFormDate)
-  rerenderScheduleFormInner()
+  renderScheduleFormInner()
 })
 
 schedule.form.addEventListener("submit", event => {
@@ -633,7 +638,7 @@ schedule.form.addEventListener("submit", event => {
   const hoursPerWeekDom = document.querySelector("[data-target='hoursPerWeek']")
   schedule.formData = schedule.formData.filter(data => data.date && data.time)
   schedule.data = [...schedule.formData]
-  rerenderScheduleShowcaseFields()
+  renderScheduleShowcaseFields()
 
   if ( !hoursPerWeek.value ) return
 
@@ -672,20 +677,20 @@ const rerenderGetPaidFormInner = () => {
 }
 
 const createEditableGetPaidField = (data, index) => {
-  const fieldContainer = document.createElement("div")
-  fieldContainer.classList = "row px-5 mt-2 align-items-start"
-  fieldContainer.innerHTML = `
-  <div class="col-4 px-0">
+  const fieldContainer = Object.assign(document.createElement("div"), {
+    classList: "row px-5 mt-2 align-items-start",
+    innerHTML: `
+    <div class="col-4 px-0">
       <label class="weight-black text-dark fs-6 px-0" for="bankName${ index} ">Bank name:</label>
-      <input class="fs-6 px-0 weight-medium px-2" type="text" id="bankName${ index}" ${ data.bank? `value="${ data.bank }"` : "" } data-target="bankName${ index }">
+      <input class="input__text--default fs-6 px-0 weight-medium px-2" type="text" id="bankName${ index}" ${ data.bank? `value="${ data.bank }"` : "" } data-target="bankName${ index }">
     </div>
     <div class="col-4 px-0">
       <label class="col-4 weight-black text-dark fs-6 px-0" for="bankNumber${ index }">Number:</label>
-      <input class="fs-6 px-0 weight-medium px-2" type="password" id="bankNumber${ index }" ${ data.number? `value="${ data.number }"` : "" } data-target="bankNumber${ index }">
+      <input class="input__text--default fs-6 px-0 weight-medium px-2" type="password" id="bankNumber${ index }" ${ data.number? `value="${ data.number }"` : "" } data-target="bankNumber${ index }">
     </div>
     <div class="col-3 px-0">
       <label class="col-4 weight-black text-dark fs-6 px-0" for="bankType${ index }">Type:</label>
-      <select class="col-7 rounded-2 py-1 weight-medium d-block py-1 min-w-100" name="bankType${ index }" id="bankType${ index }" data-target="bankType${ index }">
+      <select class="input__text--default col-7 rounded-2 py-1 weight-medium d-block py-1 min-w-100" name="bankType${ index }" id="bankType${ index }" data-target="bankType${ index }">
         <option value=""></option>
         <option value="Bank" ${ data.type==="Bank"? "selected": "" }>Bank</option>
         <option value="Card" ${ data.type==="Card"? "selected": "" }>Card</option>
@@ -697,7 +702,8 @@ const createEditableGetPaidField = (data, index) => {
         <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
       </button>
     </div>
-  `
+    `
+  })
   fieldContainer.dataset.target = "dateRow"
 
   fieldContainer.querySelector(`[data-target=bankName${ index }]`).addEventListener("change", event => {
@@ -759,11 +765,11 @@ getPaid.addRowButton.addEventListener("click", () => {
 })
 
 // Adds default dom
-const rerenderGetPaidShowcaseFields = () => {
+const renderGetPaidShowcaseFields = () => {
   getPaid.data.forEach(data => getPaid.tabsData.append(createShowcaseGetPaidField(`${data.bank}:`, data.number, data.type)))
 }
 
-rerenderGetPaidShowcaseFields()
+renderGetPaidShowcaseFields()
 
 const defaultGetPaidConfiguration = () => {
   getPaid.form.querySelector("[data-target='formCancel']").addEventListener("click", () => {
@@ -793,5 +799,5 @@ getPaid.form.addEventListener("submit", event => {
   
   getPaid.formData = getPaid.formData.filter(data => data.bank && data.number && data.type)
   getPaid.data = [...getPaid.formData]
-  rerenderGetPaidShowcaseFields()
+  renderGetPaidShowcaseFields()
 })
