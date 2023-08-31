@@ -7,9 +7,39 @@
   max-width: max-content;
 }
 
+.weight-medium {
+  font-weight: 500;
+}
+
+.weight-black {
+  font-weight: 800;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  padding: 0;
+  width: 1px;
+}
+
+.input__text--default {
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: .5rem;
+  padding: .35rem 0;
+}
+
+
 
 @media (min-width: 1000px) {
   .flex__desktop {
     display: flex;
+  }
+
+  .cursor__desktop {
+    cursor: pointer;
   }
 }

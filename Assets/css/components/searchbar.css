@@ -1,0 +1,25 @@
+
+
+.searchbar {
+  padding: 20px 48px 20px 72px;
+}
+
+.searchbar__button {
+  height: 40px;
+  width: 40px;
+}
+
+.search {
+  max-width: 450px;
+}
+
+.search__input {
+  background: url("../../svg/search-gray.svg") no-repeat 98% center;
+  border-radius: 2rem;
+  border: 1px solid #ccc;
+  height: 40px;
+}
+
+.search__input::placeholder {
+  color: #c4c4c4;
+}

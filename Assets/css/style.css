@@ -8,133 +8,189 @@
     src: url("../assets/fonts/amsterdam/amsterdam-four-ttf.ttf");
 }
 
-
-
 @font-face {
     font-family: Kollektif;
     src: url("../assets/fonts/kollektif/Kollektif.ttf");
 }
 
+@font-face {
+    font-family: "demo";
+    font-display: swap;
+    src: url(../fonts/demo.woff) format("woff"), url(../fonts/demo.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter-Black";
+    font-display: swap;
+    src: url(../fonts/Inter-Black.woff) format("woff"), url(../fonts/Inter-Black.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter-ExtraBold";
+    font-display: swap;
+    src: url(../fonts/Inter-ExtraBold.woff) format("woff"), url(../fonts/Inter-ExtraBold.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter-Bold";
+    font-display: swap;
+    src: url(../fonts/Inter-Bold.woff) format("woff"), url(../fonts/Inter-Bold.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter-Light";
+    font-display: swap;
+    src: url(../fonts/Inter-Light.woff) format("woff"), url(../fonts/Inter-Light.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter-ExtraLight";
+    font-display: swap;
+    src: url(../fonts/Inter-ExtraLight.woff) format("woff"), url(../fonts/Inter-ExtraLight.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter-Regular";
+    font-display: swap;
+    src: url(../fonts/Inter-Regular.woff) format("woff"), url(../fonts/Inter-Regular.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter-Medium";
+    font-display: swap;
+    src: url(../fonts/Inter-Medium.woff) format("woff"), url(../fonts/Inter-Medium.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter-SemiBold";
+    font-display: swap;
+    src: url(../fonts/Inter-SemiBold.woff) format("woff"), url(../fonts/Inter-SemiBold.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "stylesheet";
+    font-display: swap;
+    src: url(../fonts/stylesheet.woff) format("woff"), url(../fonts/stylesheet.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter-Thin";
+    font-display: swap;
+    src: url(../fonts/Inter-Thin.woff) format("woff"), url(../fonts/Inter-Thin.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
 
 /* GENERAL STYLING */
-
-*,
-*:after,
-*:before {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    width: 100%;
-    height: 100%;
-}
 
 :root{
     --custom_primary: #0F0346;
 }
 
 
-.custom-btn-white{
-    text-decoration: none;
-    color: var(--custom_primary) !important;
-    font-size: 22px;
-    padding: 5px 28px !important;
-    border-radius: 27px;
-    cursor: pointer;
-    background-color: #fff;
+*,
+*:after,
+*:before {
+    font-family: 'Roboto', sans-serif;   
 }
 
+.custom-btn-white{
+  text-decoration: none;
+  color: var(--custom_primary) !important;
+  font-size: 22px;
+  padding: 5px 28px !important;
+  border-radius: 27px;
+  cursor: pointer;
+  background-color: #fff;
+}
 
 .col-login-form, .col-banner-img{
-    padding:0px;
-    width: 50%;
+  padding:0px;
+  width: 50%;
 }
 .login-container-row{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 
 /* BOOTSTRAP HEADER/NAV STYLING */
 
 #header {
-    background-color: var(--custom_primary);
-    overflow: hidden;
+  background-color: var(--custom_primary);
+  overflow: hidden;
 }
 
 .navbar {
-    padding: 15px 0;
-}
-
-.navbar-brand {
-    
+  padding: 15px 0;
 }
 
 .navbar a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 h2.logo {
-    font-size: 28px;
-    font-weight: 400;
-    color: #fff;
+  font-size: 28px;
+  font-weight: 400;
+  color: #fff;
 }
-
-/* h2.center-logo {
-    margin: 0 25px;
-} */
 
 #navbarSupportedContent {
-    justify-content: space-around;
+  justify-content: space-around;
 }
 
-ul.navbar-nav {}
 
 ul.navbar-nav li.nav-item {
-    margin-right: 25px;
+  margin-right: 25px;
 }
 
 ul.navbar-nav li.nav-item:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 ul.navbar-nav li.nav-item a.nav-link {
-    color: #fff;
+  color: #fff;
 }
 
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
-    color: #EDF828;
+  color: #EDF828;
 }
 
 ul.navbar-nav li.nav-item a.nav-link:hover {
-    color: 292567;
+  color: 292567;
 }
-
 
 /* FOOTER */
 
 .footer-container {
-    display: flex;
-    justify-content: center;
-    padding: 24px 0px;
-    color: white;
-    font-size: 16px;
+  display: flex;
+  justify-content: center;
+  padding: 24px 0px;
+  color: white;
+  font-size: 16px;
 }
 
 .footer-container p{
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 footer{
-    background-color: var(--custom_primary);
+  background-color: var(--custom_primary);
 }
 
-
 @media only screen and (max-width: 576px){
-    .footer-container{
-        font-size: 12px;
-    }
+  .footer-container{
+      font-size: 12px;
+  }
 }

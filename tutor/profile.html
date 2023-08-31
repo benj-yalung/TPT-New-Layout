@@ -7,30 +7,19 @@
     <title> Tutor Profile | Talent Pro Tutor</title>
 
     <!-- Custom styles -->
-    <link rel="stylesheet" href="../Assets/css/dashboard.css">
-    <link rel="stylesheet" href="../Assets/css/dashboard-tab.css">
+    <link rel="stylesheet" href="../Assets/css/reset.css">
     <link rel="stylesheet" href="../Assets/css/utilities.css">
     <link rel="stylesheet" href="../Assets/css/tutor/profile.css">
+    <!-- Components -->
     <link rel="stylesheet" href="../Assets/css/header.css">
+    <link rel="stylesheet" href="../Assets/css/components/searchbar.css">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-    <!-- Google Font Link for Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-    <!-- JQUERY -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- UUID -->
-    <!-- Icons library -->
-    <script src="../plugins/feather.min.js"></script>
     <!-- Custom scripts -->
     <script src="../Assets/js/tutor/profile.js" defer type="module"></script>
     <script src="../Assets/js/header.js" defer></script>
-    <script src="../Assets/js/dashboard.js"></script>
   </head>
 
   <body>
@@ -104,69 +93,48 @@
       </header>
       <main class="w-100 min-vh-100 bg-light pb-5 ">
         <!-- Searchbar -->
-        <div class="px-5 bg-light">
-          <div class="main-nav">
-            <div class="main-nav-start ms-1 ps-4">
-              <div class="search-wrapper">
-                <input type="text" placeholder="Search" required>
-                <i data-feather="search" aria-hidden="true"></i>
-              </div>
+        <div class="searchbar mb-2 d-flex justify-content-between bg-light">
+          <div class="search w-100">
+            <input class="search__input w-100 bg-white py-1 px-3" type="text" placeholder="Search" required>
+          </div>
+          <div class="d-flex align-items-center">
+            <div class="me-3">
+              <button class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center">
+                <span class="sr-only">To messages</span>
+                <svg aria-hidden="true" fill="#545454" height="18px" width="18px" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M26.8,25H5.2c-0.8,0-1.5-0.4-1.9-1.1c-0.4-0.7-0.3-1.5,0.1-2.2L4.5,20c1.8-2.7,2.7-5.8,2.7-9c0-3.7,2.4-7.1,5.9-8.3 C13.7,1.6,14.8,1,16,1s2.3,0.6,2.9,1.7c3.5,1.2,5.9,4.6,5.9,8.3c0,3.2,0.9,6.3,2.7,9l1.1,1.7c0.4,0.7,0.5,1.5,0.1,2.2 C28.4,24.6,27.6,25,26.8,25z"></path> </g> <path d="M11.1,27c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H11.1z"></path> </g></svg>
+              </button>
             </div>
-            <div class="main-nav-end">
-              <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
-                <span class="sr-only">Toggle menu</span>
-                <span class="icon menu-toggle--gray" aria-hidden="true"></span>
+            <div class="me-3">
+              <button class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center">
+                <span class="sr-only">Messages</span>
+                <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 8.58527V17.0731C22 18.4389 20.8733 19.6097 19.4394 19.7072C17.2884 19.9023 14.3181 19.9999 12.0648 19.9999C9.81147 19.9999 6.84116 19.8048 4.69025 19.7072C3.25631 19.6097 2.12964 18.4389 2.12964 17.0731V8.58527L3.666 9.36576L10.7333 13.0731C11.143 13.2682 11.6551 13.3658 12.0648 13.3658C12.4745 13.3658 12.9866 13.2682 13.3963 13.0731L20.4636 9.36576L22 8.58527Z" fill="#545454"></path> <path d="M21.8976 6.43898C21.8976 6.6341 21.7952 6.92678 21.5903 7.02434L20.3612 7.60971L12.577 11.7073C12.1673 11.9024 11.7576 11.9024 11.3479 11.7073L2.33452 7.02434C2.12967 6.92678 1.92482 6.73166 2.02724 6.53654C2.23209 5.36581 3.25634 4.3902 4.58785 4.29264C6.73877 4.09752 9.70907 3.99995 11.9624 3.99995C14.2157 3.99995 17.2885 4.19508 19.337 4.29264C20.6685 4.3902 21.6927 5.26825 21.8976 6.43898Z" fill="#545454"></path> </g></svg>
               </button>
-              <div class="notification-wrapper">
-                <button class="gray-circle-btn dropdown-btn" title="To messages" type="button">
-                  <span class="sr-only">To messages</span>
-                  <span class="icon notification active" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
-                  </span>
-                </button>
-              </div>
-              <button class="gray-circle-btn dropdown-btn" type="button" title="Switch theme">
-                <span class="icon message" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
-            
-                </span>
+            </div>
+            <div>
+              <button class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center">
+                <span class="sr-only">My profile</span>
+                <img class="rounded-circle" src="../Assets/img/profile.png" alt="" height="40" width="40" aria-hidden="true">
               </button>
-              <div class="nav-user-wrapper">
-                <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
-                  <span class="sr-only">My profile</span>
-                  <span class="nav-user-img">
-                    <picture>
-                      <source srcset="../Assets/img/profile.png" type="image/webp"><img src="../Assets/img/profile.png"
-                        alt="User name">
-                    </picture>
-                  </span>
-                </button>
-              </div>
             </div>
           </div>
         </div>
         <!-- Profile -->
-        <div class="px-5 bg-light">
-          <div class="px-5">
+        <div class="px-5">
             <div class="profile__header px-4 d-flex align-items-center">
               <img class="profile__avatar" src="../Assets/img/Lesson-Dashboard-img.jpg" alt="Elizabeth Sutton" data-target="avatarPreview">
               <div class="ms-4 mb-5">
                 <h1 class="fw-bold fs-1">Elizabeth Sutton</h1>
                 <input class="sr-only" type="file" accept="image/png, image/jpeg" id="profileAvatar" name="profileAvatar" data-target="profileAvatar">
-                <label class="profile__avatar-label py-1 px-3 mt-1 bg-white text-black" for="profileAvatar">Change Photo</label>
+                <label class="profile__avatar-label cursor__desktop py-1 px-3 mt-1 bg-white text-black" for="profileAvatar">Change Photo</label>
               </div>
             </div>
             <div class="profile__tab-interface px-4 mt-4">
               <div class="tabs pe-5">
-                <div class="tabs__selections row mx-0" role="tablist" aria-label="feature selection tabs">
-                  <button class="tabs__choice col-3 fw-bold fs-6 py-2" role="tab" aria-selected="true" aria-controls="profile1" id="profile-1"
-                    tabindex="0" data-index="0">Personal Information</button>
-                  <button class="tabs__choice col-4 fw-bold fs-6 py-2" role="tab" aria-selected="false" aria-controls="profile2" id="profile-2"
-                    tabindex="-1" data-index="1">Education and Qualification</button>
-                  <button class="tabs__choice col-2 fw-bold fs-6 py-2" role="tab" aria-selected="false" aria-controls="profile3" id="profile-3"
-                    tabindex="-1" data-index="2">Schedule</button>
-                  <button class="tabs__choice col-3 fw-bold fs-6 py-2" role="tab" aria-selected="false" aria-controls="profile4" id="profile-4"
-                    tabindex="-1" data-index="3">Get Paid</button>
+                <div class="tabs__selections row mx-0" role="tablist" aria-label="feature selection tabs" data-target="tabsSelection">
+                  <button class="tabs__choice col-3 fw-bold fs-6 py-2" role="tab" aria-selected="true" aria-controls="profile1" id="profile-1" tabindex="0" data-index="0" data-target="tabsChoice">Personal Information</button>
+                  <button class="tabs__choice col-4 fw-bold fs-6 py-2" role="tab" aria-selected="false" aria-controls="profile2" id="profile-2" tabindex="-1" data-index="1" data-target="tabsChoice">Education and Qualification</button>
+                  <button class="tabs__choice col-2 fw-bold fs-6 py-2" role="tab" aria-selected="false" aria-controls="profile3" id="profile-3" tabindex="-1" data-index="2" data-target="tabsChoice">Schedule</button>
+                  <button class="tabs__choice col-3 fw-bold fs-6 py-2" role="tab" aria-selected="false" aria-controls="profile4" id="profile-4" tabindex="-1" data-index="3" data-target="tabsChoice">Get Paid</button>
                 </div>
                 <div class="tabs__contents bg-white px-5 py-4 w-100" id="profile1" role="tabpanel" tabindex="0" aria-labelledby="profile-1" data-target="tabsContent">
                   <button class="tabs__edit-button d-block ms-auto" data-target="tabsEdit">
@@ -189,19 +157,19 @@
                   <form class="tabs__form mb-4 p-3 w-100" data-target="personalInformation" data-index="0">
                     <div class="row px-5 mt-2">
                       <label class="weight-black text-dark fs-6 col-3 px-0" for="email">Email address:</label>
-                      <input class="col-9 fs-6 px-0 weight-medium px-2" id="email" name="email" type="email" value="elizabethsutton@tptutor.com">
+                      <input class="input__text--default col-9 fs-6 px-0 weight-medium px-2" id="email" name="email" type="email" value="elizabethsutton@tptutor.com">
                     </div>
                     <div class="row px-5 mt-2">
                       <label class="weight-black text-dark fs-6 col-3 px-0" for="phoneNumber">Phone number:</label>
-                      <input class="col-9 fs-6 px-0 weight-medium px-2" id="phoneNumber" name="phoneNumber" type="text" value="(123) 456 7890">
+                      <input class="input__text--default col-9 fs-6 px-0 weight-medium px-2" id="phoneNumber" name="phoneNumber" type="text" value="(123) 456 7890">
                     </div>
                     <div class="row px-5 mt-2">
                       <label class="weight-black text-dark fs-6 col-3 px-0" for="dateOfBirth">Date of Birth:</label>
-                      <input class="col-9 fs-6 px-0 weight-medium px-2" id="dateOfBirth" name="dateOfBirth" type="date" value="1998-08-10">
+                      <input class="input__text--default col-9 fs-6 px-0 weight-medium px-2" id="dateOfBirth" name="dateOfBirth" type="date" value="1998-08-10">
                     </div>
                     <div class="row px-5 mt-2 align-items-center">
                       <label class="weight-black text-dark fs-6 col-3 px-0" for="identification">Identification:</label>
-                      <input class="col-9 fs-6 px-0 weight-medium px-2" id="identification" name="identification" type="file">
+                      <input class="input__text--default col-9 fs-6 px-0 weight-medium px-2" id="identification" name="identification" type="file">
                     </div>
                     <div class="d-flex mt-4 ms-4 ps-2">
                       <button class="form__button text-white rounded-2 p-2 bg-dark me-2" type="button" data-target="formCancel">Cancel</button>
@@ -242,7 +210,7 @@
                     </div>
                     <div class="row align-items-center px-5 mt-1">
                       <label class="col-7 weight-black text-dark fs-6 px-0" for="hoursPerWeek">How many hours per week are you available?:</label>
-                      <select class="col-5 py-1 weight-medium" name="hoursPerWeek" id="hoursPerWeek">
+                      <select class="input__text--default col-5 py-1 weight-medium" name="hoursPerWeek" id="hoursPerWeek">
                         <option value="Less than 5hrs">Less than 5hrs</option>
                         <option value="5-10hrs" selected>5-10hrs</option>
                         <option value="10-20hrs">10-20hrs</option>
@@ -277,5 +245,4 @@
       </main>
     </div>
   </body>
-
 </html>

@@ -21,10 +21,6 @@
   border-radius: 1rem;
 }
 
-.weight-medium {
-  font-weight: 500;
-}
-
 .tabs__choice[aria-selected="true"] {
   background-color: #FFFFFF;
   color: #000000;
