@@ -6,3 +6,10 @@
   color: #FFFFFF;
   max-width: max-content;
 }
+
+
+@media (min-width: 1000px) {
+  .flex__desktop {
+    display: flex;
+  }
+}

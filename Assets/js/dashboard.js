@@ -65,23 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })();
 
-  // (function () {
-  //   var showCatBtns = document.querySelectorAll('.show-cat-btn');
-
-  //   if (showCatBtns) {
-  //     showCatBtns.forEach(function (showCatBtn) {
-  //       var catSubMenu = showCatBtn;
-  //       showCatBtn.addEventListener('click', function (e) {
-  //         e.preventDefault();
-  //         console.log(showCatBtn)
-  //         catSubMenu.classList.toggle('visible');
-  //         var catBtnToRotate = document.querySelector('.category__btn');
-  //         catBtnToRotate.classList.toggle('rotated');
-  //       });
-  //     });
-  //   }
-  // })();
-
   (function () {
     var showMenu = document.querySelector('.lang-switcher');
     var langMenu = document.querySelector('.lang-menu');
