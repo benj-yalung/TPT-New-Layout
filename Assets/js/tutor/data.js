@@ -41,7 +41,7 @@ export const personalInformationFormData = [
   }
 ]
 
-export const qualificationData =  [
+export const qualificationShowcaseData =  [
   {
     heading: "Education",
     content: "Bachelor of Arts Major in Philosophy - Stanford University",
@@ -560,32 +560,216 @@ export const qualificationFormData = [
   },
 ]
 
-export const scheduleData =  [
+export const scheduleShowcaseData =  [
   {
-    date: "Monday",
-    time: "5:00 AM - 2:00 PM"
+    heading: "Monday",
+    content: "5:00 AM - 2:00 PM"
   },
   {
-    date: "Tuesday",
-    time: "5:00 AM - 2:00 PM"
+    heading: "Tuesday",
+    content: "5:00 AM - 2:00 PM"
   },
   {
-    date: "Wednesday",
-    time: "5:00 AM - 2:00 PM"
+    heading: "Wednesday",
+    content: "5:00 AM - 2:00 PM"
   },
   {
-    date: "Thursday",
-    time: "5:00 AM - 2:00 PM"
+    heading: "Thursday",
+    content: "5:00 AM - 2:00 PM"
   },
   {
-    date: "Friday",
-    time: "5:00 AM - 2:00 PM"
+    heading: "Friday",
+    content: "5:00 AM - 2:00 PM"
   },
   {
-    date: "Saturday",
-    time: "5:00 AM - 2:00 PM"
-  },{
-    date: "Sunday",
-    time: "5:00 AM - 2:00 PM"
+    heading: "Saturday",
+    content: "5:00 AM - 2:00 PM"
+  },
+  {
+    heading: "Sunday",
+    content: "5:00 AM - 2:00 PM"
   }
+]
+
+export const scheduleFormData =  [
+  {
+    type: "multiple",
+    fields:[
+      [
+        {
+          heading: "Select day",
+          content: "Monday",
+          name: "schedDate",
+          id: crypto.randomUUID(),
+          type: "select"
+        },
+        {
+          heading: "Time",
+          content: "5:00 AM - 2:00 PM",
+          name: "schedTime",
+          id: crypto.randomUUID(),
+          type: "select"      
+        }
+      ],
+      [
+        {
+          heading: "Select day",
+          content: "Tuesday",
+          name: "schedDate",
+          id: crypto.randomUUID(),
+          type: "select"
+        },
+        {
+          heading: "Time",
+          content: "5:00 AM - 2:00 PM",
+          name: "schedTime",
+          id: crypto.randomUUID(),
+          type: "select"      
+        }
+      ],
+      [
+        {
+          heading: "Select day",
+          content: "Wednesday",
+          name: "schedDate",
+          id: crypto.randomUUID(),
+          type: "select"
+        },
+        {
+          heading: "Time",
+          content: "5:00 AM - 2:00 PM",
+          name: "schedTime",
+          id: crypto.randomUUID(),
+          type: "select"      
+        }
+      ],
+      [
+        {
+          heading: "Select day",
+          content: "Thursday",
+          name: "schedDate",
+          id: crypto.randomUUID(),
+          type: "select"
+        },
+        {
+          heading: "Time",
+          content: "5:00 AM - 2:00 PM",
+          name: "schedTime",
+          id: crypto.randomUUID(),
+          type: "select"      
+        }
+      ],
+      [
+        {
+          heading: "Select day",
+          content: "Friday",
+          name: "schedDate",
+          id: crypto.randomUUID(),
+          type: "select"
+        },
+        {
+          heading: "Time",
+          content: "5:00 AM - 2:00 PM",
+          name: "schedTime",
+          id: crypto.randomUUID(),
+          type: "select"      
+        }
+      ],
+      [
+        {
+          heading: "Select day",
+          content: "Saturday",
+          name: "schedDate",
+          id: crypto.randomUUID(),
+          type: "select"
+        },
+        {
+          heading: "Time",
+          content: "5:00 AM - 2:00 PM",
+          name: "schedTime",
+          id: crypto.randomUUID(),
+          type: "select"      
+        }
+      ],
+      [
+        {
+          heading: "Select day",
+          content: "Sunday",
+          name: "schedDate",
+          id: crypto.randomUUID(),
+          type: "select"
+        },
+        {
+          heading: "Time",
+          content: "5:00 AM - 2:00 PM",
+          name: "schedTime",
+          id: crypto.randomUUID(),
+          type: "select"      
+        }
+      ],
+    ],
+    id: "schedDateTime"
+  },
+  {
+    heading: "How many hours per week are you available?",
+    showCaseHeading: "Hours per week",
+    content: "5-10hrs",
+    name: "hoursPerWeek",
+  }
+]
+
+export const getPaidShowcaseData = [
+  {
+    bank: "Bank of America",
+    number: "12345678",
+    type: "Bank"
+  },
+  {
+    bank: "Wells Fargo",
+    number: "12345678",
+    type: "Card"
+  }
+]
+
+export const getPaidFormData = [
+  [
+    {
+      heading: "Bank name",
+      content: "Bank of america",
+      name: "bankName",
+      type: "text"
+    },
+    {
+      heading: "Number",
+      content: "12345678",
+      name: "bankNumber",
+      type: "password"
+    },
+    {
+      heading: "Type",
+      content: "Bank",
+      name: "bankType",
+      type: "select"
+    }
+  ],
+  [
+    {
+      heading: "Bank name",
+      content: "Bank of america",
+      name: "bankName",
+      type: "text"
+    },
+    {
+      heading: "Number",
+      content: "12345678",
+      name: "bankNumber",
+      type: "password"
+    },
+    {
+      heading: "Type",
+      content: "Bank",
+      name: "bankType",
+      type: "select"
+    }
+  ]
 ]
