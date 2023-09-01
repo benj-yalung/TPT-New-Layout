@@ -6,6 +6,10 @@
   width: 20rem;
 }
 
+.profile__avatar-input:focus-visible + .profile__avatar-label {
+  outline: 2px dashed #5e7fcd;
+}
+
 .profile__avatar-label {
   border: 1px solid rgb(71, 71, 71);
   border-radius: 1rem;
@@ -30,6 +34,10 @@
   display: none;
 }
 
+.tabs__contents:focus-visible {
+  outline: none;
+}
+
 .tabs__contents.editable .tabs__data {
   display: none;
 }
@@ -45,21 +53,4 @@
 
 .form__button {
   background: none;
-
-}
-
-.form__button--cancel {
-
-}
-
-.form__button--save {
-
-}
-
-.hidden {
-  display: none;
-}
-
-.min-w-100 {
-  min-width: 100%;
 }

@@ -1,803 +1,1005 @@
 import { 
-  qualificationData, 
+  personalInformationFormData,
+  personalInformationShowcaseData,
+  qualificationShowcaseData, 
   qualificationFormData, 
-  scheduleData} from "./data.js"
+  scheduleShowcaseData, 
+  getPaidShowcaseData,
+  scheduleFormData} from "./data.js"
 import { 
   element,
   elements } from "../utilities.js"
 
  
 // Changing avatar
-const profileAvatar = element("[data-target=profileAvatar]")
+class ProfileAvatar {
+  profileAvatar = element("[data-target=profileAvatar]")
+  constructor() {
 
-profileAvatar.addEventListener("change", () => {
-  const oFReader = new FileReader();
-  oFReader.readAsDataURL(profileAvatar.files[0])
-
-  oFReader.onload = oFREvent => {
-    const avatarPreview = element("[data-target='avatarPreview']")
-    avatarPreview.src = oFREvent.target.result
-  };
-})
-
-// Tab interface
-const tabsSelection = element("[data-target='tabsSelection']");
-const tabsChoice = elements("[data-target='tabsChoice']");
-const tabsContents = elements("[data-target='tabsContent']")
-let profileTabIndex = 0;
-
-const changeTab = event =>{
+  this.profileAvatar.addEventListener("change", () => {
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(this.profileAvatar.files[0])
     
-  if (event.keyCode == 37 || event.keyCode == 39) {
-    if (event.keyCode == 37) {
-      profileTabIndex--;
-      profileTabIndex = profileTabIndex < 0? 3 : profileTabIndex;
-    } else if (event.keyCode == 39) {
-      profileTabIndex++;
-      profileTabIndex = profileTabIndex > 3? 0: profileTabIndex;
-    }
+    oFReader.onload = oFREvent => {
+      const avatarPreview = element("[data-target='avatarPreview']")
+      avatarPreview.src = oFREvent.target.result
+      };
+    })
   }
-  tabsChoice[profileTabIndex].focus();
 }
-// for using arrow to change tabs
-tabsSelection.addEventListener("keydown", changeTab);
 
-// Changing the tab content
-tabsChoice.forEach((tabChoice, tabChoiceIndex) =>{
-  tabChoice.addEventListener("click", event => {
+const profileAvatar = new ProfileAvatar()
 
-    if (event.target.getAttribute("aria-selected") == "true") return
+class TabInterface {
+  tabsSelection = element("[data-target='tabsSelection']")
+  tabsChoice = elements("[data-target='tabsChoice']")
+  tabsContents = elements("[data-target='tabsContent']")
+  profileTabIndex = 0
 
-    tabsChoice.forEach(tab => tab.setAttribute("aria-selected", "false"))
-    event.target.setAttribute("aria-selected", "true")
-    tabsContents[tabChoiceIndex].classList.remove("hidden")
-
-    tabsContents.forEach((tabContent, tabContentIndex) => {
-      if ( tabContentIndex!==tabChoiceIndex ) {
-        tabContent.classList.add("hidden")
-        tabContent.classList.remove("editable")
-      } 
+  constructor() {
+    this.tabsSelection.addEventListener("keydown", event => {
+      if (event.keyCode == 37 || event.keyCode == 39) {
+        if (event.keyCode == 37) {
+          this.profileTabIndex--
+          this.profileTabIndex = this.profileTabIndex < 0? 3 : this.profileTabIndex
+        } else if (event.keyCode == 39) {
+          this.profileTabIndex++
+          this.profileTabIndex = this.profileTabIndex > 3? 0: this.profileTabIndex
+        }
+      }
+      this.tabsChoice[this.profileTabIndex].focus()
     })
-  })
-})
-
-const editFormButtons = elements("[data-target='tabsEdit']")
-const cancelFormButtons = elements("[data-target='formCancel']")
-
-// Making the tabsContent editable
-editFormButtons.forEach((button, index) => {
-  button.addEventListener("click", () => tabsContents[index].classList.add("editable"))
-})
-
-// Cancelling the editing of the form
-cancelFormButtons.forEach((button, index) => {
-  button.addEventListener("click", () => tabsContents[index].classList.remove("editable"))
-})
-
-// Default styling for a profile field
-const createShowcaseField = ( headingName, data, columnWidth ) => {
-  const container = Object.assign(document.createElement("div"), {
-    classList: "row px-5 mt-2"
-  })
-  const heading = Object.assign(document.createElement('h2'), {
-    classList: `weight-black text-dark fs-6 col-${ columnWidth? columnWidth[0] : 3 } px-0`,
-    textContent: headingName
-  })
-  const paragraph = Object.assign(document.createElement("p"), {
-    classList: `col-${ columnWidth? columnWidth[1] : 9 } fs-6 px-0 weight-medium`,
-    textContent: data
-  })
-  container.append(heading, paragraph)
-
-  return container
-}
-
-// Default styling for a list field
-const createShowcaseListField = ( headingName, data, columnWidth ) => {
-  const container = Object.assign(document.createElement("div"), {
-    classList: "row px-5 mt-2"
-  })
-  const heading = Object.assign(document.createElement('h2'), {
-    classList: `weight-black text-dark fs-6 col-${ columnWidth? columnWidth[0] : 3 } px-0`,
-    textContent: headingName
-  })
-  const list = Object.assign(document.createElement("ul"), {
-    classList: `col-${ columnWidth? columnWidth[1] : 9 } px-0`
-
-  })
-  data.forEach(item => {
-    const listItem = Object.assign(document.createElement("li"), {
-      classList: "col-9 fs-6 px-0 mb-1 weight-medium",
-      textContent: item
+    
+    // Changing the tab content
+    this.tabsChoice.forEach((tabChoice, tabChoiceIndex) =>{
+      tabChoice.addEventListener("click", event => {
+    
+        if (event.target.getAttribute("aria-selected") == "true") return
+    
+        this.tabsChoice.forEach(tab => tab.setAttribute("aria-selected", "false"))
+        event.target.setAttribute("aria-selected", "true")
+        this.tabsContents[tabChoiceIndex].classList.remove("hidden")
+    
+        this.tabsContents.forEach((tabContent, tabContentIndex) => {
+          if ( tabContentIndex!==tabChoiceIndex ) {
+            tabContent.classList.add("hidden")
+            tabContent.classList.remove("editable")
+          } 
+        })
+      })
     })
-    list.append(listItem)
-  })
-
-  container.append(heading, list)
-
-  return container
+  }
 }
 
-// Personal information selection
-const personalInformation = {
-  form: element("[data-target='personalInformation']"),
-  tabsData: element("[data-target='tabsData1']")
+const tabInterface = new TabInterface()
+
+class DomCreation {
+
+  createShowcaseField ( headingName, data, columnWidth ) {
+    const container = Object.assign(document.createElement("div"), {
+      classList: "row px-5 mt-2"
+    })
+
+    const heading = Object.assign(document.createElement('h2'), {
+      classList: `weight-black text-dark fs-6 col-${ columnWidth? columnWidth[0] : 3 } px-0`,
+      textContent: headingName
+    })
+
+    const paragraph = Object.assign(document.createElement("p"), {
+      classList: `col-${ columnWidth? columnWidth[1] : 9 } fs-6 px-0 weight-medium`,
+      textContent: data
+    })
+    
+    container.append(heading, paragraph)
+
+    return container
+  }
+
+  createShowcaseListField ( headingName, data, columnWidth ) {
+    const container = Object.assign(document.createElement("div"), {
+      classList: "row px-5 mt-2"
+    })
+
+    const heading = Object.assign(document.createElement('h2'), {
+      classList: `weight-black text-dark fs-6 col-${ columnWidth? columnWidth[0] : 3 } px-0`,
+      textContent: headingName
+    })
+
+    const list = Object.assign(document.createElement("ul"), {
+      classList: `col-${ columnWidth? columnWidth[1] : 9 } px-0`
+    })
+
+    data.forEach(item => {
+      const listItem = Object.assign(document.createElement("li"), {
+        classList: "col-9 fs-6 px-0 mb-1 weight-medium",
+        textContent: item
+      })
+      list.append(listItem)
+    })
+
+    container.append(heading, list)
+
+    return container
+  }
+
+  createFormContainer (styling) {
+    const container = Object.assign(document.createElement("div"), {
+      classList: styling?? "row px-5 mt-2",
+    })
+
+    return container
+  }
+
+  createFormLabel ( heading, name, classList ) {
+    const label = Object.assign(document.createElement("label"), {
+      classList: classList?? "weight-black text-dark fs-6 col-3 px-0",
+      textContent: heading + ":"
+    })
+    label.setAttribute('for', name)
+
+    return label
+  }
+
+  createFormInput ( name, content, type, classList ) {
+    const input = Object.assign(document.createElement("input"), {
+      classList: classList?? "input__text--default col-9 fs-6 px-0 weight-medium px-2",
+      id: name,
+      name,
+      type,
+      value: content?? ""
+    })
+
+    return input
+  }
+
+  createFormLegend (heading) {
+    const legend = Object.assign(document.createElement("legend"), {
+      classList: "weight-black text-dark fs-6 col-3 px-0",
+      textContent: heading + ":"
+    })
+
+    return legend
+  }
+
+  createFormFieldset () {
+    const fieldset = Object.assign(document.createElement("fieldset"), {
+      classList: "row px-5 mt-2" 
+    })
+
+    return fieldset
+  }
+
+  createFormSelect( name, classList ) {
+    const select = Object.assign(document.createElement("select"), {
+      name,
+      id: name,
+      classList: classList?? "input__text--default col-5 py-1 weight-medium"
+    })
+
+    return select
+  }
+
+  createFormButton(classList, textContent, type) {
+    const button = Object.assign(document.createElement("button"), {
+      type: type?? "button",
+      classList,
+      textContent: textContent?? ""
+    })
+
+    return button
+  }
 }
 
-personalInformation.form.addEventListener("submit", event => {
-  event.preventDefault()
-  element("[data-target='cEmailAddress']").textContent = event.target.email.value
-  element("[data-target='cPhoneNumber']").textContent = event.target.phoneNumber.value
-  element("[data-target='cDateOfBirth']").textContent = new Date(event.target.dateOfBirth.value).toLocaleDateString("en-GB")
-  tabsContents[event.target.dataset.index].classList.remove("editable")
-  const identification = event.target.identification
+const domCreation = new DomCreation()
 
-  if ( !identification.files.length ) return
+class PersonalInformation {
+  showcase = [...personalInformationShowcaseData]
+  formData = [...personalInformationFormData]
+  oldFormData = [...personalInformationFormData]
+  tabContent = element("[data-id='personalInformationTabContent']")
+  tabsData = element("[data-target='tabsData1']")
+  form = element("[data-target='personalInformation']")
+  formInner = element("[data-target='personalInformationInner']")
+  edit = element("[data-target='editPersonalInformation']")
+  cancel = element("[data-target='formCancelPersonalInformation']")
+
+  constructor() {
+    this.edit.addEventListener("click", () => {
+      this.tabContent.classList.add("editable")
+      this.clearPersonalInformationForm()
+      this.renderPersonalInformationForm()
+    })
+    
+    this.cancel.addEventListener("click", () => {
+      this.tabContent.classList.remove("editable")
+      this.formData = [...this.oldFormData]
+      this.clearPersonalInformationShowcase()
+      this.renderPersonalInformationShowcase()
+    })
+    
+    this.form.addEventListener("submit", event => {
+      event.preventDefault()
+      this.showcase = this.formData.map(formData => ({
+        heading: formData.heading,
+        content: formData.content
+      }))
+      this.oldFormData = [...this.formData]
+      this.tabContent.classList.remove('editable')
+      this.clearPersonalInformationShowcase()
+      this.renderPersonalInformationShowcase()
+    })
+
+    this.renderPersonalInformationShowcase()
+  }
+
+  renderPersonalInformationShowcase(){
+    this.showcase.forEach(data => {
+      if ( !data.content || !data.heading ) return
   
-  personalInformation.tabsData.append(createShowcaseField("Identification", identification.files[0].name))
-})
+      this.tabsData.append(Array.isArray(data.content)? domCreation.createShowcaseListField(`${ data.heading }:`, data.content) : domCreation.createShowcaseField(`${ data.heading }:`, data.content))
+    })
+  }
+
+  renderPersonalInformationForm() {
+    this.formData.forEach(formData => {
+      const container = domCreation.createFormContainer()
+      const label = domCreation.createFormLabel(formData.heading, formData.name)
+      const input = domCreation.createFormInput(formData.name, formData.type==="file"? "" : formData.content, formData.type)
+  
+      input.addEventListener("change", event => {
+        this.formData = this.formData.map(innerFormData => innerFormData.name===formData.name? {
+          ...innerFormData,
+          content: formData.type==="file" ? event.target.files[0].name : event.target.value
+        } : innerFormData
+        )
+      })
+
+      container.append(label, input)
+      this.formInner.append(container)
+    })
+  }
+
+  clearPersonalInformationShowcase () {
+    this.tabsData.innerHTML = ""
+  }
+  
+  clearPersonalInformationForm () {
+    this.formInner.innerHTML = ""
+  }
+}
+
+const personalInformation = new PersonalInformation()
 
 // Education & Qualification selection
-const qualification = {
-  data: [ ...qualificationData ],
-  showCase: [],
-  formData: [...qualificationFormData],
-  oldFormData: [...qualificationFormData],
-  tabsData: element("[data-target='tabsData2']"),
-  form: element("[data-target='educationAndQualification']"),
-  inner: element("[data-target='educationAndQualificationInner']"),
-}
+class Qualification {
+  showcase = [...qualificationShowcaseData]
+  formData = [...qualificationFormData]
+  oldFormData = [...qualificationFormData]
+  tabContent = element("[data-id='qualificationTabContent']")
+  tabsData = element("[data-target='tabsData2']")
+  form = element("[data-target='educationAndQualification']")
+  formInner = element("[data-target='educationAndQualificationInner']")
+  edit = element("[data-target='editQualification']")
+  cancel = element("[data-target='formCancelQualification']")
 
-const renderQualificationShowcaseFields = () =>{
-  qualification.data.forEach(data => {
-    qualification.tabsData.append(Array.isArray(data.content)? createShowcaseListField(`${ data.heading }:`, data.content, [4,8]) : createShowcaseField(`${ data.heading }:`, data.content, [4,8]))
-  })
-}
+  constructor() {
+    this.edit.addEventListener("click", () =>{
+      this.tabContent.classList.add("editable")
+      this.emptyQualificationForm()
+      this.renderQualificationForm()
+    })
+    
+    this.cancel.addEventListener("click", () => {
+      this.tabContent.classList.remove("editable")
+      this.formData = [...this.oldFormData]
+      this.emptyQualificationShowcase()
+      this.renderQualificationShowcase()
+    })
+    
+    this.form.addEventListener("submit", event => {
+      event.preventDefault()
+      this.sanitizeFormData()
+      this.showcase = []
+      this.oldFormData = [...this.formData]
+      this.hydrateShowcaseData()
+      this.tabContent.classList.remove("editable")
+      this.emptyQualificationShowcase()
+      this.renderQualificationShowcase()
+    })
 
-const emptyQualificationForm = () => {
-  qualification.inner.innerHTML = ""
-}
+    this.renderQualificationShowcase()
+  }
 
-const emptyQualificationShowcase = () => {
-  qualification.tabsData.innerHTML = ""
-}
+  sanitizeFormData() {
+    this.formData = this.formData.map(formData => {
+      switch(formData.type) {
+        case "text": {
+          if ( Array.isArray(formData.content) ) {
+            return {
+              ...formData,
+              content: formData.content.filter(content => !!content.value )
+            }
+          }
 
-const renderQualificationFormInner = () => {
-  qualification.formData.forEach(formData => {
-    switch(formData.type) {
-      case "text": {
-        if ( Array.isArray(formData.content) ) {
-          const fieldset = Object.assign(document.createElement("fieldset"), {
-            classList: "row px-5 mt-2" 
+          return formData
+        }
+        default: return formData
+      }
+    })
+  }
+
+  hydrateShowcaseData() {
+    this.formData.forEach(formData => {
+      switch(formData.type) {
+        case "text": {
+          if ( !formData.content || !formData.content.length ) return 
+
+          this.showcase.push({
+            heading: formData.heading,
+            content: Array.isArray(formData.content)? formData.content
+              .filter(content => !!content.value)
+              .map(content => content.value) : formData.content
           })
-          const legend = Object.assign(document.createElement("legend"), {
-            classList: "weight-black text-dark fs-6 col-3 px-0",
-            textContent: formData.heading + ":"
+  
+          return
+        }
+        case "select": {
+          if ( formData.content === "------" ) return
+  
+          this.showcase.push({
+            heading: formData.heading,
+            content: formData.content
           })
-          const fields = Object.assign(document.createElement("div"), {
-            classList: "col-9 fs-6 px-0"
-          })
+  
+          return
+        }
+        case "checkbox": {
+          const result = { 
+            heading: formData.showCaseHeading?? formData.heading,
+            content: formData.fields
+            .filter(field => field.selected)
+            .map(field => field.value)
+          }
 
-          formData.content.forEach((inputData, inputIdx) => {
-            const inputContainer = Object.assign(document.createElement("div"), {
-              classList: "row mx-0"
+          if ( !result.content.length ) return
+  
+          this.showcase.push(result)
+  
+          return 
+        }
+        case "file": {
+          if ( !formData.content ) return
+  
+          this.showcase.push({
+            heading: formData.showCaseHeading?? formData.heading,
+            content: formData.content
+          })
+          
+          return
+        }
+      }
+    })
+  }
+
+  emptyQualificationShowcase () {
+    this.tabsData.innerHTML = ""
+  }
+
+  renderQualificationShowcase () {
+    this.showcase.forEach(data => {
+      this.tabsData.append(Array.isArray(data.content)? domCreation.createShowcaseListField(`${ data.heading }:`, data.content, [4,8]) : domCreation.createShowcaseField(`${ data.heading }:`, data.content, [4,8]))
+    })
+  }
+
+  emptyQualificationForm () {
+    this.formInner.innerHTML = ""
+  }
+
+  renderQualificationForm = () => {
+    this.formData.forEach(formData => {
+      switch(formData.type) {
+        case "text": {
+          if ( Array.isArray(formData.content) ) {
+            const fieldset = domCreation.createFormFieldset()
+            const legend = domCreation.createFormLegend(formData.heading)
+            const fields = Object.assign(document.createElement("div"), {
+              classList: "col-9 fs-6 px-0"
             })
-            const input = Object.assign(document.createElement("input"), {
-              type: "text",
-              value: inputData.value,
-              classList: "input__text--default d-block mb-2 px-2 weight-medium col-11",
-              name: formData.name + inputIdx
-            })
-            input.addEventListener("change", event => {
-              qualification.formData = qualification.formData.map(innerFormData => {
-                if ( formData.name===innerFormData.name ) {
-                  innerFormData.content = innerFormData.content.map(content => {
-                    if ( inputData.id === content.id ) {
-                      content.value = event.target.value
-                    }
+  
+            formData.content.forEach((inputData, inputIdx) => {
+              const inputContainer = domCreation.createFormContainer("row mx-0")
 
-                    return content
-                  })
-                }
-
-                return innerFormData
+              const input = domCreation.createFormInput(formData.name + inputIdx, inputData.value, "text", "input__text--default d-block mb-2 px-2 weight-medium col-11")
+              input.addEventListener("change", event => {
+                this.formData = this.formData.map(innerFormData => formData.name===innerFormData.name? {
+                  ...innerFormData,
+                  content: innerFormData.content.map(content => inputData.id === content.id? {
+                    ...content,
+                    value: event.target.value
+                  } : content)
+                } : innerFormData)
               })
-            })
-            const removeContainer = Object.assign(document.createElement('div'), {
-              classList: "col-1 px-0"
-            })
-            const removeButton = Object.assign(document.createElement("button"), {
-              classList: "bg-transparent rounded-circle d-block ms-auto",
-              type: "button",
-              innerHTML: `
+
+              const removeContainer = domCreation.createFormContainer("col-1 px-0")
+
+              const removeButton = domCreation.createFormButton("bg-transparent rounded-circle d-block ms-auto")
+              removeButton.innerHTML = `
               <span class="sr-only">Remove row</span>
               <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
               `
-            })
-            removeButton.dataset.target = "removeFieldRow"
-            removeButton.addEventListener("click", () => {
-              qualification.formData.map(innerFormData => {
-                if ( innerFormData.name===formData.name ) {
-                  innerFormData.content = formData.content.filter(content => content.id !== inputData.id)
-                }
-
-                return innerFormData
+              removeButton.addEventListener("click", () => {
+                this.formData = this.formData.map(innerFormData => innerFormData.name===formData.name? {
+                  ...innerFormData,
+                  content: innerFormData.content.filter(content => content.id!==inputData.id)
+                } : innerFormData)
+                this.emptyQualificationForm()
+                this.renderQualificationForm()
               })
 
-              emptyQualificationForm()
-              renderQualificationFormInner()
+              removeContainer.append(removeButton)
+              inputContainer.append(input, removeContainer)
+  
+              fields.append(inputContainer)
             })
-            removeContainer.append(removeButton)
-            inputContainer.append(input, removeContainer)
+            const addRowContainer = domCreation.createFormContainer("d-flex my-3")
 
-            fields.append(inputContainer)
-          })
-
-          const addRowContainer = Object.assign(document.createElement("div"), {
-            classList: "d-flex my-3"
-          })
-          const addRowButton = Object.assign(document.createElement("button"), {
-            type: "button",
-            classList: "form__button bg-primary text-white rounded-2 py-1 px-2",
-            textContent: "Add Row"
-          })
-          addRowButton.dataset.target = "fieldAddRow"
-          addRowButton.addEventListener("click", () => {
-            qualification.formData.map(innerFormData => {
-              if ( formData.name===innerFormData.name ) {
-                innerFormData.content = [...formData.content, {
+            const addRowButton = domCreation.createFormButton("form__button bg-primary text-white rounded-2 py-1 px-2", "Add Row")
+            addRowButton.addEventListener("click", () => {
+              this.formData = this.formData.map(innerFormData => formData.name===innerFormData.name? {
+                ...innerFormData,
+                content: [...innerFormData.content, {
                   value: "",
-                  name: innerFormData.name + formData.content.length,
-                  id: crypto.randomUUID()
+                    name: innerFormData.name + formData.content.length,
+                    id: crypto.randomUUID()
                 }]
-              }
-
-              return innerFormData
+              } : innerFormData)
+              this.emptyQualificationForm()
+              this.renderQualificationForm()
             })
-            emptyQualificationForm()
-            renderQualificationFormInner()
-          })
-          addRowContainer.append(addRowButton)
+            addRowContainer.append(addRowButton)
+            fields.append(addRowContainer)
+            fieldset.append(legend, fields)
+            this.formInner.append(fieldset)
+  
+            return
+          } 
 
-          fields.append(addRowContainer)
-          fieldset.append(legend, fields)
-          qualification.inner.append(fieldset)
+          const container = domCreation.createFormContainer()
+          const label = domCreation.createFormLabel(formData.heading, formData.name)
 
-          return
-        } 
-
-        const container = Object.assign(document.createElement("div"), {
-          classList: "row px-5 mt-2",
-        })
-        const label = Object.assign(document.createElement("label"), {
-          classList: "weight-black text-dark fs-6 col-3 px-0",
-          textContent: formData.heading + ":"
-        })
-        label.setAttribute('for', formData.name)
-        const input = Object.assign(document.createElement("input"), {
-          classList: "input__text--default col-9 fs-6 px-0 weight-medium px-2",
-          id: formData.name,
-          name: formData.name,
-          type: "text",
-          value: formData.content?? ""
-        })
-        input.addEventListener("change", event => {
-          qualification.formData = qualification.formData.map(innerFormData => {
-            if ( innerFormData.name===formData.name ) {
-              innerFormData.content = event.target.value
-            }
-
-            return innerFormData
-          })
-          
-        })
-        container.append(label, input)
-        qualification.inner.append(container)
-
-        return
-      }
-      case "select": {
-        const container = Object.assign(document.createElement("div"), {
-          classList: "row align-items-center px-5 mt-1"
-        })
-        const label = Object.assign(document.createElement("label"), {
-          classList: "col-3 weight-black text-dark fs-6 px-0",
-          textContent: formData.heading + ":"
-        })
-        label.setAttribute("for", formData.name)
-        const select = Object.assign(document.createElement("select"), {
-          classList: "input__text--default col-9 rounded-2 py-1 weight-medium",
-          name: formData.name,
-          id: formData.name
-        })
-        select.addEventListener("change", event => {
-          qualification.formData = qualification.formData.map(innerFormData => {
-            if ( innerFormData.name===formData.name ) {
-              innerFormData.content = event.target.value
-            }
-
-            return innerFormData
-          })
-        })
-
-        formData.options.forEach(option => {
-          const optionItem = Object.assign(document.createElement("option"), {
-            value: option,
-            textContent: option,
-          })
-          optionItem.selected = option === formData.content
-
-          select.append(optionItem)
-        })
-
-        container.append(label, select)
-        qualification.inner.append(container)
-
-        return
-      }
-      case "checkbox": {
-        const fieldset = Object.assign(document.createElement("fieldset"), {
-          classList: "row px-5 mt-2"
-        })
-        const legend = Object.assign(document.createElement("legend"), {
-          classList: "weight-black text-dark fs-6 col-6 px-0 mb-2",
-          textContent: formData.heading + ":"
-        })
-        const list = Object.assign(document.createElement("ul"), {
-          classList: "px-0"
-        })
-
-        formData.fields.forEach((field, fieldIdx) => {
-          const listItem = Object.assign(document.createElement("li"), {
-            classList: "mt-1"
-          })
-          const input = Object.assign(document.createElement("input"), {
-            classList: "me-2 rounded-2",
-            type: "checkbox",
-            name: formData.name,
-            id: field.id,
-            value: field.value
-          })
-          input.checked = field.selected
+          const input = domCreation.createFormInput(formData.name, formData.content, formData.type)
           input.addEventListener("change", event => {
-            qualification.formData = qualification.formData.map(innerFormData => {
-              if ( innerFormData.name===formData.name ) {
-                innerFormData.fields = innerFormData.fields.map(innerField => {
-                  if ( event.target.checked && innerField.id===event.target.id ) {
-                    
-                    innerField.selected = true
-                  }
-                  
-                  return innerField
-                })
-              }
-              
-              return innerFormData
-            })
+            this.formData = this.formData.map(innerFormData => innerFormData.name===formData.name? {
+              ...innerFormData,
+              content: event.target.value
+            } : innerFormData)
           })
-          const label = Object.assign(document.createElement("label"), {
-            classList: "fs-6",
-            textContent: field.value
+
+          container.append(label, input)
+          this.formInner.append(container)
+  
+          return
+        }
+        case "select": {
+          const container = domCreation.createFormContainer("row align-items-center px-5 mt-1")
+          const label = domCreation.createFormLabel(formData.heading, formData.name)
+
+          const select = domCreation.createFormSelect(formData.name, "input__text--default col-9 rounded-2 py-1 weight-medium")
+          select.addEventListener("change", event => {
+            this.formData = this.formData.map(innerFormData => innerFormData.name===formData.name? {
+              ...innerFormData,
+              content: event.target.value
+            } : innerFormData)
           })
-          label.setAttribute('for', field.id)
-          listItem.append(input, label)
-          list.append(listItem)
-        })
-
-        fieldset.append(legend, list)
-        qualification.inner.append(fieldset)
-
-        return
-      }
-      case "file": {
-        const container = Object.assign(document.createElement("div"), {
-          classList: "row px-5 mt-2 align-items-center"
-        })
-        const label = Object.assign(document.createElement("label"), {
-          classList: "weight-black text-dark fs-6 col-4 px-0",
-          textContent: formData.heading + ":"
-        })
-        label.setAttribute("for", formData.name)
-        const input = Object.assign(document.createElement("input"), {
-          classList: "input__text--default col-8 fs-6 px-0 weight-medium px-2",
-          id: formData.name,
-          name: formData.name,
-          type: "file"
-        })
-        input.addEventListener("change", event => {
-          if ( event.target.files[0] ) {
-            qualification.formData = qualification.formData.map(innerFormData => {
-              if ( formData.name===innerFormData.name ) {
-                innerFormData.content = event.target.files[0].name
-              }
-
-              return innerFormData
+  
+          formData.options.forEach(option => {
+            const optionItem = Object.assign(document.createElement("option"), {
+              value: option,
+              textContent: option,
             })
-          }
-        })
-        container.append(label, input)
-        qualification.inner.append(container)
+            optionItem.selected = option === formData.content
+  
+            select.append(optionItem)
+          })
+  
+          container.append(label, select)
+          this.formInner.append(container)
+  
+          return
+        }
+        case "checkbox": {
+          const fieldset = domCreation.createFormFieldset()
+          const legend = domCreation.createFormLegend(formData.heading)
+          const list = Object.assign(document.createElement("ul"), {
+            classList: "px-0"
+          })
+  
+          formData.fields.forEach(field => {
+            const listItem = Object.assign(document.createElement("li"), {
+              classList: "mt-1"
+            })
 
-        return
+            const input = domCreation.createFormInput(formData.name, field.value, "checkbox", "me-2 rounded-2")
+            input.id = field.id
+            input.checked = field.selected
+            input.addEventListener("change", event => {
+              this.formData = this.formData.map(innerFormData => innerFormData.name===formData.name? {
+                ...innerFormData,
+                fields: innerFormData.fields.map(innerField => event.target.checked && innerField.id===event.target.id? {
+                  ...innerField,
+                  selected: true
+                } : innerField)
+              } : innerFormData)
+            })
+
+            const label = domCreation.createFormLabel(field.value, field.id, "fs-6")
+
+            listItem.append(input, label)
+            list.append(listItem)
+          })
+  
+          fieldset.append(legend, list)
+          this.formInner.append(fieldset)
+  
+          return
+        }
+        case "file": {
+          const container = domCreation.createFormContainer("row px-5 mt-2 align-items-center")
+          const label = domCreation.createFormLabel(formData.heading, formData.name, "weight-black text-dark fs-6 col-4 px-0")
+          
+          const input = domCreation.createFormInput(formData.name, "", "file", "input__text--default col-8 fs-6 px-0 weight-medium px-2")
+          input.addEventListener("change", event => {
+            if ( !event.target.files[0] ) return
+
+            this.formData = this.formData.map(innerFormData => formData.name===innerFormData.name? {
+              ...innerFormData,
+              content: event.target.files[0].name
+            } : innerFormData)
+          })
+
+          container.append(label, input)
+          this.formInner.append(container)
+  
+          return
+        }
       }
-    }
-  })
-}
-
-// Default fields
-renderQualificationShowcaseFields()
-
-const defaultQualificationConfiguration = () => {
-  qualification.form.querySelector("[data-target='formCancel']").addEventListener("click", () => {
-    tabsContents[1].classList.remove("editable")
-    qualification.formData = [...qualification.oldFormData]
-    emptyQualificationShowcase()
-    renderQualificationShowcaseFields()
-  })
-
-  editFormButtons[1].addEventListener("click", () =>{
-    tabsContents[1].classList.add("editable")
-    qualification.formData = qualification.formData.map(formData => {
-      if ( formData.type==="text" && Array.isArray(formData.content) ) {
-        formData.content = formData.content.filter(content => !!content.value)
-      }
-
-      return formData
     })
-    qualification.oldFormData = [...qualification.formData]
-    emptyQualificationForm()
-    renderQualificationFormInner()
-  })
+  }
 }
 
-defaultQualificationConfiguration()
+const qualification = new Qualification()
 
-qualification.form.addEventListener("submit", event => {
-  event.preventDefault()
-  qualification.showCase = []
+// Schedule tab selection
+class Schedule {
+  showcase = [...scheduleShowcaseData]
+  formData = [...scheduleFormData]
+  oldFormData = [...scheduleFormData]
+  tabContent = element("[data-id='scheduleTabContent']")
+  tabsData = element("[data-target='tabsData3']")
+  form = element("[data-target='schedule']")
+  formInner = element("[data-target='scheduleFormInner']")
+  inner = element("[data-target='scheduleFormInner']")
+  edit = element("[data-target='editSchedule']")
+  cancel = element("[data-target='formCancelSchedule']")
 
-  qualification.formData.forEach(formData => {
-    switch(formData.type) {
-      case "text": {
-        const result = { heading: formData.heading }
-        
-        if ( Array.isArray(formData.content) ) {
-          result.content = formData.content
-            .filter(content => !!content.value)
-            .map(content => content.value)
+  constructor() {
+    this.edit.addEventListener("click", () =>{
+      this.tabContent.classList.add("editable")
+      this.emptyScheduleForm()
+      this.renderScheduleForm()
+    })
+    
+    this.cancel.addEventListener("click", () => {
+      this.tabContent.classList.remove("editable")
+      this.formData = [...this.oldFormData]
+    })
+    
+    this.form.addEventListener("submit", event => {
+      event.preventDefault()
+      this.tabContent.classList.remove("editable")
+      this.sanitizeFormData()
+      this.oldFormData = [...this.formData]
 
-          if ( !result.content.length ) return
+      this.showcase = []
 
-        } else if ( formData.content ) {
-          result.content = formData.content
-        } else {
+      this.formData.forEach(formData => {
+        if ( formData.type==="multiple" ) {
+          formData.fields
+            .forEach(field => {
+              this.showcase.push({
+                heading: field[0].content,
+                content: field[1].content
+              })
+            })
+          
           return
         }
 
-        qualification.showCase.push(result)
+        if ( formData.content ) {
 
-        return
-      }
-      case "select": {
-        if ( formData.content === "------" ) return
+          this.showcase.push({
+            heading: formData.showCaseHeading,
+            content: formData.content
+          })
+        }
+      })
+      
+      this.emptyScheduleShowcase()
+      this.renderScheduleShowcase()
+    })
 
-        qualification.showCase.push({
-          heading: formData.heading,
-          content: formData.content
-        })
-
-        return
-      }
-      case "checkbox": {
-        const result = { heading: formData.showCaseHeading?? formData.heading }
-
-        result.content = formData.fields
-          .filter(field => field.selected)
-          .map(field => field.value)
-
-        if ( !result.content.length ) return
-
-        qualification.showCase.push(result)
-
-        return 
-      }
-      case "file": {
-        if ( !formData.content ) return
-
-        qualification.showCase.push({
-          heading: formData.showCaseHeading?? formData.heading,
-          content: formData.content
-        })
-        
-        return
-      }
-    }
-  })
-
-  qualification.data = [...qualification.showCase]
-  qualification.oldFormData = [...qualification.formData]
-
-  emptyQualificationShowcase()
-  renderQualificationShowcaseFields()
-  tabsContents[1].classList.remove("editable")
-})
-
-// Schedule tab selection
-const schedule = {
-  data: scheduleData,
-  formData: [],
-  tabsData: element("[data-target='tabsData3']"),
-  form: element("[data-target='schedule']"),
-  inner: element("[data-target='scheduleFormInner']"),
-  addRowButton: element("[data-target='dateAddRow']")
-}
-
-// Copy defaultData to formData
-const copyScheduleDataToFormData = () => {
-  schedule.formData = [...schedule.data]
-}
-
-copyScheduleDataToFormData()
-
-// Adds default dom
-const renderScheduleShowcaseFields = () => {
-  schedule.data.forEach(data => schedule.tabsData.append(createShowcaseField(`${data.date}:`, data.time)))
-}
-
-renderScheduleShowcaseFields()
-
-const renderScheduleFormInner = () => {
-  schedule.inner.innerHTML = ""
-  
-  schedule.formData.forEach((data, index) => schedule.inner.append(createEditableScheduleField(data, index)))
-}
-
-const defaultScheduleConfiguration = () => {
-  schedule.form.querySelector("[data-target='formCancel']").addEventListener("click", () => {
-    tabsContents[2].classList.remove("editable")
-    schedule.formData = [...schedule.data]
-  })
-
-  editFormButtons[2].addEventListener("click", () =>{
-    tabsContents[2].classList.add("editable")
-    renderScheduleFormInner()
-  })
-}
-
-defaultScheduleConfiguration()
-
-// Creates single schedule form field container
-const createEditableScheduleField = ( data, index ) => {
-  const fieldContainer = Object.assign(document.createElement("div"), {
-    classList: "row ps-5 pe-3 mt-2 align-items-start",
-    innerHTML: `
-    <div class="col-6 row align-items-center">
-      <label class="col-4 weight-black text-dark fs-6 px-0" for="schedDate${ index }">Select day:</label>
-      <select class="input__text--default col-7 rounded-2 py-1 weight-medium" name="schedDate${ index }" id="schedDate${ index }" data-target="scheduleSelect${ index }">
-      <option value=""></option>
-        <option value="Monday" ${ data.date==="Monday"? "Selected": "" }>Monday</option>
-        <option value="Tuesday" ${ data.date==="Tuesday"? "Selected": "" }>Tuesday</option>
-        <option value="Wednesday" ${ data.date==="Wednesday"? "Selected": "" }>Wednesday</option>
-        <option value="Thursday" ${ data.date==="Thursday"? "Selected": "" }>Thursday</option>
-        <option value="Friday" ${ data.date==="Friday"? "Selected": "" }>Friday</option>
-        <option value="Saturday" ${ data.date==="Saturday"? "Selected": "" }>Saturday</option>
-        <option value="Sunday" ${ data.date==="Sunday"? "Selected": "" }>Sunday</option>
-      </select>
-    </div>
-    <div class="col-5 row align-items-center pe-0">
-      <label class="weight-black col-2 text-dark fs-6 px-0" for="time${ index }">Time:</label>
-      <input class="input__text--default fs-6 col-10 px-0 weight-medium px-2" id="time${ index }" name="time${ index }" type="text" value="${ data.time }" data-target='scheduleTime${ index }'>
-    </div>
-    <div class="col-1 px-0">
-      <button class="bg-transparent rounded-circle d-block ms-auto" type="button" data-target="removeDateRow">
-        <span class="sr-only">Remove date</span>
-        <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
-      </button>
-    </div>
-    `
-  })
-  fieldContainer.dataset.target = "dateRow"
-
-  fieldContainer.querySelector(`[data-target=scheduleSelect${ index }]`).addEventListener("change", event => {
-    schedule.formData[index].date = event.target.value
-  })
-
-  fieldContainer.querySelector(`[data-target=scheduleTime${ index }]`).addEventListener("change", event => {
-    schedule.formData[index].time = event.target.value
-  })
-
-  fieldContainer.querySelector("[data-target='removeDateRow']").addEventListener("click", () => {
-    schedule.formData = schedule.formData.filter((_, filterIndex) => filterIndex!==index)
-    renderScheduleFormInner()
-  })
-
-  return fieldContainer
-}
-
-// Adds default schedule form dom
-const createDefaultScheduleFormFields = () => {
-  schedule.formData.forEach(( data, index ) => schedule.inner.append(createEditableScheduleField(data, index)))
-}
-
-createDefaultScheduleFormFields()
-
-schedule.addRowButton.addEventListener("click", () => {
-  const newFormDate = {
-    date: "",
-    time: ""
+    this.renderScheduleShowcase()
   }
-  schedule.formData.push(newFormDate)
-  renderScheduleFormInner()
-})
 
-schedule.form.addEventListener("submit", event => {
-  event.preventDefault()
-  schedule.tabsData.innerHTML = ""
-  tabsContents[event.target.dataset.index].classList.remove("editable")
-  const hoursPerWeek = event.target.hoursPerWeek
-  const hoursPerWeekDom = document.querySelector("[data-target='hoursPerWeek']")
-  schedule.formData = schedule.formData.filter(data => data.date && data.time)
-  schedule.data = [...schedule.formData]
-  renderScheduleShowcaseFields()
+  sanitizeFormData() {
+    this.formData = this.formData.map(formData => formData.type==="multiple"? {
+      ...formData,
+      fields: formData.fields.filter(field => !!field[0].content && !!field[1].content )
+    } : formData)
+  }
 
-  if ( !hoursPerWeek.value ) return
+  emptyScheduleForm() {
+    this.formInner.innerHTML = ""
+  }
 
-  hoursPerWeekDom.classList = "row px-5 mt-2 mx-1 pb-3"
-  hoursPerWeekDom.innerHTML = `
-  <h2 class="weight-black text-dark fs-6 col-3 px-0">Hours per week:</h2>
-  <p class="col-9 fs-6 px-0 weight-medium">${ hoursPerWeek.value }</p>
-  `
-})
+  createScheduleRow ( data, index ) {
+    const fieldContainer = domCreation.createFormContainer("row ps-5 pe-3 mt-2 align-items-start")
+    const selectContainer = domCreation.createFormContainer("col-6 row align-items-center")
+    const selectData = data[0]
+    const selectLabel = domCreation.createFormLabel(selectData.heading, selectData.name+index, "col-4 weight-black text-dark fs-6 px-0")
+    
+    const select = domCreation.createFormSelect(selectData.name+index, "input__text--default col-7 rounded-2 py-1 weight-medium")
+    select.addEventListener("change", event => {
+      this.formData = this.formData.map(formData => formData.type==="multiple" ? {
+        ...formData,
+        fields: formData.fields.map(field => (
+          field[0].id===selectData.id?
+          field.map((innerField, innerFieldIdx) => (
+            innerFieldIdx===0? {
+              ...innerField,
+              content: event.target.value
+            } : innerField
+          )) 
+          : field
+        ))
+      } : formData)
+    })
+
+    const dates = ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    dates.forEach(day => {
+      const option = Object.assign(document.createElement("option"), {
+        value: day,
+        textContent: day
+      })
+      option.selected = day===selectData.content
+
+      select.append(option)
+    })
+
+    selectContainer.append(selectLabel, select)
+    const timeData = data[1]
+    const timeContainer = domCreation.createFormContainer("col-5 row align-items-center pe-0")
+    const timeLabel = domCreation.createFormLabel(timeData.heading, timeData.name+index, "weight-black col-2 text-dark fs-6 px-0")
+    const timeInput = domCreation.createFormInput(timeData.name+index, timeData.content, "text", "input__text--default fs-6 col-10 px-0 weight-medium px-2")
+    timeInput.addEventListener("change", event => {
+      this.formData = this.formData.map(formData => formData.type==="multiple" ? {
+        ...formData,
+        fields: formData.fields.map(field => (
+          field[1].id===timeData.id?
+          field.map((innerField, innerFieldIdx) => (
+            innerFieldIdx===1? {
+              ...innerField,
+              content: event.target.value
+            } : innerField
+          )) 
+          : field
+        ))
+      } : formData)
+    })
+    timeContainer.append(timeLabel, timeInput)
+
+    const removeContainer = domCreation.createFormContainer("col-1 px-0")
+    
+    const removeButton = domCreation.createFormButton("bg-transparent rounded-circle d-block ms-auto")
+    removeButton.innerHTML = `
+    <span class="sr-only">Remove date</span>
+    <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
+    `
+    removeButton.addEventListener("click", () => {
+      this.formData = this.formData.map(formData => formData.type==="multiple"? {
+        ...formData,
+        fields: formData.fields.filter(field => field[0].id!==selectData.id)
+      } : formData)
+
+      this.emptyScheduleForm()
+      this.renderScheduleForm()
+    })
+
+    removeContainer.append(removeButton)
+    fieldContainer.append(selectContainer, timeContainer, removeContainer)
+
+    return fieldContainer
+  }
+
+  renderScheduleForm () {
+    this.formData.forEach((data, index) => {
+      if ( data.type==="multiple" ) {
+        data.fields.forEach((field, fieldIndex) => {
+          const dateRow = this.createScheduleRow(field, fieldIndex)
+          this.formInner.append(dateRow)
+        })
+
+        const addRowContainer = domCreation.createFormContainer("d-flex my-3 mx-4 ps-2")
+    
+        const addRowButton = Object.assign(document.createElement("button"), {
+          type: "button",
+          classList: "form__button bg-primary text-white rounded-2 py-1 px-2",
+          textContent: "Add row"
+        })
+        addRowButton.addEventListener("click", () => {
+          this.formData = this.formData.map(formData => formData.type==="multiple"? {
+            ...formData,
+            fields: [
+              ...formData.fields,
+              [
+                {
+                  heading: "Select day",
+                  content: "",
+                  name: "schedDate",
+                  id: crypto.randomUUID(),
+                  type: "select"
+                },
+                {
+                  heading: "Time",
+                  content: "",
+                  name: "schedTime",
+                  id: crypto.randomUUID(),
+                  type: "select"      
+                }
+              ]
+            ]
+          } : formData)
+          this.emptyScheduleForm()
+          this.renderScheduleForm()
+        })
+
+        addRowContainer.append(addRowButton)
+        this.formInner.append(addRowContainer)
+      } else {
+        const hoursContainer = domCreation.createFormContainer("row align-items-center px-4 mt-1 mx-2 me-4")
+        const hoursLabel = domCreation.createFormLabel(data.heading, data.name, "col-7 weight-black text-dark fs-6 px-0")
+        
+        const hoursSelect = domCreation.createFormSelect(data.name )
+        hoursSelect.addEventListener("change", event => {
+          this.formData = this.formData.map(formData => formData.name===data.name? {
+            ...formData,
+            content: event.target.value
+          } : formData)
+        })
+    
+        const optionsData = [
+          "Less than 5hrs",
+          "5-10hrs",
+          "10-20hrs",
+          "More than 20hrs"
+        ]
+    
+        optionsData.forEach(option => {
+          const optionDom = Object.assign(document.createElement("option"), {
+            value: option,
+            textContent: option
+          })
+          optionDom.selected = data.content===option
+    
+          hoursSelect.append(optionDom)
+        })
+    
+        hoursContainer.append(hoursLabel, hoursSelect)
+        this.formInner.append(hoursContainer)
+      }
+    })
+
+  }
+
+  emptyScheduleShowcase() {
+    this.tabsData.innerHTML = ""
+  }
+
+  renderScheduleShowcase() {
+    this.showcase.forEach(hoursData => this.tabsData.append(domCreation.createShowcaseField(`${hoursData.heading}:`, hoursData.content)))
+  }
+}
+
+const schedule = new Schedule()
 
 // Get paid tab selection
-const getPaid = {
-  data: [
-    {
-      bank: "Bank of America",
-      number: "12345678",
-      type: "Bank"
-    },
-    {
-      bank: "Wells Fargo",
-      number: "12345678",
-      type: "Card"
-    }
-  ],
-  formData: [],
-  tabsData: element("[data-target='tabsData4']"),
-  form: element("[data-target='getPaid']"),
-  inner: element("[data-target='getPaidInner']"),
-  addRowButton: element("[data-target='bankAddRow']")
-}
+class GetPaid {
+  data = [...getPaidShowcaseData]
+  showcase = [...getPaidShowcaseData]
+  formData = []
+  oldFormData = []
+  tabContent = element("[data-id='getPaidTabContent']")
+  tabsData = element("[data-target='tabsData4']")
+  form = element("[data-target='getPaid']")
+  formInner = element("[data-target='getPaidInner']")
+  inner = element("[data-target='getPaidInner']")
+  addRowButton = element("[data-target='bankAddRow']")
+  edit = element("[data-target='editGetPaid']")
+  cancel = element("[data-target='formCancelGetPaid']")
 
-const rerenderGetPaidFormInner = () => {
-  getPaid.inner.innerHTML = ""
-  
-  getPaid.formData.forEach((data, index) => getPaid.inner.append(createEditableGetPaidField(data, index)))
-}
+  constructor () {
+    this.edit.addEventListener("click", () =>{
+      tabInterface.tabsContents[3].classList.add("editable")
+      this.renderGetPaidForm()
+    })
+    
+    this.cancel.addEventListener("click", () => {
+      tabInterface.tabsContents[3].classList.remove("editable")
+      this.formData = [...this.data]
+    })
 
-const createEditableGetPaidField = (data, index) => {
-  const fieldContainer = Object.assign(document.createElement("div"), {
-    classList: "row px-5 mt-2 align-items-start",
-    innerHTML: `
-    <div class="col-4 px-0">
-      <label class="weight-black text-dark fs-6 px-0" for="bankName${ index} ">Bank name:</label>
-      <input class="input__text--default fs-6 px-0 weight-medium px-2" type="text" id="bankName${ index}" ${ data.bank? `value="${ data.bank }"` : "" } data-target="bankName${ index }">
-    </div>
-    <div class="col-4 px-0">
-      <label class="col-4 weight-black text-dark fs-6 px-0" for="bankNumber${ index }">Number:</label>
-      <input class="input__text--default fs-6 px-0 weight-medium px-2" type="password" id="bankNumber${ index }" ${ data.number? `value="${ data.number }"` : "" } data-target="bankNumber${ index }">
-    </div>
-    <div class="col-3 px-0">
-      <label class="col-4 weight-black text-dark fs-6 px-0" for="bankType${ index }">Type:</label>
-      <select class="input__text--default col-7 rounded-2 py-1 weight-medium d-block py-1 min-w-100" name="bankType${ index }" id="bankType${ index }" data-target="bankType${ index }">
-        <option value=""></option>
-        <option value="Bank" ${ data.type==="Bank"? "selected": "" }>Bank</option>
-        <option value="Card" ${ data.type==="Card"? "selected": "" }>Card</option>
-      </select>
-    </div>
-    <div class="col-1 px-0 mt-4">
-      <button class="bg-transparent rounded-circle d-block ms-auto" type="button" data-target="removeBankRow">
-        <span class="sr-only">Remove date</span>
-        <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
-      </button>
-    </div>
-    `
-  })
-  fieldContainer.dataset.target = "dateRow"
+    this.addRowButton.addEventListener("click", () => {
+      const newFormData = {
+        bank: "",
+        number: "",
+        type: ""
+      }
+      this.formData.push(newFormData)
+      this.renderGetPaidForm()
+    })
 
-  fieldContainer.querySelector(`[data-target=bankName${ index }]`).addEventListener("change", event => {
-    getPaid.formData[index].bank = event.target.value
-  })
+    this.form.addEventListener("submit", event => {
+      event.preventDefault()
+      this.tabsData.innerHTML = ""
+      tabInterface.tabsContents[event.target.dataset.index].classList.remove("editable")
+      
+      this.formData = this.formData.filter(data => data.bank && data.number && data.type)
+      this.data = [...this.formData]
+      this.renderGetPaidShowcase()
+    })
 
-  fieldContainer.querySelector(`[data-target=bankNumber${ index }]`).addEventListener("change", event => {
-    getPaid.formData[index].number = event.target.value
-  })
-
-  fieldContainer.querySelector(`[data-target=bankType${ index }]`).addEventListener("change", event => {
-    getPaid.formData[index].type = event.target.value
-  })
-
-  fieldContainer.querySelector("[data-target=removeBankRow]").addEventListener("click", () => {
-    getPaid.formData = getPaid.formData.filter((_, filterIndex) => filterIndex!==index)
-    rerenderGetPaidFormInner()
-  })
-
-  return fieldContainer
-}
-
-const createShowcaseGetPaidField = ( bank, number, type ) => {
-  const container = Object.assign(document.createElement("div"), {
-    classList: "row px-5 mt-2"
-  })
-  const bankHeading = Object.assign(document.createElement('h2'), {
-    classList: "weight-black text-dark fs-6 col-4 px-0",
-    textContent: bank
-  })
-  const numberParagraph = Object.assign(document.createElement("p"), {
-    classList: "col-4 fs-6 px-0 weight-medium",
-    textContent: "****" + number.slice(4)
-  })
-  const typeParagraph = Object.assign(document.createElement("p"), {
-    classList: "col-4 fs-6 px-0 weight-medium",
-    textContent: type
-  })
-  container.append(bankHeading, numberParagraph, typeParagraph)
-  
-  return container
-}
-
-// Copy defaultData to formData
-const copyGetPaidDataToFormData = () => {
-  getPaid.formData = [...getPaid.data]
-}
-
-copyGetPaidDataToFormData()
-
-getPaid.addRowButton.addEventListener("click", () => {
-  const newFormData = {
-    bank: "",
-    number: "",
-    type: ""
+    this.copyGetPaidDataToFormData()
+    this.renderGetPaidShowcase()
+    this.createDefaultGetPaidFormFields()
   }
-  getPaid.formData.push(newFormData)
-  rerenderGetPaidFormInner()
-})
 
-// Adds default dom
-const renderGetPaidShowcaseFields = () => {
-  getPaid.data.forEach(data => getPaid.tabsData.append(createShowcaseGetPaidField(`${data.bank}:`, data.number, data.type)))
-}
+  emptyGetPaidForm () {
+    this.formInner.innerHTML = ""
+  }
 
-renderGetPaidShowcaseFields()
+  emptyGetPaidShowcase () {
+    this.tabsData.innerHTML = ""
+  }
+  // todo 
+  renderGetPaidFormNew () {
+    this.emptyGetPaidForm()
 
-const defaultGetPaidConfiguration = () => {
-  getPaid.form.querySelector("[data-target='formCancel']").addEventListener("click", () => {
-    tabsContents[3].classList.remove("editable")
-    getPaid.formData = [...getPaid.data]
-  })
+    this.formData.forEach((formData, formDataIdx) => {
+      const [bankName, bankNumber, bankType] = formData 
+      const fieldsContainer = domCreation.createFormContainer("row px-5 mt-2 align-items-start")
+      const bankNameContainer = domCreation.createFormContainer("col-4 px-0")
+      const bankNameLabel = domCreation.createFormLabel(bankName.heading, bankName.name+formDataIdx, "weight-black text-dark fs-6 px-0")
+      const bankNameInput = domCreation.createFormInput(bankName.name+formDataIdx, bankName.content, "text", "input__text--default fs-6 px-0 weight-medium px-2")
+      bankNameInput.addEventListener("change", event => {
 
-  editFormButtons[3].addEventListener("click", () =>{
-    tabsContents[3].classList.add("editable")
-    rerenderGetPaidFormInner()
-  })
-}
+      })
 
-defaultGetPaidConfiguration()
+      bankNameContainer.append(bankNameLabel, bankNameInput)
 
-// Adds default schedule form dom
-const createDefaultGetPaidFormFields = () => {
-  getPaid.formData.forEach(( data, index ) => getPaid.inner.append(createEditableGetPaidField(data, index)))
-}
+      const bankNumberContainer = domCreation.createFormContainer("col-4 px-0")
+      const bankNumberLabel = domCreation.createFormLabel(bankNumber.heading, bankNumber.name+formDataIdx, "weight-black text-dark fs-6 px-0")
+      const bankNumberInput = domCreation.createFormInput(bankNumber.name+formDataIdx, bankNumber.content, "password", "input__text--default fs-6 px-0 weight-medium px-2")
+      bankNumberInput.addEventListener("change", event => {
+        
+      })
 
-createDefaultGetPaidFormFields()
+      bankNumberContainer.append(bankNumberLabel, bankNumberInput)
 
-getPaid.form.addEventListener("submit", event => {
-  event.preventDefault()
-  getPaid.tabsData.innerHTML = ""
-  tabsContents[event.target.dataset.index].classList.remove("editable")
+      const bankTypeContainer = domCreation.createFormContainer("col-4 px-0")
+      const bankTypeLabel = domCreation.createFormLabel(bankType.heading, bankType.name+formDataIdx, "weight-black text-dark fs-6 px-0")
+      const bankTypeSelect = domCreation.createFormSelect(bankType.name+formDataIdx, "input__text--default col-7 rounded-2 py-1 weight-medium d-block py-1 min-w-100")
+      bankTypeSelect.addEventListener("change", event => {
+        
+      })
+
+      bankTypeContainer.append(bankTypeLabel, bankTypeSelect)
+
+      this.formInner.append()
+    })
+  }
+
+  renderGetPaidShowcaseNew () {
+
+  }
+
+  renderGetPaidForm () {
+    this.emptyGetPaidForm()
+    
+    this.formData.forEach((data, index) => this.inner.append(this.createEditableGetPaidField(data, index)))
+  }
   
-  getPaid.formData = getPaid.formData.filter(data => data.bank && data.number && data.type)
-  getPaid.data = [...getPaid.formData]
-  renderGetPaidShowcaseFields()
-})
+  createEditableGetPaidField (data, index) {
+    const fieldContainer = Object.assign(document.createElement("div"), {
+      classList: "row px-5 mt-2 align-items-start",
+      innerHTML: `
+      <div class="col-4 px-0">
+        <label class="weight-black text-dark fs-6 px-0" for="bankName${ index} ">Bank name:</label>
+        <input class="input__text--default fs-6 px-0 weight-medium px-2" type="text" id="bankName${ index}" ${ data.bank? `value="${ data.bank }"` : "" } data-target="bankName${ index }">
+      </div>
+      <div class="col-4 px-0">
+        <label class="col-4 weight-black text-dark fs-6 px-0" for="bankNumber${ index }">Number:</label>
+        <input class="input__text--default fs-6 px-0 weight-medium px-2" type="password" id="bankNumber${ index }" ${ data.number? `value="${ data.number }"` : "" } data-target="bankNumber${ index }">
+      </div>
+      <div class="col-3 px-0">
+        <label class="col-4 weight-black text-dark fs-6 px-0" for="bankType${ index }">Type:</label>
+        <select class="input__text--default col-7 rounded-2 py-1 weight-medium d-block py-1 min-w-100" name="bankType${ index }" id="bankType${ index }" data-target="bankType${ index }">
+          <option value=""></option>
+          <option value="Bank" ${ data.type==="Bank"? "selected": "" }>Bank</option>
+          <option value="Card" ${ data.type==="Card"? "selected": "" }>Card</option>
+        </select>
+      </div>
+      <div class="col-1 px-0 mt-4">
+        <button class="bg-transparent rounded-circle d-block ms-auto" type="button" data-target="removeBankRow">
+          <span class="sr-only">Remove date</span>
+          <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
+        </button>
+      </div>
+      `
+    })
+    fieldContainer.dataset.target = "dateRow"
+  
+    fieldContainer.querySelector(`[data-target=bankName${ index }]`).addEventListener("change", event => {
+      this.formData[index].bank = event.target.value
+    })
+  
+    fieldContainer.querySelector(`[data-target=bankNumber${ index }]`).addEventListener("change", event => {
+      this.formData[index].number = event.target.value
+    })
+  
+    fieldContainer.querySelector(`[data-target=bankType${ index }]`).addEventListener("change", event => {
+      this.formData[index].type = event.target.value
+    })
+  
+    fieldContainer.querySelector("[data-target=removeBankRow]").addEventListener("click", () => {
+      this.formData = this.formData.filter((_, filterIndex) => filterIndex!==index)
+      this.renderGetPaidForm()
+    })
+  
+    return fieldContainer
+  }
+  
+  createShowcaseGetPaidField ( bank, number, type ) {
+    const container = Object.assign(document.createElement("div"), {
+      classList: "row px-5 mt-2"
+    })
+    const bankHeading = Object.assign(document.createElement('h2'), {
+      classList: "weight-black text-dark fs-6 col-4 px-0",
+      textContent: bank
+    })
+    const numberParagraph = Object.assign(document.createElement("p"), {
+      classList: "col-4 fs-6 px-0 weight-medium",
+      textContent: "****" + number.slice(4)
+    })
+    const typeParagraph = Object.assign(document.createElement("p"), {
+      classList: "col-4 fs-6 px-0 weight-medium",
+      textContent: type
+    })
+    container.append(bankHeading, numberParagraph, typeParagraph)
+    
+    return container
+  }
+
+  copyGetPaidDataToFormData () {
+    this.formData = [...this.data]
+  }
+
+  renderGetPaidShowcase () {
+    this.data.forEach(data => this.tabsData.append(this.createShowcaseGetPaidField(`${data.bank}:`, data.number, data.type)))
+  }
+
+  createDefaultGetPaidFormFields () {
+    this.formData.forEach(( data, index ) => this.inner.append(this.createEditableGetPaidField(data, index)))
+  }
+}
+
+const getPaid = new GetPaid()
