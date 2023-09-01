@@ -10,19 +10,19 @@ import {
   element,
   elements } from "../utilities.js"
 
-
+ 
 // Changing avatar
 class ProfileAvatar {
   profileAvatar = element("[data-target=profileAvatar]")
   constructor() {
 
-    this.profileAvatar.addEventListener("change", () => {
-      const oFReader = new FileReader();
-      oFReader.readAsDataURL(this.profileAvatar.files[0])
+  this.profileAvatar.addEventListener("change", () => {
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(this.profileAvatar.files[0])
     
-      oFReader.onload = oFREvent => {
-        const avatarPreview = element("[data-target='avatarPreview']")
-        avatarPreview.src = oFREvent.target.result
+    oFReader.onload = oFREvent => {
+      const avatarPreview = element("[data-target='avatarPreview']")
+      avatarPreview.src = oFREvent.target.result
       };
     })
   }
