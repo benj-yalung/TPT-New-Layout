@@ -1,0 +1,10 @@
+
+
+.tabs__choice {
+  background-color: #94aade;
+  color: #FFFFFF;
+}
+.tabs__choice[aria-selected="true"] {
+  background-color: #FFFFFF;
+  color: #000000;
+}
