@@ -15,19 +15,9 @@
   border-radius: 1rem;
 }
 
-.tabs__choice {
-  background-color: #94aade;
-  color: #FFFFFF;
-}
-
 .tabs__button-add {
   background-color: #718ed4;
   border-radius: 1rem;
-}
-
-.tabs__choice[aria-selected="true"] {
-  background-color: #FFFFFF;
-  color: #000000;
 }
 
 .tabs__form {

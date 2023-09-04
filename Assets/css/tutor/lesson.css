@@ -1,0 +1,29 @@
+
+
+.mylessons {
+  border-top: .25rem solid #FFFFFF;
+  padding: 1.5rem 2rem 2rem 4rem;
+}
+
+.lesson__table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.lesson__table_thead {
+  border-bottom: 1rem solid transparent;
+}
+
+.lesson__table-bodyrow {
+  border-bottom: .25rem solid transparent;
+}
+
+.tabcontent__trigger {
+  background-color: #94aade;
+  min-width: 124px;
+}
+
+.notes__edit_button {
+  background: none;
+  width: 1.25rem;
+}

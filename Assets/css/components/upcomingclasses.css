@@ -1,0 +1,97 @@
+
+
+.upcoming_lessons {
+  background-color: #f4f4f4;
+  border-radius: 0 0 1.5rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.upcoming_lessons::before {
+  content: "";
+  background-color: #f4f4f4;
+  height: 3rem;
+  inset: -2.5rem 0 auto 0;
+  position: absolute;
+  width: 100%;
+}
+
+.upcoming_lessons__heading {
+  font-size: 1.75rem;
+  max-width: 11rem;
+}
+
+.upcoming_lessons__list {
+  display: flex;
+}
+
+@media (min-width: 1000px) {
+  .upcoming_lessons {
+    background-color: transparent;
+    display: block;
+  }
+
+  .upcoming_lessons::before {
+    display: none;
+  }
+
+  .upcoming_lessons__heading {
+    font-size: 1.25rem;
+    max-width: none;
+  }
+
+  .upcoming_lessons__list {
+    display: block;
+  }
+}
+
+.upcoming_lesson {
+  color: #000000;
+  text-align: center;
+}
+
+.upcoming_lesson:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
+.upcoming_lesson__date {
+  background-color: #0f0345;
+  margin-bottom: 8px;
+}
+
+.upcoming_lesson__subject > p:first-of-type {
+  text-decoration: underline;
+}
+
+@media (min-width: 1000px) {
+  .upcoming_lesson {
+    background-color: #FFFFFF;
+    display: flex;
+    padding: 8px 24px;
+    text-align: revert;
+  }
+
+  .upcoming_lesson:not(:last-of-type) {
+    margin-right: 0;
+  }
+
+  .upcoming_lesson:first-of-type {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+
+  .upcoming_lesson__date {
+    background-color: #444;
+    margin-bottom: 0;
+    padding: 8px 24px;
+  }
+
+  .upcoming_lesson__subject {
+    margin-left: 16px;
+  }
+
+  .upcoming_lesson__subject > p:first-of-type {
+    text-decoration: none;
+  }
+}
