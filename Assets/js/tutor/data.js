@@ -735,18 +735,21 @@ export const getPaidFormData = [
   [
     {
       heading: "Bank name",
+      fieldKey: "bank",
       content: "Bank of america",
       name: "bankName",
       type: "text"
     },
     {
       heading: "Number",
+      fieldKey: "number",
       content: "12345678",
       name: "bankNumber",
       type: "password"
     },
     {
       heading: "Type",
+      fieldKey: "type",
       content: "Bank",
       name: "bankType",
       type: "select"
@@ -755,18 +758,21 @@ export const getPaidFormData = [
   [
     {
       heading: "Bank name",
-      content: "Bank of america",
+      fieldKey: "bank",
+      content: "Wells fargo",
       name: "bankName",
       type: "text"
     },
     {
       heading: "Number",
+      fieldKey: "number",
       content: "12345678",
       name: "bankNumber",
       type: "password"
     },
     {
       heading: "Type",
+      fieldKey: "type",
       content: "Bank",
       name: "bankType",
       type: "select"

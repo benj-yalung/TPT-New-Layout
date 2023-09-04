@@ -5,7 +5,8 @@ import {
   qualificationFormData, 
   scheduleShowcaseData, 
   getPaidShowcaseData,
-  scheduleFormData} from "./data.js"
+  scheduleFormData,
+  getPaidFormData} from "./data.js"
 import { 
   element,
   elements } from "../utilities.js"
@@ -814,53 +815,49 @@ const schedule = new Schedule()
 
 // Get paid tab selection
 class GetPaid {
-  data = [...getPaidShowcaseData]
   showcase = [...getPaidShowcaseData]
-  formData = []
-  oldFormData = []
+  formData = [...getPaidFormData]
+  oldFormData = [...getPaidFormData]
   tabContent = element("[data-id='getPaidTabContent']")
   tabsData = element("[data-target='tabsData4']")
   form = element("[data-target='getPaid']")
   formInner = element("[data-target='getPaidInner']")
-  inner = element("[data-target='getPaidInner']")
-  addRowButton = element("[data-target='bankAddRow']")
   edit = element("[data-target='editGetPaid']")
   cancel = element("[data-target='formCancelGetPaid']")
 
   constructor () {
     this.edit.addEventListener("click", () =>{
-      tabInterface.tabsContents[3].classList.add("editable")
+      this.tabContent.classList.add("editable")
+      this.emptyGetPaidForm()
       this.renderGetPaidForm()
     })
     
     this.cancel.addEventListener("click", () => {
-      tabInterface.tabsContents[3].classList.remove("editable")
-      this.formData = [...this.data]
-    })
-
-    this.addRowButton.addEventListener("click", () => {
-      const newFormData = {
-        bank: "",
-        number: "",
-        type: ""
-      }
-      this.formData.push(newFormData)
-      this.renderGetPaidForm()
+      this.tabContent.classList.remove("editable")
+      this.formData = [...this.oldFormData]
     })
 
     this.form.addEventListener("submit", event => {
       event.preventDefault()
-      this.tabsData.innerHTML = ""
-      tabInterface.tabsContents[event.target.dataset.index].classList.remove("editable")
-      
-      this.formData = this.formData.filter(data => data.bank && data.number && data.type)
-      this.data = [...this.formData]
+      this.sanitizeFormData()
+      this.emptyGetPaidShowcase()
+      this.showcase = this.formData.reduce((accu, curr) => {
+        return accu.concat(curr.reduce((innerAccu, innerCurr) => ({
+          ...innerAccu,
+          [innerCurr.fieldKey]: innerCurr.content
+        }), {}))
+      }, [])
+      this.oldFormData = [...this.formData]
+      this.tabContent.classList.remove("editable")
+      this.emptyGetPaidShowcase()
       this.renderGetPaidShowcase()
     })
 
-    this.copyGetPaidDataToFormData()
     this.renderGetPaidShowcase()
-    this.createDefaultGetPaidFormFields()
+  }
+
+  sanitizeFormData() {
+    this.formData = this.formData.filter(formData => formData.every(data => !!data.content))
   }
 
   emptyGetPaidForm () {
@@ -870,8 +867,8 @@ class GetPaid {
   emptyGetPaidShowcase () {
     this.tabsData.innerHTML = ""
   }
-  // todo 
-  renderGetPaidFormNew () {
+
+  renderGetPaidForm () {
     this.emptyGetPaidForm()
 
     this.formData.forEach((formData, formDataIdx) => {
@@ -881,7 +878,12 @@ class GetPaid {
       const bankNameLabel = domCreation.createFormLabel(bankName.heading, bankName.name+formDataIdx, "weight-black text-dark fs-6 px-0")
       const bankNameInput = domCreation.createFormInput(bankName.name+formDataIdx, bankName.content, "text", "input__text--default fs-6 px-0 weight-medium px-2")
       bankNameInput.addEventListener("change", event => {
-
+        this.formData = this.formData.map((data, dataIdx) => [
+          ...data.map((innerData, innerDataIdx) => innerDataIdx===0 && formDataIdx===dataIdx? {
+            ...innerData,
+            content: event.target.value
+          } : innerData )
+        ])
       })
 
       bankNameContainer.append(bankNameLabel, bankNameInput)
@@ -890,115 +892,110 @@ class GetPaid {
       const bankNumberLabel = domCreation.createFormLabel(bankNumber.heading, bankNumber.name+formDataIdx, "weight-black text-dark fs-6 px-0")
       const bankNumberInput = domCreation.createFormInput(bankNumber.name+formDataIdx, bankNumber.content, "password", "input__text--default fs-6 px-0 weight-medium px-2")
       bankNumberInput.addEventListener("change", event => {
-        
+        this.formData = this.formData.map((data, dataIdx) => [
+          ...data.map((innerData, innerDataIdx) => innerDataIdx===1 && formDataIdx===dataIdx? {
+            ...innerData,
+            content: event.target.value
+          } : innerData )
+        ])
       })
 
       bankNumberContainer.append(bankNumberLabel, bankNumberInput)
 
-      const bankTypeContainer = domCreation.createFormContainer("col-4 px-0")
+      const bankTypeContainer = domCreation.createFormContainer("col-3 px-0")
       const bankTypeLabel = domCreation.createFormLabel(bankType.heading, bankType.name+formDataIdx, "weight-black text-dark fs-6 px-0")
       const bankTypeSelect = domCreation.createFormSelect(bankType.name+formDataIdx, "input__text--default col-7 rounded-2 py-1 weight-medium d-block py-1 min-w-100")
+      const bankOptions = ["", "Bank", "Card"]
+      bankOptions.forEach(bankOption => {
+        const option = Object.assign(document.createElement("option"), {
+          value: bankOption,
+          textContent: bankOption
+        })
+        option.selected = bankOption===bankType.content
+        bankTypeSelect.append(option)
+      })
       bankTypeSelect.addEventListener("change", event => {
-        
+        this.formData = this.formData.map((data, dataIdx) => [
+          ...data.map((innerData, innerDataIdx) => innerDataIdx===2 && formDataIdx===dataIdx? {
+            ...innerData,
+            content: event.target.value
+          } : innerData )
+        ])
       })
 
       bankTypeContainer.append(bankTypeLabel, bankTypeSelect)
 
-      this.formInner.append()
-    })
-  }
-
-  renderGetPaidShowcaseNew () {
-
-  }
-
-  renderGetPaidForm () {
-    this.emptyGetPaidForm()
-    
-    this.formData.forEach((data, index) => this.inner.append(this.createEditableGetPaidField(data, index)))
-  }
-  
-  createEditableGetPaidField (data, index) {
-    const fieldContainer = Object.assign(document.createElement("div"), {
-      classList: "row px-5 mt-2 align-items-start",
-      innerHTML: `
-      <div class="col-4 px-0">
-        <label class="weight-black text-dark fs-6 px-0" for="bankName${ index} ">Bank name:</label>
-        <input class="input__text--default fs-6 px-0 weight-medium px-2" type="text" id="bankName${ index}" ${ data.bank? `value="${ data.bank }"` : "" } data-target="bankName${ index }">
-      </div>
-      <div class="col-4 px-0">
-        <label class="col-4 weight-black text-dark fs-6 px-0" for="bankNumber${ index }">Number:</label>
-        <input class="input__text--default fs-6 px-0 weight-medium px-2" type="password" id="bankNumber${ index }" ${ data.number? `value="${ data.number }"` : "" } data-target="bankNumber${ index }">
-      </div>
-      <div class="col-3 px-0">
-        <label class="col-4 weight-black text-dark fs-6 px-0" for="bankType${ index }">Type:</label>
-        <select class="input__text--default col-7 rounded-2 py-1 weight-medium d-block py-1 min-w-100" name="bankType${ index }" id="bankType${ index }" data-target="bankType${ index }">
-          <option value=""></option>
-          <option value="Bank" ${ data.type==="Bank"? "selected": "" }>Bank</option>
-          <option value="Card" ${ data.type==="Card"? "selected": "" }>Card</option>
-        </select>
-      </div>
-      <div class="col-1 px-0 mt-4">
-        <button class="bg-transparent rounded-circle d-block ms-auto" type="button" data-target="removeBankRow">
-          <span class="sr-only">Remove date</span>
-          <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
-        </button>
-      </div>
+      const removeContainer = domCreation.createFormContainer("col-1 px-0 mt-4")
+      const removeButton = domCreation.createFormButton("bg-transparent rounded-circle d-block ms-auto")
+      removeButton.innerHTML = `
+      <span class="sr-only">Remove row</span>
+      <svg fill="#ff3838" aria-hidden="true" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 27.965 27.965" xml:space="preserve" stroke="#ff3838"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g id="c142_x"> <path d="M13.98,0C6.259,0,0,6.261,0,13.983c0,7.721,6.259,13.982,13.98,13.982c7.725,0,13.985-6.262,13.985-13.982 C27.965,6.261,21.705,0,13.98,0z M19.992,17.769l-2.227,2.224c0,0-3.523-3.78-3.786-3.78c-0.259,0-3.783,3.78-3.783,3.78 l-2.228-2.224c0,0,3.784-3.472,3.784-3.781c0-0.314-3.784-3.787-3.784-3.787l2.228-2.229c0,0,3.553,3.782,3.783,3.782 c0.232,0,3.786-3.782,3.786-3.782l2.227,2.229c0,0-3.785,3.523-3.785,3.787C16.207,14.239,19.992,17.769,19.992,17.769z"></path> </g> <g id="Capa_1_104_"> </g> </g> </g></svg>
       `
+      removeButton.addEventListener("click", () =>{
+        this.formData = this.formData.filter((data, dataIdx) => formDataIdx!==dataIdx)
+        this.emptyGetPaidForm()
+        this.renderGetPaidForm()
+      })
+
+      removeContainer.append(removeButton)
+
+      fieldsContainer.append(bankNameContainer, bankNumberContainer, bankTypeContainer, removeContainer)
+
+      this.formInner.append(fieldsContainer)
     })
-    fieldContainer.dataset.target = "dateRow"
-  
-    fieldContainer.querySelector(`[data-target=bankName${ index }]`).addEventListener("change", event => {
-      this.formData[index].bank = event.target.value
-    })
-  
-    fieldContainer.querySelector(`[data-target=bankNumber${ index }]`).addEventListener("change", event => {
-      this.formData[index].number = event.target.value
-    })
-  
-    fieldContainer.querySelector(`[data-target=bankType${ index }]`).addEventListener("change", event => {
-      this.formData[index].type = event.target.value
-    })
-  
-    fieldContainer.querySelector("[data-target=removeBankRow]").addEventListener("click", () => {
-      this.formData = this.formData.filter((_, filterIndex) => filterIndex!==index)
+
+    const addBankContainer = domCreation.createFormContainer("px-3 ms-3 mt-3 align-items-start")
+    const addBankButton = domCreation.createFormButton("form__button bg-primary text-white rounded-2 p-2 me-2", "Add Bank")
+    addBankButton.addEventListener("click", () =>{
+      this.formData = this.formData.concat([[
+        {
+          heading: "Bank name",
+          fieldKey: "bank",
+          content: "",
+          name: "bankName",
+          type: "text"
+        },
+        {
+          heading: "Number",
+          fieldKey: "number",
+          content: "",
+          name: "bankNumber",
+          type: "password"
+        },
+        {
+          heading: "Type",
+          fieldKey: "type",
+          content: "",
+          name: "bankType",
+          type: "select"
+        }
+      ]])
+      this.emptyGetPaidForm()
       this.renderGetPaidForm()
     })
-  
-    return fieldContainer
-  }
-  
-  createShowcaseGetPaidField ( bank, number, type ) {
-    const container = Object.assign(document.createElement("div"), {
-      classList: "row px-5 mt-2"
-    })
-    const bankHeading = Object.assign(document.createElement('h2'), {
-      classList: "weight-black text-dark fs-6 col-4 px-0",
-      textContent: bank
-    })
-    const numberParagraph = Object.assign(document.createElement("p"), {
-      classList: "col-4 fs-6 px-0 weight-medium",
-      textContent: "****" + number.slice(4)
-    })
-    const typeParagraph = Object.assign(document.createElement("p"), {
-      classList: "col-4 fs-6 px-0 weight-medium",
-      textContent: type
-    })
-    container.append(bankHeading, numberParagraph, typeParagraph)
-    
-    return container
-  }
+    addBankContainer.append(addBankButton)
 
-  copyGetPaidDataToFormData () {
-    this.formData = [...this.data]
+    this.formInner.append(addBankContainer)
   }
 
   renderGetPaidShowcase () {
-    this.data.forEach(data => this.tabsData.append(this.createShowcaseGetPaidField(`${data.bank}:`, data.number, data.type)))
-  }
-
-  createDefaultGetPaidFormFields () {
-    this.formData.forEach(( data, index ) => this.inner.append(this.createEditableGetPaidField(data, index)))
+    this.showcase.forEach(data => {
+      const fieldContainer = domCreation.createFormContainer("row px-5 mt-2")
+      const heading = Object.assign(document.createElement("h2"), {
+        classList: "weight-black text-dark fs-6 col-4 px-0",
+        textContent: data.bank
+      })
+      const numberParagraph = Object.assign(document.createElement("p"), {
+        classList: "col-4 fs-6 px-0 weight-medium",
+        textContent: "****" + data.number.slice(3)
+      })
+      const typeParagraph = Object.assign(document.createElement("p"), {
+        classList: "col-4 fs-6 px-0 weight-medium",
+        textContent: data.type
+      })
+      fieldContainer.append(heading, numberParagraph, typeParagraph)
+      this.tabsData.append(fieldContainer)
+    })
   }
 }
 
