@@ -1,0 +1,36 @@
+
+
+.newtask {
+  border-top: .25rem solid #FFFFFF;
+  padding: 1.5rem 2rem 2rem 4rem;
+}
+
+.taskform__select:required:invalid {
+  color: #eaeaea;
+}
+
+.taskform__select option[value=""][disabled] {
+  display: none;
+}
+
+.taskform__select option {
+  color: #000000;
+}
+
+.taskform__input::placeholder {
+  color: #eaeaea;
+}
+
+.taskform__search {
+  background: url("../../../svg/search-gray.svg") no-repeat 95% center;
+}
+
+.taskform__description {
+  resize: none;
+}
+
+.taskform__submit {
+  background-color: #94aade;
+  min-width: 124px;
+  text-align: center;
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+  <g id="taskCreateCircle" transform="translate(-477 -267)">
+    <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(477 267)" fill="#fff" stroke="#d9d9d9" stroke-width="2">
+      <circle cx="18.5" cy="18.5" r="18.5" stroke="none"/>
+      <circle cx="18.5" cy="18.5" r="17.5" fill="none"/>
+    </g>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="13.75" cy="13.75" r="13.75" transform="translate(482 272)" fill="#d9d9d9"/>
+  </g>
+</svg>
