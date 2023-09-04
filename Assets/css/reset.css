@@ -13,6 +13,10 @@ html {
   padding: 0;
 }
 
+* {
+  line-height: initial;
+}
+
 ul {
   list-style: none;
   margin: 0;

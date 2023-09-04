@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="410" height="376" viewBox="0 0 410 376">
+  <g id="infobar-bg" transform="translate(-1893 -547)" opacity="0.2">
+    <g id="Group_1" data-name="Group 1">
+      <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1963 783)" fill="none" stroke="#fff" stroke-width="12" opacity="0.25">
+        <circle cx="70" cy="70" r="70" stroke="none"/>
+        <circle cx="70" cy="70" r="64" fill="none"/>
+      </g>
+      <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(2093 783)" fill="none" stroke="#fff" stroke-width="12" opacity="0.25">
+        <circle cx="70" cy="70" r="70" stroke="none"/>
+        <circle cx="70" cy="70" r="64" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_4" data-name="Group 4" transform="translate(28 -236)">
+      <g id="Ellipse_1-2" data-name="Ellipse 1" transform="translate(1963 783)" fill="none" stroke="#fff" stroke-width="12" opacity="0.25">
+        <circle cx="70" cy="70" r="70" stroke="none"/>
+        <circle cx="70" cy="70" r="64" fill="none"/>
+      </g>
+      <g id="Ellipse_2-2" data-name="Ellipse 2" transform="translate(2093 783)" fill="none" stroke="#fff" stroke-width="12" opacity="0.25">
+        <circle cx="70" cy="70" r="70" stroke="none"/>
+        <circle cx="70" cy="70" r="64" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_2" data-name="Group 2" transform="translate(3086 -1353) rotate(90)">
+      <g id="Ellipse_1-3" data-name="Ellipse 1" transform="translate(1963 783)" fill="none" stroke="#fff" stroke-width="12" opacity="0.25">
+        <circle cx="70" cy="70" r="70" stroke="none"/>
+        <circle cx="70" cy="70" r="64" fill="none"/>
+      </g>
+      <g id="Ellipse_2-3" data-name="Ellipse 2" transform="translate(2093 783)" fill="none" stroke="#fff" stroke-width="12" opacity="0.25">
+        <circle cx="70" cy="70" r="70" stroke="none"/>
+        <circle cx="70" cy="70" r="64" fill="none"/>
+      </g>
+    </g>
+    <g id="Group_3" data-name="Group 3" transform="translate(2816 -1373) rotate(90)">
+      <g id="Ellipse_1-4" data-name="Ellipse 1" transform="translate(1963 783)" fill="none" stroke="#fff" stroke-width="12" opacity="0.25">
+        <circle cx="70" cy="70" r="70" stroke="none"/>
+        <circle cx="70" cy="70" r="64" fill="none"/>
+      </g>
+      <g id="Ellipse_2-4" data-name="Ellipse 2" transform="translate(2093 783)" fill="none" stroke="#fff" stroke-width="12" opacity="0.25">
+        <circle cx="70" cy="70" r="70" stroke="none"/>
+        <circle cx="70" cy="70" r="64" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

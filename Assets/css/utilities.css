@@ -36,8 +36,40 @@
   display: none;
 }
 
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-15 {
+  font-size: 15px;
+}
+
+.fs-17 {
+  font-size: 17px;
+}
+
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-s-black {
+  font-weight: 800;
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
 .min-w-100 {
   min-width: 100%;
+}
+
+.bg__main--gray {
+  background-color: #F7F9FA;
+}
+
+.bg__main-desktop--gray {
+	background-color: #FFFFFF;
 }
 
 @media (min-width: 1000px) {
@@ -47,5 +79,9 @@
 
   .cursor__desktop {
     cursor: pointer;
+  }
+
+  .bg__main-desktop--gray {
+    background-color: #F7F9FA;
   }
 }

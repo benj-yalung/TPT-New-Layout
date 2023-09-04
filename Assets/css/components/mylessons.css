@@ -1,0 +1,60 @@
+
+
+.mylessons {
+  display: none;
+}
+
+.mylessons__item {
+  align-items: center;
+  background-color: #92ADEF;
+  display: flex;
+}
+
+.mylessons__item.with-bg {
+  background: url("../../svg/Bulk/mylessons__item-bg.svg") no-repeat -130px -70px ;
+  background-color: #92ADEF;
+}
+
+.mylessons__avatar {
+  height: 5.5rem;
+  object-fit: cover;
+  width: 5.5rem;
+}
+
+.mylessons__control {
+  background-color: #FFFFFF;
+  color: #000000;
+  height: 2rem;
+  width: 2rem;
+}
+
+.mylessons__control:first-of-type {
+  transform: rotate(180deg);
+}
+
+.mylessons__text-container {
+  max-width: 250px;
+  text-align: center;
+}
+
+.mylessons__start-button {
+  background-color: #5e7dfb;
+}
+
+@media (min-width: 520px) {
+  .mylessons__text-container {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768) {
+  .mylessons {
+    display: block;
+  }
+}
+
+@media (min-width: 1000px) {
+  .mylessons__container {
+    border-top: .25rem solid #FFFFFF;
+  }
+}
