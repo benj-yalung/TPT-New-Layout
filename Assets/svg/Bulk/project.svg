@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100.09" viewBox="0 0 100 100.09">
+  <g id="project" transform="translate(-0.545 -0.545)">
+    <path id="Path_1" data-name="Path 1" d="M.545,6.275H79.18V49.186l5.941,0a15.725,15.725,0,0,1,0,31.4l-.166,0H.545Zm73,5.633H6.178V74.959H84.866a10.093,10.093,0,0,0,0-20.141H73.547Z" transform="translate(0 20.043)" fill="#9f4bf8"/>
+    <path id="Path_2" data-name="Path 2" d="M16.775.545H28.212A15.725,15.725,0,0,1,43.773,16.216v68.6l-5.632.02a9.942,9.942,0,0,0-2.948-7.02,10.086,10.086,0,0,0-7.028-2.959H16.775ZM28.166,6.178H22.408V69.229h5.807a15.674,15.674,0,0,1,9.926,3.662V16.225A10.132,10.132,0,0,0,28.166,6.178Z" transform="translate(56.772)" fill="#9f4bf8"/>
+    <path id="Path_3" data-name="Path 3" d="M45.819,51.544H4.365V10.09H10V45.911H45.819Z" transform="translate(13.362 31.909)" fill="#9f4bf8"/>
+    <path id="Line_1" data-name="Line 1" d="M8.591,4.678H0V-.955H8.591Z" transform="translate(20.544 48.729)" fill="#9f4bf8"/>
+    <path id="Line_2" data-name="Line 2" d="M8.591,4.678H0V-.955H8.591Z" transform="translate(20.544 61.593)" fill="#9f4bf8"/>
+    <path id="Line_3" data-name="Line 3" d="M4.678,8.591H-.955V0H4.678Z" transform="translate(35.865 72.045)" fill="#9f4bf8"/>
+    <path id="Line_4" data-name="Line 4" d="M4.678,8.591H-.955V0H4.678Z" transform="translate(48.729 72.045)" fill="#9f4bf8"/>
+  </g>
+</svg>

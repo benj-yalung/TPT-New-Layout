@@ -1,0 +1,77 @@
+
+
+.infobar {
+  align-items: center;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.infobar__avatar {
+  height: 100vh;
+  max-height: clamp(100px, 30vw, 146px);
+  margin-right: clamp(1rem, 3.5vw, 3rem);
+  max-width: clamp(100px, 30vw, 146px);
+  object-fit: cover;
+} 
+
+.infobar__block {
+  color: #000000;
+  text-align: left;
+}
+
+.infobar__courses {
+  display: flex;
+}
+
+.infobar__course {
+  background-color: #0F0346;
+  border-radius: 1rem;
+  flex-basis: 45%;
+  padding: 0 clamp(12px, 3.5vw, 24px);
+}
+
+.infobar__course p {
+  font-size: 14px;
+}
+
+@media (min-width: 1000px) {
+  .infobar {
+    background: url("../../svg/infobar-bg.svg") no-repeat center center;
+    background-color: #0F0346;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem 3.5rem 2rem; 
+  }
+
+  .infobar__avatar {
+    margin: 0;
+    max-height: 7rem;
+    max-width: 7rem;
+  }
+
+  .infobar__block  {
+    text-align: center;
+  }
+
+  .infobar__block h3 {
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+  .infobar__block p {
+    color: #a8a8a8;
+  }
+  
+  .infobar__course {
+    background-color: #877bc0;
+    padding: 0 .25rem;
+  }
+
+  .infobar__course p {
+    color: #FFFFFF;
+    font-size: 12px;
+    min-width: max-content;
+  }
+}

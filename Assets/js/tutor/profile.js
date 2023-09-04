@@ -799,7 +799,6 @@ class Schedule {
         this.formInner.append(hoursContainer)
       }
     })
-
   }
 
   emptyScheduleShowcase() {

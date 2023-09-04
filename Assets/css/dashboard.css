@@ -1,4 +1,8 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url(../fonts/stylesheet.css);
+    html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%}
 body {
     margin: 0;
 }
@@ -454,85 +458,8 @@ ol, ul {
     display: block;
 }
 
-@font-face {
-    font-family: "demo";
-    font-display: swap;
-    src: url(../fonts/demo.woff) format("woff"), url(../fonts/demo.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Inter-Black";
-    font-display: swap;
-    src: url(../fonts/Inter-Black.woff) format("woff"), url(../fonts/Inter-Black.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Inter-ExtraBold";
-    font-display: swap;
-    src: url(../fonts/Inter-ExtraBold.woff) format("woff"), url(../fonts/Inter-ExtraBold.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Inter-Bold";
-    font-display: swap;
-    src: url(../fonts/Inter-Bold.woff) format("woff"), url(../fonts/Inter-Bold.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Inter-Light";
-    font-display: swap;
-    src: url(../fonts/Inter-Light.woff) format("woff"), url(../fonts/Inter-Light.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Inter-ExtraLight";
-    font-display: swap;
-    src: url(../fonts/Inter-ExtraLight.woff) format("woff"), url(../fonts/Inter-ExtraLight.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Inter-Regular";
-    font-display: swap;
-    src: url(../fonts/Inter-Regular.woff) format("woff"), url(../fonts/Inter-Regular.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Inter-Medium";
-    font-display: swap;
-    src: url(../fonts/Inter-Medium.woff) format("woff"), url(../fonts/Inter-Medium.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Inter-SemiBold";
-    font-display: swap;
-    src: url(../fonts/Inter-SemiBold.woff) format("woff"), url(../fonts/Inter-SemiBold.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "stylesheet";
-    font-display: swap;
-    src: url(../fonts/stylesheet.woff) format("woff"), url(../fonts/stylesheet.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Inter-Thin";
-    font-display: swap;
-    src: url(../fonts/Inter-Thin.woff) format("woff"), url(../fonts/Inter-Thin.woff2) format("woff2");
-    font-weight: 400;
-    font-style: normal;
-}
 .icon {
-    display: grid;
+    display: inline-block;
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -574,7 +501,7 @@ ol, ul {
     background-image: url(../img/svg/Bulk/Paper-white.svg);
 }
 .message {
-    background-image: url(../svg/Message-white.svg);
+    background-image: url(../svg/Bulk/Message-gray.svg);
 }
 .category, .edit, .user-3 {
     background-image: url(../img/svg/Bulk/Edit-white.svg);
@@ -606,7 +533,7 @@ ol, ul {
     height: 40px;
 }
 .notification {
-    background-image: url(../svg/Notification-gray.svg);
+    background-image: url(../svg/Bulk/Notification-gray.svg);
     width: 18px;
     height: 18px;
 }
@@ -649,7 +576,7 @@ ol, ul {
     background-image: url(../img/svg/Bulk/Delete.svg);
 }
 .search-wrapper svg {
-    stroke: #d6d7e3;
+    stroke: #838383;
     position: absolute;
     right: 16px;
     top: 50%;
@@ -700,12 +627,6 @@ ol, ul {
 .library-table-name span.danger {
     background-color: #f26464;
 }
-.sched-size{
-    font-size: 22px;
-}
-.sched-size-2{
-    font-size: 10px;
-}
 .library-table-name span.warning {
     background-color: #ffb648;
 }
@@ -722,8 +643,7 @@ ol, ul {
     stroke-width: 1px;
 }
 h1, h2, h3 {
-    letter-spacing: 1px;
-     
+    color: #171717;
 }
 .h-1 {
     font-size: 64px;
@@ -749,6 +669,7 @@ button {
     -webkit-transition: .3s all;
     -o-transition: .3s all;
     transition: .3s all;
+    border: 2px solid transparent;
 }
 .transparent-btn:focus, button:focus {
     outline: 0;
@@ -1081,12 +1002,12 @@ button.disabled:focus {
     color: #4bde97;
     background-color: rgba(75, 222, 151, .1);
 }
-input {
+/* input {
     border-radius: 6px;
     background-color: #eff0f6;
     min-height: 40px;
     border: solid transparent 2px!important;
-}
+} */
 input[type=checkbox], input[type=radio] {
     min-height: auto;
 }
@@ -1241,6 +1162,7 @@ label {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1475,19 +1397,13 @@ label {
     -ms-flex-align: center;
     align-items: center;
 }
-
+.main-nav-end>* {
+    margin-right: 15px;
+}
 .main-nav-end svg {
     fill: rgb(112, 112, 112);
 }
 
-.main-nav-end button {
-    background-color: #FFFFFF;
-    border-radius: 50%;
-}
-
-.main-nav-end>* {
-    margin-right: 15px;
-}
 .footer-end li:last-child, .main-btns-wrapper button:last-child, .main-nav-end>:last-child, .sort-bar .select-wrapper:last-child .select {
     margin-right: 0;
 }
@@ -1603,10 +1519,6 @@ label {
 .main-nav .nav-user-wrapper .users-item-dropdown a.danger {
     color: #f26464;
 }
-.schedule-item.schedule-item-1-2{
-    background-color: #111;
-    color: #FFFFFF;
-    }
 .main-nav .nav-user-img {
     border-radius: 50%;
     -webkit-box-pack: center;
@@ -1623,7 +1535,7 @@ label {
     align-items: flex-end;
 }
 .search-wrapper input {
-  width: 350px;
+  width: 450px;
   border-radius: 50px;
   background-color: #fff;
   padding: 3px 20px;
@@ -2938,5 +2850,181 @@ label {
     /* DASHBOARD */
     .sidebar{
         min-width: 180px;
+    }
+}
+
+/** Dashboad Responsive **/
+
+@media only screen and (max-width: 600px){
+  .progress-container .progress-items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .progress-container .progress-items > .progress__col {
+        width: 100%;
+        text-align: center;
+    }
+    .progress-items .progress__col.col3 {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .progress-items .completion-info {
+        width: 100%;
+    }
+    .tutor-ad.tutor__ad--items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* New Css, top CSS should be refactored!!! 1-2962 */
+/* BEM should be used */
+
+/* .dashboard .mylessons__container {
+    padding: 1.5rem 2rem 2rem 4rem;
+}
+
+.dashboard .searchbar {
+    padding: 20px 2rem 20px 4rem;
+}
+
+.upcoming_lessons {
+  background-color: #f4f4f4;
+  border-radius: 0 0 1.5rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.upcoming_lessons::before {
+  content: "";
+  background-color: #f4f4f4;
+  height: 3rem;
+  inset: -2.5rem 0 auto 0;
+  position: absolute;
+  width: 100%;
+}
+
+.upcoming_lessons__heading {
+  font-size: 1.75rem;
+  max-width: 11rem;
+}
+
+.upcoming_lessons__list {
+  display: flex;
+}
+
+@media (min-width: 1000px) {
+  .upcoming_lessons {
+    background-color: transparent;
+    display: block;
+  }
+
+  .upcoming_lessons::before {
+    display: none;
+  }
+
+  .upcoming_lessons__heading {
+    font-size: 1.25rem;
+    max-width: none;
+  }
+  
+  .upcoming_lessons__list {
+    display: block;
+  }
+}
+
+.upcoming_lesson {
+  color: #000000;
+  text-align: center;
+}
+
+.upcoming_lesson:not(:last-of-type) {
+  margin-right: 2rem;
+}
+
+.upcoming_lesson__date {
+  background-color: #0f0345;
+  margin-bottom: 8px;
+}
+
+.upcoming_lesson__subject > p:first-of-type {
+  text-decoration: underline;
+}
+
+@media (min-width: 1000px) {
+  .upcoming_lesson {
+    background-color: #FFFFFF;
+    display: flex;
+    padding: 8px 24px;
+    text-align: revert;
+  }
+
+  .upcoming_lesson:not(:last-of-type) {
+    margin-right: 0;
+  }
+
+  .upcoming_lesson:first-of-type {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+
+  .upcoming_lesson__date {
+    background-color: #444;
+    margin-bottom: 0;
+    padding: 8px 24px;
+  }
+
+  .upcoming_lesson__subject {
+    margin-left: 16px;
+  }
+
+  .upcoming_lesson__subject > p:first-of-type {
+    text-decoration: none;
+  }
+} */
+
+.courses-ad {
+    align-items: center;
+    background-color: #9f4bf8;
+    display: flex;   
+    color: #FFFFFF;
+    padding: clamp(1rem, 1.5vw, 1.5rem) 2rem clamp(1rem, 1.5vw, 1.5rem) 2rem;
+}
+
+.courses-ad__circle {
+    margin-right: clamp(1rem, 4vw, 3rem);
+}
+
+.courses-ad__circle > span {
+    font-size: 3rem;
+}
+
+.courses-add__heading {
+    font-size: clamp(1.25rem, 1vw, 1.5rem);
+    max-width: 200px;
+}
+
+.courses-ad__button {
+    background-color: #FFFFFF;
+    border-radius: clamp(.5rem, 1vw, 1rem);
+    padding: .5rem 1rem;
+    white-space: nowrap;
+}
+
+@media (min-width: 1000px) {
+    .courses-ad {
+        background-color: #92adef;
+        border-radius: 1rem;
+    }
+
+    .courses-ad__button {
+        background-color: #292567;
+        color: #FFFFFF;
+        text-transform: uppercase;
     }
 }
