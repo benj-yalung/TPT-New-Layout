@@ -21,6 +21,8 @@
 .tabcontent__trigger {
   background-color: #94aade;
   min-width: 124px;
+  max-width: max-content;
+  text-align: center;
 }
 
 .notes__edit_button {

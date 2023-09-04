@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38.496" height="37.576" viewBox="0 0 38.496 37.576">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_5" data-name="Path 5" d="M2.406,0H36.09A2.288,2.288,0,0,1,38.5,2.147V35.429a2.288,2.288,0,0,1-2.406,2.147H2.406A2.288,2.288,0,0,1,0,35.429V2.147A2.288,2.288,0,0,1,2.406,0Z" transform="translate(446 270)" fill="none" stroke="#d9d9d9" stroke-width="2"/>
+    </clipPath>
+  </defs>
+  <g id="taskCreateCapitalise" transform="translate(-446 -270)" clip-path="url(#clip-path)">
+    <text id="A" transform="translate(449.609 304.641)" fill="#d9d9d9" font-size="43" font-family="BookAntiqua, Book Antiqua"><tspan x="0" y="0">A</tspan></text>
+  </g>
+</svg>
