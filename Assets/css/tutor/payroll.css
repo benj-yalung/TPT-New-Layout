@@ -1,0 +1,45 @@
+
+
+.filters {
+
+}
+
+.table {
+  border-collapse: collapse; 
+  border-spacing: 0;
+}
+
+.table__head th:first-of-type {
+  border-radius: 1.25rem 0 0;
+  padding-left: 4rem;
+  width: 280px;
+}
+
+.table__head th:nth-of-type(2) {
+  width: 64px;
+}
+
+.table__head th:last-of-type {
+  border-radius: 0 1.25rem 0 0;
+}
+
+.table__body td {
+  border: none;
+}
+
+.table__body td:first-of-type {
+  padding-left: 4rem;
+}
+
+.table__body tr:nth-last-of-type(odd) {
+  border-top: 4px solid #f7f9fa;
+}
+
+.table__body tr:nth-last-of-type(odd) td{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.table__body tr:last-of-type td {
+  padding-bottom: 2rem;
+}
