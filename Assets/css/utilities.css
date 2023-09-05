@@ -72,6 +72,14 @@
 	background-color: #FFFFFF;
 }
 
+.bg__button--lightblue {
+  background-color: #8da4dc;
+}
+
+.resize-none {
+  resize: none;
+}
+
 @media (min-width: 1000px) {
   .flex__desktop {
     display: flex;
