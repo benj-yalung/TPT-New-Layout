@@ -1,0 +1,62 @@
+
+
+.mytasks {
+  padding: 1.5rem 2rem 2rem 4rem;
+}
+
+.mytasks__inner {
+  background: url(../../svg/Bulk/mylessons__item-bg.svg) no-repeat -130px -70px;
+  background-color: #92ADEF;
+}
+
+.tabs__choice {
+  background: none;
+  color: #d7d7d9;
+}
+
+.tabs__choice[aria-selected="true"] {
+  background: none;
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.mytutors {
+  border-top: 4px solid #FFFFFF;
+  padding: 1.5rem 2rem 2rem 4rem;
+}
+
+.tutor {
+  background-color: #FFFFFF;
+}
+
+.tutor:first-of-type {
+  background: url(../../svg/Bulk/tutor-single-bg.svg) no-repeat -140px 40%;
+  background-color: #0f0346;
+  color: #FFFFFF;
+}
+
+.tutor__avatar {
+  height: 5rem;
+  object-fit: cover;
+  width: 5rem;
+}
+
+.tutor__schedule span:first-of-type {
+  background-color: #877bc0;
+}
+
+.tutor__schedule span:last-of-type {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.findtutors {
+  background: url(../../svg/Bulk/mylessons__item-bg.svg) no-repeat -130px -70px;
+  background-color: #92adef;
+}
+
+.findtutors__search {
+  background-color: #292567;
+  border-radius: .75rem;
+  padding: 0 2.5rem;
+}
