@@ -1,0 +1,76 @@
+
+
+.questions {
+  max-width: 400px;
+}
+
+.questions__search {
+  background: url("../../svg/search-gray.svg") no-repeat 90% center;
+  border: 1px solid rgb(214, 214, 214);
+  max-width: 300px;
+}
+
+.questions__header {
+  backdrop-filter: blur(40px);
+  padding: 3rem 3rem 6rem 3rem;
+}
+
+.questions__help {
+  background: url("../../svg/infobar-bg.svg") no-repeat center center;
+  background-color: #0f0346;
+}
+
+.questions__contact {
+  max-width: max-content;
+}
+
+.questions__help a {
+  color: #0f0346;
+}
+
+.questions__radial span {
+  background-color: rgba(0, 255, 255, 0.2);
+  height: 6rem;
+  width: 6rem;
+}
+
+.questions__radial span:first-of-type {
+  inset: 64px auto auto 100px;
+}
+
+.questions__radial span:last-of-type {
+  background-color: rgba(255, 0, 212, 0.2);
+  inset: 80px auto auto 180px;
+}
+
+.question {
+  border-bottom: 2px solid rgb(214, 214, 214);;
+}
+
+.question.active {
+  border-bottom: none;
+}
+
+.question.active a{
+  background-color: #8da4dc;
+}
+
+.question.active svg {
+  stroke: #FFFFFF;
+}
+ 
+.tabs__choice[aria-selected=true] {
+  border-bottom: 5px solid #718ed4;
+}
+
+.tabs__contents {
+  border-top: 4px solid #ffffff;
+}
+
+.ticket {
+
+}
+
+.ticket__content {
+  line-height: 1.25;
+}
