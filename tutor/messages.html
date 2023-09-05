@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Messages | Talent Pro Tutor</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Custom -->
+    <link rel="stylesheet" href="../Assets/css/reset.css">
+    <link rel="stylesheet" href="../Assets/css/utilities.css">
+    <link rel="stylesheet" href="../Assets/css/style.css">
+    <link rel="stylesheet" href="../Assets/css/messages.css">
+    <!-- Components -->
+    <link rel="stylesheet" href="../Assets/css/header.css">
+    <link rel="stylesheet" href="../Assets/css/components/searchbar.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <!-- Google Font Link for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../Assets/img/logo-removebg-preview.png" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <!-- Custom scripts -->
+    <script src="../Assets/js/header.js" defer></script>
+    <script src="../Assets/js/tutor/messages.js" defer type="module"></script>
+  </head>
+
+  <body>
+    <div class="flex__desktop">
+      <header class="header w-100 flex-row-reverse align-items-center justify-content-between position-sticky" data-target="header">
+        <div></div>
+        <div class="header__logo">
+          <a href="./dashboard.html" title="Home">
+            <img src="../Assets/img/logo-removebg-preview.png" alt="Site Logo" width="100">
+          </a>
+        </div>
+        <nav class="d-block position-static">
+          <button class="navbar__hamburger bg-white rounded-circle" data-target="headerHamburger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="27.967" height="19.515" viewBox="0 0 27.967 19.515">
+              <path id="hamburger" d="M1374.485,69.048a1.768,1.768,0,0,1,0-3.536h24.471a1.768,1.768,0,0,1,0,3.536Zm0-7.988a1.769,1.769,0,0,1,0-3.537h24.471a1.769,1.769,0,0,1,0,3.537Zm0-7.989a1.769,1.769,0,0,1,0-3.537h24.471a1.769,1.769,0,0,1,0,3.537Z" transform="translate(-1372.738 -49.533)" fill="#9f4bf8"/>
+            </svg>          
+            <span class="sr-only"></span>
+          </button>
+          <div class="navbar__content w-100">
+            <div class="navbar__content-inner">
+              <div class="navbar__block">
+                <h3 class="navbar__heading fs-5 mb-4">Menu</h3>
+                <ul class="navlist p-0">
+                  <li class="mb-2">
+                    <a class="d-flex align-items-center navlink text-decoration-none" href="dashboard.html">
+                      <i class="icon fa fa-th-large" aria-hidden="true"></i>Dashboard
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="d-flex align-items-center navlink text-decoration-none" href="calendar.html">
+                      <i class="icon fa fa-calendar" aria-hidden="true"></i>Calendar
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="d-flex align-items-center navlink text-decoration-none" href="messages.html">
+                      <i class="icon fa fa-comment" aria-hidden="true"></i>Messages
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="d-flex align-items-center navlink text-decoration-none" href="profile.html">
+                      <i class="icon fa fa-user" aria-hidden="true"></i>Profile
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a class="d-flex align-items-center navlink text-decoration-none" href="help.html">
+                      <i class="icon fa fa-question" aria-hidden="true"></i>Help
+                    </a>
+                  </li>
+                  <li>
+                    <a class="d-flex align-items-center navlink text-decoration-none" href="payroll.html">
+                      <i class="icon fa fa-dollar" aria-hidden="true"></i>
+                      Payroll
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navbar__block">
+                <h3 class="navbar__heading fs-5 mb-4">Account</h3>
+                <ul class="navlist p-0">
+                  <li class="mb-2">
+                    <a class=" navlink text-decoration-none" href="settings.html">
+                      <i class="icon setting fa fa-wrench" aria-hidden="true"></i>Settings
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <main class="w-100">
+      <!-- Searchbar -->
+      <div class="searchbar mb-1 d-flex justify-content-between bg-light">
+        <div class="search w-100">
+          <input class="search__input w-100 bg-white py-1 px-3" type="text" placeholder="Search" required>
+        </div>
+        <div class="d-flex align-items-center">
+          <div class="me-3">
+            <button class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center">
+              <span class="sr-only">To messages</span>
+              <svg aria-hidden="true" fill="#545454" height="18px" width="18px" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M26.8,25H5.2c-0.8,0-1.5-0.4-1.9-1.1c-0.4-0.7-0.3-1.5,0.1-2.2L4.5,20c1.8-2.7,2.7-5.8,2.7-9c0-3.7,2.4-7.1,5.9-8.3 C13.7,1.6,14.8,1,16,1s2.3,0.6,2.9,1.7c3.5,1.2,5.9,4.6,5.9,8.3c0,3.2,0.9,6.3,2.7,9l1.1,1.7c0.4,0.7,0.5,1.5,0.1,2.2 C28.4,24.6,27.6,25,26.8,25z"></path> </g> <path d="M11.1,27c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H11.1z"></path> </g></svg>
+            </button>
+          </div>
+          <div class="me-3">
+            <button class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center">
+              <span class="sr-only">Messages</span>
+              <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 8.58527V17.0731C22 18.4389 20.8733 19.6097 19.4394 19.7072C17.2884 19.9023 14.3181 19.9999 12.0648 19.9999C9.81147 19.9999 6.84116 19.8048 4.69025 19.7072C3.25631 19.6097 2.12964 18.4389 2.12964 17.0731V8.58527L3.666 9.36576L10.7333 13.0731C11.143 13.2682 11.6551 13.3658 12.0648 13.3658C12.4745 13.3658 12.9866 13.2682 13.3963 13.0731L20.4636 9.36576L22 8.58527Z" fill="#545454"></path> <path d="M21.8976 6.43898C21.8976 6.6341 21.7952 6.92678 21.5903 7.02434L20.3612 7.60971L12.577 11.7073C12.1673 11.9024 11.7576 11.9024 11.3479 11.7073L2.33452 7.02434C2.12967 6.92678 1.92482 6.73166 2.02724 6.53654C2.23209 5.36581 3.25634 4.3902 4.58785 4.29264C6.73877 4.09752 9.70907 3.99995 11.9624 3.99995C14.2157 3.99995 17.2885 4.19508 19.337 4.29264C20.6685 4.3902 21.6927 5.26825 21.8976 6.43898Z" fill="#545454"></path> </g></svg>
+            </button>
+          </div>
+          <div>
+            <button class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center border-0">
+              <span class="sr-only">Profile</span>
+              <img src="../Assets/img/profile.png" height="100%" width="100%" alt="" aria-hidden="true">
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="messages d-flex">
+        <div class="inbox bg__main--gray w-100 py-5 me-1">
+          <div class="d-flex align-items-center justify-content-between">
+            <h1 class="fw-black">Inbox</h1>
+            <button class="inbox__button d-flex align-items-center justify-content-center">
+              <i class="fa fa-plus fa-lg" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="mt-4">
+            <div class="tabs__selections p-1 row mx-0" role="tablist" aria-label="feature selection tabs" data-target="tabsSelection">
+              <button class="tabs__choice col-6 fw-bold fs-6 py-2" role="tab" aria-selected="true" aria-controls="profile1" id="profile-1" tabindex="0" data-index="0" data-target="tabsChoice">Unread</button>
+              <button class="tabs__choice col-6 fw-bold fs-6 py-2" role="tab" aria-selected="false" aria-controls="profile2" id="profile-2" tabindex="-1" data-index="1" data-target="tabsChoice">All</button>
+            </div>
+            <div class="tabs__contents w-100" id="profile1" role="tabpanel" tabindex="0" aria-labelledby="profile-1" data-target="tabsContent" data-id="inboxUnread">
+              <div class="tabs__data mb-4 pb-3 w-100 p-relative" data-target="tabsData1">
+                <div class="inbox__container mt-3 pe-0">
+                  <ul class="ps-0">
+                    <li class="inbox__item active bg-white mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                      <div class="inbox__item_new rounded-circle ms-auto d-flex align-items-center justify-content-center text-white">
+                        <span class="">3</span>
+                      </div>
+                    </li>
+                    <li class="inbox__item active bg-white mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                      <div class="inbox__item_new rounded-circle ms-auto d-flex align-items-center justify-content-center text-white">
+                        <span class="">3</span>
+                      </div>
+                    </li>
+                    <li class="inbox__item mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                    </li>
+                    <li class="inbox__item mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                    </li>
+                    <li class="inbox__item mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                    </li>
+                    <li class="inbox__item mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                    </li>
+                    <li class="inbox__item mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="tabs__contents w-100 hidden" id="profile2" role="tabpanel" tabindex="0" aria-labelledby="profile-2" data-target="tabsContent" data-id="inboxAll">
+              <div class="tabs__data mb-4 pb-3 w-100 p-relative" data-target="tabsData2">
+                <div class="inbox__container mt-3 pe-0">
+                  <ul class="ps-0">
+                    <li class="inbox__item active bg-white mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Satisha Fox</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you next week...</p>
+                      </div>
+                      <div class="inbox__item_new rounded-circle ms-auto d-flex align-items-center justify-content-center text-white">
+                        <span class="">3</span>
+                      </div>
+                    </li>
+                    <li class="inbox__item mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                    </li>
+                    <li class="inbox__item mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                    </li>
+                    <li class="inbox__item mt-3 py-4 p-3 d-flex align-items-center cursor__desktop">
+                      <img class="inbox__item_avatar me-4" src="../Assets/img/profile.png" alt="User profile">
+                      <div class="ms-1">
+                        <h3 class="fs-6 weight-black mb-0">Natisha Wolf</h3>
+                        <p class="inbox__item_message mt-1 fs-14">Student</p>
+                        <p class="inbox__item_message fw-bold mt-2 fs-15">See you tomorrow...</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="message w-100 bg__main--gray">
+          <div class="message__header pt-2 pe-3 pb-4 ps-5 bg-white">
+            <button class="message__settings bg-transparent d-block ms-auto me-4">
+              <i class="fa fa-ellipsis-v fa-2x" aria-hidden="true"></i>
+            </button>
+            <div class="d-flex w-100 justify-content-between p-relative pe-2">
+              <div class="d-flex me-4">
+                <img class="message__avatar" src="../Assets/img/profile.png" alt="user profile">
+                <div class="d-flex flex-column justify-content-center ms-3">
+                  <h3 class="fs-5 fw-black mb-0">Natisha Wolf</h3>
+                  <p class="m-0 opacity-75 fs-15 fw-medium">Student</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-center">
+                <button class="bg__button--lightblue rounded-5 text-white py-1 px-4 me-4">Schedule a Call</button>
+                <div>
+                  <input class="message__search rounded-5 py-1 px-4 pe-5" type="text" placeholder="Search Messages" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="message__box py-4 pe-4 bg__main--gray">
+            <div class="message__date mb-4">
+              <p class="fw-medium">March 2, 2023 Thursday</p>
+            </div>
+            <div class="message__text mb-2 own">
+              <p class="fs-14 mb-2 opacity-75">4:32 PM</p>
+              <p class="message__bubble fs-15 bg-white rounded-5 p-3 px-4">
+                <span class="opacity-75">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit iure reprehenderit amet.</span>
+              </p>
+            </div>
+            <div class="message__text mb-2 d-flex align-items-center">
+              <img class="message__receiver me-2 rounded-circle" src="../Assets/img/profile.png" alt="" aria-hidden="true">
+              <div>
+                <p class="fs-14 mb-2 opacity-75">4:32 PM</p>
+                <p class="message__bubble fs-15 bg-white rounded-5 p-3 px-4">
+                  <span class="opacity-75">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit iure reprehenderit amet.</span>
+                </p>
+              </div>
+            </div>
+            <div class="message__text mb-2 own">
+              <p class="fs-14 mb-2 opacity-75">4:32 PM</p>
+              <p class="message__bubble fs-15 bg-white rounded-5 p-3 px-4">
+                <span class="opacity-75">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit iure reprehenderit amet.</span>
+              </p>
+            </div>
+            <div class="message__text mb-2 d-flex align-items-center">
+              <img class="message__receiver me-2 rounded-circle" src="../Assets/img/profile.png" alt="" aria-hidden="true">
+              <div>
+                <p class="fs-14 mb-2 opacity-75">4:32 PM</p>
+                <p class="message__bubble fs-15 bg-white rounded-5 p-3 px-4">
+                  <span class="opacity-75">Lorem ipsum, dolor sit.</span>
+                </p>
+              </div>
+            </div>
+            <div class="message__text mb-2 d-flex align-items-center">
+              <img class="message__receiver me-2 rounded-circle" src="../Assets/img/profile.png" alt="" aria-hidden="true">
+              <div>
+                <p class="message__bubble fs-15 bg-white rounded-5 p-3 px-4">
+                  <span class="opacity-75">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+                </p>
+              </div>
+            </div>
+            <div class="message__text mb-2 own">
+              <p class="fs-14 mb-2 opacity-75">4:32 PM</p>
+              <p class="message__bubble fs-15 bg-white rounded-5 p-3 px-4">
+                <span class="opacity-75">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit iure reprehenderit amet.</span>
+              </p>
+            </div>
+          </div>
+          <form class="message__create p-4 ps-3 bg__main--gray" data-target="createMessage">
+            <div class="bg-white rounded-4 ms-2 p-3">
+              <div class="d-flex align-items-start">
+                <textarea class="w-100 resize-none me-2" name="messageCompose" id="messageCompose" rows="6" placeholder="Message Elizabeth Sutton"></textarea>
+                <button>
+                  <i class="fa fa-thumbs-up fs-5" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="d-flex w-100 justify-content-between align-items-center">
+                <div class="d-flex">
+                  <button class="me-2">
+                    <i class="fa fa-microphone fs-5" aria-hidden="true"></i>
+                  </button>
+                  <button class="me-2">
+                    <i class="fa fa-smile-o fs-5" aria-hidden="true"></i>
+                  </button>
+                  <button class="me-2">
+                    <i class="fa fa-upload fs-5" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <button type="submit">
+                  <i class="fa fa-paper-plane fs-5" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+  </body>
+
+
+</html>
