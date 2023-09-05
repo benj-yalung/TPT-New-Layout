@@ -76,6 +76,10 @@
   background-color: #8da4dc;
 }
 
+.text--lightblue {
+  color: #8da4dc;
+}
+
 .resize-none {
   resize: none;
 }
