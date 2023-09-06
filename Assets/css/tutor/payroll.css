@@ -1,45 +1,117 @@
 
 
-.filters {
-
+.shortcode_skill {
+	position:relative;
+	overflow:hidden;
 }
 
-.table {
-  border-collapse: collapse; 
-  border-spacing: 0;
+.shortcode_skill:before {
+	position:absolute;
+	top:0;
+	left:27%;
+	margin:15px 0 0;
+	width:1px;
+	height:95%;
+	background:rgba(0, 0, 0, .1);
+	content:"";
 }
 
-.table__head th:first-of-type {
-  border-radius: 1.25rem 0 0;
-  padding-left: 4rem;
-  width: 280px;
+.skill_item {
+	overflow:hidden;
+	width:100%;
 }
 
-.table__head th:nth-of-type(2) {
-  width: 64px;
+.skill_item > span {
+	float:left;
+	padding:20px 4.7% 0 0;
+	width:15%;
+	text-align:right;
 }
 
-.table__head th:last-of-type {
-  border-radius: 0 1.25rem 0 0;
+.skill_item_colored_main_wrap {
+	float:left;
+	padding:15px 0 5px;
+	width:70%;
 }
 
-.table__body td {
-  border: none;
+.skill_item_colored_wrap {
+	position:relative;
+	height:33px;
 }
 
-.table__body td:first-of-type {
-  padding-left: 4rem;
+.skill_item_colored {
+	position:absolute;
+	width:100%;
+	height:70%;
+	-webkit-animation:move 2s linear .1s normal none 1 ;
+	-moz-animation:move 2s linear .1s normal none 1 ;
+	-ms-animation:move 2s linear .1s normal none 1 ;
+	-o-animation:move 2s linear .1s normal none 1 ;
+	animation:move 2s linear .1s normal none 1 ;
 }
 
-.table__body tr:nth-last-of-type(odd) {
-  border-top: 4px solid #f7f9fa;
+@-webkit-keyframes move {
+	from {width:0;}
+	to {width:100%;}
 }
 
-.table__body tr:nth-last-of-type(odd) td{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+@-ms-keyframes move {
+	from {width:0;}
+	to {width:100%;}
 }
 
-.table__body tr:last-of-type td {
-  padding-bottom: 2rem;
+@-o-keyframes move {
+	from {width:0;}
+	to {width:100%;}
+}
+
+@keyframes move {
+	from {width:0;}
+	to {width:100%;}
+}
+
+.skill_item_colored_wrap > span {
+	position:relative;
+	display:block;
+}
+
+.skill_item_colored > span {
+	display:block;
+	padding:8px 10px;
+	text-align:right;
+	-webkit-animation:opacity 2.5s linear .1s normal none 1 ;
+	-moz-animation:opacity 2.5s linear .1s normal none 1 ;
+	-ms-animation:opacity 2.5s linear .1s normal none 1 ;
+	-o-animation:opacity 2.5s linear .1s normal none 1 ;
+	animation:opacity 2.5s linear .1s normal none 1 ;
+}
+
+@-webkit-keyframes opacity {
+	0% {opacity:0;}
+	90% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-moz-keyframes opacity {
+	0% {opacity:0;}
+	90% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-ms-keyframes opacity {
+	0% {opacity:0;}
+	90% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-o-keyframes opacity {
+	0% {opacity:0;}
+	90% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@keyframes opacity {
+	0% {opacity:0;}
+	90% {opacity:0;}
+	100% {opacity:1;}
 }

@@ -50,3 +50,4 @@ prevNextIcon.forEach(icon => {
     renderCalendar()
   });
 });
+

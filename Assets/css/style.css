@@ -200,8 +200,3 @@ footer{
   }
 }
 
-/* New, will refactor top as todo */
-.main__grid--desktop {
-  display: grid;
-  grid-template-columns: auto 420px;
-}
