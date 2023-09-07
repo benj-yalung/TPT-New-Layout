@@ -34,15 +34,6 @@
     <!-- Custom scripts -->
     <script src="../Assets/js/header.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
-    <!-- Include jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Include jQuery UI -->
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
   </head>
 
   <body>
@@ -156,50 +147,7 @@
                 </button>  -->
                 <!-- <button class="text-white opacity-75">Date  Range</button>                    -->
                 <button class="text-white opacity-75" role="tab" aria-selected="true" aria-controls="profile1" id="profile-1" tabindex="0" data-index="0" data-target="tabsChoice">Date Range</button>
-               <script>
-         $(document).ready(function() {
-  let datepickerVisible = false;
-
-  // Add a click event listener to the button
-  $("#profile-1").click(function() {
-    if (!datepickerVisible) {
-      // Create a datepicker element
-      const datepicker = $("<div id='datepicker'></div>").datepicker({
-        dateFormat: "yy-mm-dd", // Date format (you can customize this)
-        onClose: function() {
-          // Remove the datepicker when it's closed
-          datepicker.remove();
-          datepickerVisible = false;
-        },
-      });
-
-      // Get the button's position and dimensions
-      const buttonOffset = $("#profile-1").offset();
-      const buttonHeight = $("#profile-1").outerHeight();
-
-      // Calculate the new position for the datepicker
-      const datepickerTop = buttonOffset.top + buttonHeight + 10; // Adjust the vertical position
-
-      // Set the datepicker's position
-      datepicker.css({
-        position: "absolute",
-        top: datepickerTop,
-        right: "10px", // Add a right margin of 10px
-      });
-
-      // Append the datepicker to the body
-      datepicker.appendTo("body");
-
-      datepickerVisible = true;
-    } else {
-      // If the datepicker is already visible, remove it
-      $("#datepicker").remove();
-      datepickerVisible = false;
-    }
-  });
-});
-
-               </script>
+               
                 <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3">Date</button> -->
            
               </div>
