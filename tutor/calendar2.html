@@ -144,306 +144,110 @@
       </div>
      
     
-
-   
-    <div class="ui container">
-
-      <!-- <div class="ui menu">
-        <div class="header item">Brand</div>
-        <a class="active item">Link</a>
-        <a class="item">Link</a>
-        <div class="ui dropdown item">
-          Dropdown
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div class="item">Action</div>
-            <div class="item">Another Action</div>
-            <div class="item">Something else here</div>
-            <div class="divider"></div>
-            <div class="item">Separated Link</div>
-            <div class="divider"></div>
-            <div class="item">One more separated link</div>
-          </div>
-        </div>
-        <div class="right menu">
-          <div class="item">
-            <div class="ui action left icon input">
-              <i class="search icon"></i>
-              <input type="text" placeholder="Search">
-              <button class="ui button">Submit</button>
-            </div>
-          </div>
-          <a class="item">Link</a>
-        </div> -->
-      <!-- </div> -->
-    </div>
-    <script>
-      $(document).ready(function() {
-  let datepickerVisible = false;
-      const buttonOffset = $("#profile-1").offset();
-      const buttonHeight = $("#profile-1").outerHeight();
-      const datepickerTop = buttonOffset.top + buttonHeight + 10; 
-      });
-      </script>
-      
     <br/>
-    <div class="container">
-      <div class="ui grid">
-        <div class="calendar">
-          <div class="timeline">
-            <div class="spacer"></div>
-            <div class="time-marker">9 AM</div>
-            <div class="time-marker">10 AM</div>
-            <div class="time-marker">11 AM</div>
-            <div class="time-marker">12 PM</div>
-            <div class="time-marker">1 PM</div>
-            <div class="time-marker">2 PM</div>
-            <div class="time-marker">3 PM</div>
-            <div class="time-marker">4 PM</div>
-            <div class="time-marker">5 PM</div>
-            <div class="time-marker">6 PM</div>
-          </div>
-          <div class="days">
-            <div class="day sun">
-              <div class="date">
-                <p class="date-num">1</p>
-                <p class="date-day">Sun</p>
-              </div>
-              <div class="events">
-         
-              </div>
+    <div class="calendar-container">
+        <div class="calendar-head">
+            <div class="month-nav">
+                <span class="arrow left">&lt;</span><p>March</p><span class="arrow right">&gt;</span>
             </div>
-
-            <div class="day mon">
-              <div class="date">
-                <p class="date-num">9</p>
-                <p class="date-day">Mon</p>
-              </div>
-              <div class="events">
-                <div class="event start-2 end-5 securities">
-                  <p class="title">Securities Regulation</p>
-                  <p class="time">2 PM - 5 PM</p>
+            <div class="month-selector">
+                <div class="dropdown">
+                    <button class="dropdown-button">Week View <span class="caret-down"></span></button>
+                    <button class="dropdown-button">Create a Meeting <span class="caret-down"></span></button>
                 </div>
-              </div>
             </div>
-            <div class="day tues">
-              <div class="date">
-                <p class="date-num">12</p>
-                <p class="date-day">Tue</p>
-              </div>
-              <div class="events">
-                <div class="event start-10 end-12 corp-fi">
-                  <p class="title">Corporate Finance</p>
-                  <p class="time">10 AM - 12 PM</p>
-                </div>
-                <div class="event start-1 end-4 ent-law">
-                  <p class="title">Entertainment Law</p>
-                  <p class="time">1PM - 4PM</p>
-                </div>
-              </div>
-            </div>
-            <div class="day wed">
-              <div class="date">
-                <p class="date-num">11</p>
-                <p class="date-day">Wed</p>
-              </div>
-              <div class="events">
-                <div class="event start-12 end-1 writing">
-                  <p class="title">Writing Seminar</p>
-                  <p class="time">11 AM - 12 PM</p>
-                </div>
-                <div class="event start-2 end-5 securities">
-                  <p class="title">Securities Regulation</p>
-                  <p class="time">2 PM - 5 PM</p>
-                </div>
-              </div>
-            </div>
-            <div class="day thurs">
-              <div class="date">
-                <p class="date-num">12</p>
-                <p class="date-day">Thu</p>
-              </div>
-              <div class="events">
-                <div class="event start-10 end-12 corp-fi">
-                  <p class="title">Corporate Finance</p>
-                  <p class="time">10 AM - 12 PM</p>
-                </div>
-                <div class="event start-1 end-4 ent-law">
-                  <p class="title">Entertainment Law</p>
-                  <p class="time">1PM - 4PM</p>
-                </div>
-              </div>
-            </div>
-            <div class="day fri">
-              <div class="date">
-                <p class="date-num">13</p>
-                <p class="date-day">Fri</p>
-              </div>
-              <div class="events">
-              </div>
-            </div>
-            <div class="day sat">
-              <div class="date">
-                <p class="date-num">7</p>
-                <p class="date-day">Sat</p>
-              </div>
-              <div class="events">
-              </div>
-            </div>
-          </div>
         </div>
-
-      </div>
+        <div class="calendar-contents">
+            <table>
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+                <!-- Time slots with 1-hour intervals from 7:00 AM to 6:00 PM -->
+                <tr>
+                    <td class="time no-border">07:00 AM</td>
+                    <td></td>
+                    <td>
+                        <div class="image"></div>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="time">08:00 AM</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <!-- Repeat the above rows for all hours up to 6:00 PM -->
+                <tr>
+                    <td class="time">06:00 PM</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
     </div>
-    
-    </div>
-    <style>
-     :root {
-  --numDays: 7;
-  --numHours: 10;
-  --timeHeight: 60px;
-  --calBgColor: #fff1f8;
-  --eventBorderColor: #f2d3d8;
-  --eventColor1: #ffd6d1;
-  --eventColor2: #fafaa3;
-  --eventColor3: #e2f8ff;
-  --eventColor4: #d1ffe6;
-}
-.container{
-  max-width: 100%;
-}
-.calendar {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: auto 1fr;
-  max-width: 100%;
-  min-width: 50%;
-  background-color: #f8f9fa;
-  text-align:center;
-  margin: 2rem;
-  /* border:solid; */
-}
-
-.timeline {
-  display: grid;
-  grid-template-rows: repeat(var(--numHours), var(--timeHeight));
-  margin-top: 10px;
-}
-
-.days {
-  display: grid;
-  grid-column: 2;
-  gap: 2px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  margin-top: -20px;
-}
-.events {
-  display: grid;
-  grid-template-rows: repeat(var(--numHours), var(--timeHeight));
-  border-radius: 5px;
-  background-color: #f8f9fa;
-  margin-top: 20px;
-}
 
 
-.start-10 {
-  grid-row-start: 2;
-}
 
-.start-12 {
-  grid-row-start: 4;
-}
-
-.start-1 {
-  grid-row-start: 5;
-}
-
-.start-2 {
-  grid-row-start: 6;
-}
-
-.end-12 {
-  grid-row-end: 4;
-}
-
-.end-1 {
-  grid-row-end: 5;
-}
-
-.end-3 {
-  grid-row-end: 7;
-}
-
-.end-4 {
-  grid-row-end: 8;
-}
-
-.end-5 {
-  grid-row-end: 9;
-}
-
-/* // Event */
-
-.title {
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.event {
-  border: 1px solid var(--eventBorderColor);
-  border-radius: 5px;
-  padding: 0.5rem;
-  margin: 0 0.5rem;
-  background: white;
-}
-
-.space,
-.date {
-  height: 60px
-}
-
-.corp-fi {
-  background: var(--eventColor1);
-}
-
-.ent-law {
-  background: var(--eventColor2);
-}
-
-.writing {
-  background: var(--eventColor3);
-}
-
-.securities {
-  background: var(--eventColor4);
-}
-
-.date {
-  display: flex;
-  gap: 1em;
-  justify-content: center;
-  /* align-items: center; */
-  background-color: #f8f9fa;
-}
-
-.date-num {
-  font-size: 200%;
-  font-weight: 600;
-  display: inline;
-  margin-top: 40px;
-  /* margin-left: 65px; */
-}
-
-.date-day {
-  display: inline;
-  font-size:150%;
-  color: #333;
-  margin-left: -50px;
-  margin-top: 10px;
-}
-/* .w-100{
-  background-color: #f8f9fa;
-} */
-    </style>
   </main>
     <html>
+
+    <style>
+        .no-border {
+            border: unset;
+        }
+        .month-nav,
+        .calendar-head {
+            display: flex;
+        }
+        .calendar-head {
+            justify-content: space-between;
+        }
+
+        .arrow {
+            padding: 0 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            height: 40px;
+        }
+
+        td.time {
+            font-weight: bold;
+        }
+        
+    </style>
