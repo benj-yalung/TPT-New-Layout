@@ -113,3 +113,109 @@
 	90% {opacity:0;}
 	100% {opacity:1;}
 }
+.ui-datepicker-calendar{
+	font-family: 'Roboto', sans-serif;
+	background: unset;
+  	color: #333;
+  	border: 10px;
+}
+
+.table>:not(caption)>*>* {
+	border-bottom-width: 0px;
+}
+
+.table__body td {
+    padding: 20px 0 !important;
+}
+
+.ui-datepicker-calendar thead {
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    border-color: #E3E3E5;
+}
+
+
+.ui-widget.ui-widget-content {
+	border-width: 2px !important;
+    padding: unset;
+	border-color: #E3E3E5 !important; 
+}
+
+
+.table {
+  border-collapse: collapse; 
+  border-spacing: 0;
+}
+
+.table__head th:first-of-type {
+  border-radius: 1.25rem 0 0;
+  padding-left: 4rem;
+}
+
+.table__head th:nth-of-type(2) {
+  width: 64px;
+}
+
+.table__head th:last-of-type {
+  border-radius: 0 1.25rem 0 0;
+}
+
+.table__body td {
+  border: none;
+}
+
+.table__body td:first-of-type {
+  padding-left: 4rem !important;
+}
+
+.table__body tr:nth-last-of-type(odd) {
+  border-top: 4px solid #f7f9fa;
+}
+
+.table__body tr:nth-last-of-type(odd) td{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.table__body tr:last-of-type td {
+  padding-bottom: 2rem;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active 
+{
+	box-shadow: none;
+	background-color: unset !important;
+	border: unset !important;
+	display: flex;
+    justify-content: center;
+}
+
+.ui-state-default{
+	background-color: violet;
+	box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.4);
+  	overflow: hidden;
+	  color: aqua;
+}
+.ui-datepicker-calendar th {
+	color:#333 !important;
+}
+.ui-datepicker-calendar tbody {
+	color:green;
+}
+.ui-datepicker-title{
+	color: #333;
+	background-color: #f8f7fa;
+}
+.ui-datepicker-prev .ui-corner-all{
+	color: rgb(15, 15, 201);
+}
+.ui-datepicker-header {
+	color: blue;
+	background-color: black;
+}
+.ui-datepicker-calendar{
+	color: rgb(76, 240, 232);
+}
+#datepicker{
+	color: red !important;
+}
