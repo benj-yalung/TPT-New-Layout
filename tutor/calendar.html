@@ -142,41 +142,7 @@
           </div>
         </div>
       </div>
-     
-    
 
-   
-    <div class="ui container">
-
-      <!-- <div class="ui menu">
-        <div class="header item">Brand</div>
-        <a class="active item">Link</a>
-        <a class="item">Link</a>
-        <div class="ui dropdown item">
-          Dropdown
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div class="item">Action</div>
-            <div class="item">Another Action</div>
-            <div class="item">Something else here</div>
-            <div class="divider"></div>
-            <div class="item">Separated Link</div>
-            <div class="divider"></div>
-            <div class="item">One more separated link</div>
-          </div>
-        </div>
-        <div class="right menu">
-          <div class="item">
-            <div class="ui action left icon input">
-              <i class="search icon"></i>
-              <input type="text" placeholder="Search">
-              <button class="ui button">Submit</button>
-            </div>
-          </div>
-          <a class="item">Link</a>
-        </div> -->
-      <!-- </div> -->
-    </div>
     <script>
       $(document).ready(function() {
   let datepickerVisible = false;
@@ -188,20 +154,35 @@
       
     <br/>
     <div class="container">
+      
       <div class="ui grid">
+        <div class="sched">
+          <div class="calendar-head">
+            <div class="month-nav">
+                <span class="arrow left">&lt;</span><p>March</p><span class="arrow right">&gt;</span>
+            </div>
+            <div class="month-selector">
+                <div class="dropdown">
+                    <button class="dropdown-button">Week View <span class="caret-down"></span></button>
+                    <button class="dropdown-button">Create a Meeting <span class="caret-down"></span></button>
+                </div>
+            </div>
+        </div>
+        </div>
+
         <div class="calendar">
           <div class="timeline">
             <div class="spacer"></div>
+            <div class="time-marker">7 AM</div>
+            <div class="time-marker">8 AM</div>
             <div class="time-marker">9 AM</div>
             <div class="time-marker">10 AM</div>
             <div class="time-marker">11 AM</div>
-            <div class="time-marker">12 PM</div>
+            <div class="time-marker">12 NN</div>
             <div class="time-marker">1 PM</div>
             <div class="time-marker">2 PM</div>
             <div class="time-marker">3 PM</div>
             <div class="time-marker">4 PM</div>
-            <div class="time-marker">5 PM</div>
-            <div class="time-marker">6 PM</div>
           </div>
           <div class="days">
             <div class="day sun">
@@ -216,19 +197,20 @@
 
             <div class="day mon">
               <div class="date">
-                <p class="date-num">9</p>
+                <p class="date-num">2</p>
                 <p class="date-day">Mon</p>
               </div>
               <div class="events">
                 <div class="event start-2 end-5 securities">
-                  <p class="title">Securities Regulation</p>
-                  <p class="time">2 PM - 5 PM</p>
+                  <img src="../Assets/img/profile.png" height="50%" width="80%" alt="" aria-hidden="true">
+                  <p class="title">English Lesson</p>
+                  <p class="time">10:00 AM - 11:00 AM</p>
                 </div>
               </div>
             </div>
             <div class="day tues">
               <div class="date">
-                <p class="date-num">12</p>
+                <p class="date-num">3</p>
                 <p class="date-day">Tue</p>
               </div>
               <div class="events">
@@ -244,7 +226,7 @@
             </div>
             <div class="day wed">
               <div class="date">
-                <p class="date-num">11</p>
+                <p class="date-num">4</p>
                 <p class="date-day">Wed</p>
               </div>
               <div class="events">
@@ -260,7 +242,7 @@
             </div>
             <div class="day thurs">
               <div class="date">
-                <p class="date-num">12</p>
+                <p class="date-num">5</p>
                 <p class="date-day">Thu</p>
               </div>
               <div class="events">
@@ -276,7 +258,7 @@
             </div>
             <div class="day fri">
               <div class="date">
-                <p class="date-num">13</p>
+                <p class="date-num">6</p>
                 <p class="date-day">Fri</p>
               </div>
               <div class="events">
@@ -312,6 +294,22 @@
 .container{
   max-width: 100%;
 }
+
+p.time {
+    font-size: 10px;
+    line-height: 1.2em;
+}
+
+p.title {
+    margin: .5em;
+}
+.events img {
+  margin: auto;
+}
+.sched {
+    margin: 2rem;
+    padding: 1rem;
+}
 .calendar {
   display: grid;
   gap: 10px;
@@ -321,7 +319,7 @@
   background-color: #f8f9fa;
   text-align:center;
   margin: 2rem;
-  /* border:solid; */
+  padding: 1rem;
 }
 
 .timeline {
@@ -334,8 +332,8 @@
   display: grid;
   grid-column: 2;
   gap: 2px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  margin-top: -20px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+
 }
 .events {
   display: grid;
@@ -415,14 +413,13 @@
 }
 
 .securities {
-  background: var(--eventColor4);
+  background: #92ADEF;
 }
 
 .date {
   display: flex;
   gap: 1em;
   justify-content: center;
-  /* align-items: center; */
   background-color: #f8f9fa;
 }
 
@@ -441,9 +438,22 @@
   margin-left: -50px;
   margin-top: 10px;
 }
-/* .w-100{
-  background-color: #f8f9fa;
-} */
+.time-marker {
+    display: flex;
+    align-items: flex-end;
+}
+
+      .no-border {
+          border: unset;
+        }
+        .month-nav,
+        .calendar-head {
+            display: flex;
+        }
+        .calendar-head {
+            justify-content: space-between;
+        }
+
     </style>
   </main>
     <html>
