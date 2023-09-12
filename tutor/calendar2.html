@@ -170,7 +170,7 @@
                     <th>Sunday</th>
                 </tr>
                 <!-- Time slots with 1-hour intervals from 7:00 AM to 6:00 PM -->
-                <tr>
+                <tr class="border-bot">
                     <td class="time no-border">07:00 AM</td>
                     <td></td>
                     <td>
@@ -182,9 +182,9 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
-                    <td class="time">08:00 AM</td>
-                    <td></td>
+                <tr class="even-time">
+                    <td class="time even-time">08:00 AM</td>
+                    <td class="days" ></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -193,8 +193,8 @@
                     <td></td>
                 </tr>
                 <!-- Repeat the above rows for all hours up to 6:00 PM -->
-                <tr>
-                    <td class="time">06:00 PM</td>
+                <tr class="time no-border-top">
+                    <td class="time no-border-top">00:00 AM</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -213,6 +213,21 @@
     <html>
 
     <style>
+      tr.time.no-border-top {
+    border: 0 !important;
+}
+      .even-time,
+      .even-time tr td{
+          border: 0;
+      }
+      tr.even-time td {
+          border: 0;
+      }
+      tr.time.no-border-top td,
+      td.time.no-border-top {
+          border-top: 0;
+      }
+
         .no-border {
             border: unset;
         }
