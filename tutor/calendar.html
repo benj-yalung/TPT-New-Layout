@@ -157,303 +157,663 @@
       
       <div class="ui grid">
         <div class="sched">
+  
+        </div>
+
+        <svg style="position: absolute; width: 0; height: 0; display: none;">
+          <symbol id="icon-arrow" viewBox="0 0 96 96">
+          
+            <path d="M39.66,13.34A8,8,0,0,0,28.34,24.66L51.69,48,28.34,71.34A8,8,0,0,0,39.66,82.66l29-29a8,8,0,0,0,0-11.31Z"/>
+          </symbol>
+        </svg>
+        
+        <div class="wrapper">
           <div class="calendar-head">
             <div class="month-nav">
-                <span class="arrow left">&lt;</span><p>March</p><span class="arrow right">&gt;</span>
+              <button class="btn-left">
+                <svg><use xlink:href="#icon-arrow"></use></svg>
+              </button>
+              <p>March</p>
+                <button class="btn-right">
+                  <svg><use xlink:href="#icon-arrow"></use></svg>
+                </button>
+
             </div>
             <div class="month-selector">
                 <div class="dropdown">
-                    <button class="dropdown-button">Week View <span class="caret-down"></span></button>
-                    <button class="dropdown-button">Create a Meeting <span class="caret-down"></span></button>
+                    <button class="dropdown-button btn-week">Week View <span class="caret-down"></span></button>
+                    <button class="dropdown-button btn--blue">Create a Meeting <span class="caret-down"></span></button>
                 </div>
             </div>
-        </div>
         </div>
 
-        <div class="calendar">
-          <div class="timeline">
-            <div class="spacer"></div>
-            <div class="time-marker">7 AM</div>
-            <div class="time-marker">8 AM</div>
-            <div class="time-marker">9 AM</div>
-            <div class="time-marker">10 AM</div>
-            <div class="time-marker">11 AM</div>
-            <div class="time-marker">12 NN</div>
-            <div class="time-marker">1 PM</div>
-            <div class="time-marker">2 PM</div>
-            <div class="time-marker">3 PM</div>
-            <div class="time-marker">4 PM</div>
+          <div class="sticky-header">
+            <span>Calendar</span>
           </div>
-          <div class="days">
-            <div class="day sun">
-              <div class="date">
-                <p class="date-num">1</p>
-                <p class="date-day">Sun</p>
-              </div>
-              <div class="events">
-         
-              </div>
-            </div>
+          <div class="table">
+            <div class="headers">
+      
 
-            <div class="day mon">
-              <div class="date">
-                <p class="date-num">2</p>
-                <p class="date-day">Mon</p>
-              </div>
-              <div class="events">
-                <div class="event start-2 end-5 securities">
-                  <img src="../Assets/img/profile.png" height="50%" width="80%" alt="" aria-hidden="true">
-                  <p class="title">English Lesson</p>
-                  <p class="time">10:00 AM - 11:00 AM</p>
+              <div class="scroller syncscroll" name="myElements">
+                <div class="track time btn-center">
+                  <button class="btn-left">
+                    <svg><use xlink:href="#icon-arrow"></use></svg>
+                  </button>
                 </div>
+                <div class="track">
+                  <div class="heading">Sun</div>
+                  <div class="heading-num">1</div>
+                </div>
+                <div class="track">
+                  <div class="heading">Mon</div>
+                  <div class="heading-num">2</div>
+                </div>
+                <div class="track">
+                  <div class="heading">Tue</div>
+                  <div class="heading-num">3</div>
+                </div>
+                <div class="track">
+                  <div class="heading">Wed</div>
+                  <div class="heading-num">4</div>
+                </div>
+                <div class="track">
+                  <div class="heading">Thur</div>
+                  <div class="heading-num">5</div>
+                </div>
+                <div class="track">
+                  <div class="heading">Fri</div>
+                  <div class="heading-num">6</div>
+                </div>
+                <div class="track">
+                  <div class="heading">Sat</div>
+                  <div class="heading-num">7</div>
+                </div>
+              </div>
+              <div class="track time right-tracker">
+                <button class="btn-right">
+                  <svg><use xlink:href="#icon-arrow"></use></svg>
+                </button>
               </div>
             </div>
-            <div class="day tues">
-              <div class="date">
-                <p class="date-num">3</p>
-                <p class="date-day">Tue</p>
-              </div>
-              <div class="events">
-                <div class="event start-10 end-12 corp-fi">
-                  <p class="title">Corporate Finance</p>
-                  <p class="time">10 AM - 12 PM</p>
+       
+
+            <div class="tracks syncscroll" name="myElements">
+              <div class="track time">
+                <div class="entry">
+                  <time>09.00</time>
                 </div>
-                <div class="event start-1 end-4 ent-law">
-                  <p class="title">Entertainment Law</p>
-                  <p class="time">1PM - 4PM</p>
+                <div class="entry">
+                  <time>10.00</time>
                 </div>
-              </div>
-            </div>
-            <div class="day wed">
-              <div class="date">
-                <p class="date-num">4</p>
-                <p class="date-day">Wed</p>
-              </div>
-              <div class="events">
-                <div class="event start-12 end-1 writing">
-                  <p class="title">Writing Seminar</p>
-                  <p class="time">11 AM - 12 PM</p>
+                <div class="entry">
+                  <time>11.00</time>
                 </div>
-                <div class="event start-2 end-5 securities">
-                  <p class="title">Securities Regulation</p>
-                  <p class="time">2 PM - 5 PM</p>
+                <div class="entry">
+                  <time>12.00</time>
                 </div>
-              </div>
-            </div>
-            <div class="day thurs">
-              <div class="date">
-                <p class="date-num">5</p>
-                <p class="date-day">Thu</p>
-              </div>
-              <div class="events">
-                <div class="event start-10 end-12 corp-fi">
-                  <p class="title">Corporate Finance</p>
-                  <p class="time">10 AM - 12 PM</p>
+                <div class="entry">
+                  <time>13.00</time>
                 </div>
-                <div class="event start-1 end-4 ent-law">
-                  <p class="title">Entertainment Law</p>
-                  <p class="time">1PM - 4PM</p>
+                <div class="entry">
+                  <time>14.00</time>
+                </div>
+                <div class="entry">
+                  <time>15.00</time>
+                </div>
+                <div class="entry">
+                  <time>16.00</time>
+                </div>
+                <div class="entry">
+                  <time>17.00</time>
                 </div>
               </div>
-            </div>
-            <div class="day fri">
-              <div class="date">
-                <p class="date-num">6</p>
-                <p class="date-day">Fri</p>
+              <div class="track yellow">
+                <div class="entry">
+                 
+                </div>
+                <div class="entry">
+             
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+              
+                </div>
+                <div class="entry">
+               
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+              
+                </div>
+                <div class="entry">
+              
+                </div>
               </div>
-              <div class="events">
+              <div class="track ">
+                <div class="entry double">
+                  <div class="details sched-blue">
+                    <img src="../Assets/img/profile.png" height="35%" width="70%" alt="" aria-hidden="true">
+                    <h3 class="detail-white">English Lesson</h3>
+                    <p class="attendee">With Ally L.</p>
+                    <p class="d-time">7:00 AM - 10:00 AM</p>
+                  </div>
+                </div>
+                <div class="entry">
+             
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+               
+                </div>
+                <div class="entry">
+             
+                </div>
+                <div class="entry">
+            
+                </div>
+                <div class="entry">
+          
+                </div>
               </div>
-            </div>
-            <div class="day sat">
-              <div class="date">
-                <p class="date-num">7</p>
-                <p class="date-day">Sat</p>
+              <div class="track blue">
+        
+                <div class="entry">
+                </div>
+                <div class="entry">
+             
+                </div>
+           
+                  <div class="entry">
+                    <div class="details sched-yellow">
+                      <img src="../Assets/img/profile.png" height="35%" width="35%" alt="" aria-hidden="true">
+                      <h3 class="detail-blk">Meeting with Jayne</h3>
+                      <p>7:00 AM - 10:00 AM</p>
+                    </div>
+              
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+             
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
               </div>
-              <div class="events">
+              <div class="track green">
+
+                  <div class="entry double">
+                    <div class="details sched-blue">
+                      <img src="../Assets/img/profile.png" height="35%" width="70%" alt="" aria-hidden="true">
+                      <h3 class="detail-white">English Lesson</h3>
+                      <p class="attendee">With Ally L.</p>
+                      <p class="d-time">7:00 AM - 10:00 AM</p>
+                    </div>
+                  </div>
+ 
+                <div class="entry">
+                </div>
+                <div class="entry">
+               
+                </div>
+                <div class="entry">
+               
+                </div>
+                <div class="entry">
+             
+                </div>
+                <div class="entry">
+            
+                </div>
+                <div class="entry">
+                </div>
+              </div>
+              <div class="track purple">
+        
+                <div class="entry">
+               
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+             
+                </div>
+                <div class="entry">
+              
+                </div>
+                <div class="entry">
+                  
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+              </div>
+
+              <div class="track gray">
+        
+                <div class="entry double">
+                  <div class="details sched-blue">
+                    <img src="../Assets/img/profile.png" height="35%" width="70%" alt="" aria-hidden="true">
+                    <h3 class="detail-white">English Lesson</h3>
+                    <p class="attendee">With Ally L.</p>
+                    <p class="d-time">7:00 AM - 10:00 AM</p>
+                  </div>
+                </div>
+                <div class="entry">
+                
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+               
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+              </div>
+              <div class="track">
+        
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
+                <div class="entry">
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div id="top-of-site-pixel-anchor"></div>
+        
 
       </div>
     </div>
     
     </div>
+
+    
     <style>
-     :root {
-  --numDays: 7;
-  --numHours: 10;
-  --timeHeight: 60px;
-  --calBgColor: #fff1f8;
-  --eventBorderColor: #f2d3d8;
-  --eventColor1: #ffd6d1;
-  --eventColor2: #fafaa3;
-  --eventColor3: #e2f8ff;
-  --eventColor4: #d1ffe6;
-}
-.container{
-  max-width: 100%;
+      :root {
+  --body-bg: #FDFDFD;
+  --thead-bg: #F7F9FB;
+  --thead-color: hsl(210, 5%, 40%);
+  --bd-color: #ebebeb;
+  --time-color: hsl(210, 5%, 70%);
+  
+  --time-width: 75px;
+  --sticky-height: 40px;
 }
 
-p.time {
-    font-size: 10px;
-    line-height: 1.2em;
+body {
+  background: var(--body-bg);
+  overflow-x: hidden;
 }
 
-p.title {
-    margin: .5em;
+.wrapper {
+  max-width: 1080px;
 }
-.events img {
-  margin: auto;
+.month-nav p {
+    font-size: 25px;
+    line-height: 3em;
 }
-.sched {
-    margin: 2rem;
-    padding: 1rem;
+.btn-left,
+.btn-right {
+    background-color: unset;
 }
-.calendar {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: auto 1fr;
-  max-width: 100%;
-  min-width: 50%;
-  background-color: #f8f9fa;
-  text-align:center;
-  margin: 2rem;
-  padding: 1rem;
-}
-
-.timeline {
-  display: grid;
-  grid-template-rows: repeat(var(--numHours), var(--timeHeight));
-  margin-top: 10px;
-}
-
-.days {
-  display: grid;
-  grid-column: 2;
-  gap: 2px;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-
-}
-.events {
-  display: grid;
-  grid-template-rows: repeat(var(--numHours), var(--timeHeight));
-  border-radius: 5px;
-  background-color: #f8f9fa;
-  margin-top: 20px;
-}
-
-
-.start-10 {
-  grid-row-start: 2;
-}
-
-.start-12 {
-  grid-row-start: 4;
-}
-
-.start-1 {
-  grid-row-start: 5;
-}
-
-.start-2 {
-  grid-row-start: 6;
-}
-
-.end-12 {
-  grid-row-end: 4;
-}
-
-.end-1 {
-  grid-row-end: 5;
-}
-
-.end-3 {
-  grid-row-end: 7;
-}
-
-.end-4 {
-  grid-row-end: 8;
-}
-
-.end-5 {
-  grid-row-end: 9;
-}
-
-/* // Event */
-
-.title {
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.event {
-  border: 1px solid var(--eventBorderColor);
-  border-radius: 5px;
-  padding: 0.5rem;
-  margin: 0 0.5rem;
-  background: white;
-}
-
-.space,
-.date {
-  height: 60px
-}
-
-.corp-fi {
-  background: var(--eventColor1);
-}
-
-.ent-law {
-  background: var(--eventColor2);
-}
-
-.writing {
-  background: var(--eventColor3);
-}
-
-.securities {
-  background: #92ADEF;
-}
-
-.date {
-  display: flex;
-  gap: 1em;
-  justify-content: center;
-  background-color: #f8f9fa;
-}
-
-.date-num {
-  font-size: 200%;
-  font-weight: 600;
-  display: inline;
-  margin-top: 40px;
-  /* margin-left: 65px; */
-}
-
-.date-day {
-  display: inline;
-  font-size:150%;
+h1 {
+  font-size: 9vmin;
+  text-align: center;
+  line-height: 1;
   color: #333;
-  margin-left: -50px;
-  margin-top: 10px;
-}
-.time-marker {
-    display: flex;
-    align-items: flex-end;
+  font-family: 'Courgette', cursive;
 }
 
-      .no-border {
-          border: unset;
-        }
-        .month-nav,
-        .calendar-head {
-            display: flex;
-        }
-        .calendar-head {
-            justify-content: space-between;
-        }
+.sticky-header {
+  height: var(--sticky-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--body-bg);
+  z-index: 7;
+  position: sticky;
+  top: 0;
+  font-weight: 700;
+  overflow: hidden;
+}
+
+.sticky-header span {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: .4s;
+}
+
+.reveal .sticky-header span {
+  opacity: 1;
+  transform: none;
+}
+
+.table {
+  position: relative;
+  border: solid var(--bd-color);
+  border-width: 0 1px 0 0;
+  overscroll-behavior: contain;
+}
+
+.headers {
+  top: var(--sticky-height);
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
+}
+.heading-num {
+    display: flex;
+    justify-content: center;
+    font-size: 45px;
+}
+.tracks,
+.scroller {
+  display: flex;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroller {
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.tracks {
+  overflow: auto;
+}
+.track.time.right-tracker {
+    position: absolute;
+    left: 100%;
+    top : 30%;
+}
+.tracks::-webkit-scrollbar,
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.track {
+  flex: 1 0 10%;
+}
+
+
+.time {
+  flex: 0 0 var(--time-width);
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+}
+
+.headers .time {
+  z-index: 5;
+}
+
+.tracks .time {
+  box-shadow: 20px 0 50px rgba(0, 0, 0, 0.05);
+}
+
+time {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: .03em;
+}
+
+time {
+  color: hsl(210, 5%, 70%);
+  text-align: right;
+}
+
+.time .heading {
+  justify-content: flex-end;
+  padding-right: 1em;
+  font-weight: 500;
+  background: #F9F9F9;
+}
+.track.time.btn-center {
+    display: flex;
+}
+.heading {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  border: solid var(--bd-color);
+  border-width: 1px;
+  color: hsla(210, 5%, 40%, 1);
+  z-index: 1;
+  background: var(--thead-bg);
+  font-weight: 700;
+}
+
+.entry {
+  border: 1px solid #ebebeb;
+  border-top: 0;
+  background: var(--body-bg);
+  height: 9em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.track .heading {
+    background: unset;
+    border: 0;
+    font-size: 25px;
+}
+.entry:not(:last-of-type) {
+  border-bottom-style: dashed;
+}
+
+.track:last-of-type > div {
+  border-right: 0;
+}
+
+.time .entry,
+.time .heading {
+  position: relative;
+  border-color: transparent var(--bd-color) var(--bd-color) transparent;
+  border-color: transparent var(--bd-color) transparent transparent;
+}
+
+.time .entry:after,
+.time .heading:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 50%;
+  height: 1px;
+  z-index: 3;
+  background: linear-gradient(to left, var(--bd-color), var(--body-bg));
+}
+
+.double {
+  height: 18em;
+}
+.treble {
+  height: 27em;
+}
+
+.details {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 15px 30px -10px rgba(0,0,0,0.50);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #EBECEE;
+  padding: 10px;
+  border-left: 5px solid var(--theme-bg);
+  height: 100%;
+}
+
+h3 {
+  font-size: 12px;
+  background: var(--theme-bg);
+  padding: 2px 5px;
+  font-weight: 600;
+  line-height: 1.4;
+  border-radius: 2px;
+  color: var(--theme-color);
+  width: max-content;
+}
+
+.sched-blue{
+  background-color: #92adef;
+}
+.details.sched-yellow {
+  background: #ffde59;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.details.sched-blue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    max-height: 85%;
+}
+h3.detail-white {
+    color: #fff;
+}
+p.d-time,
+p.attendee {
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+}
+
+
+p {
+  font-size: 12px;
+  color: #333;
+  font-weight: 500;
+  margin: 0;
+}
+
+p + p {
+  color: #858585;
+  margin-top: 5px;
+  font-weight: 400;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 6;
+  height: 100%;
+  padding: 1px 0;
+  width: calc(100% - var(--time-width));
+}
+
+button {
+  border-radius: 0;
+  border: 0;
+  padding: 5px;
+  font: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  outline: none !important;
+  cursor: pointer;
+  background: var(--thead-bg);
+}
+
+button > svg {
+  line-height: 0;
+  width: 30px;
+  height: 30px;
+  fill: var(--thead-color);
+  pointer-events: none;
+}
+
+.btn-left {
+  transform: scaleX(-1);
+}
+
+
+#top-of-site-pixel-anchor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 15em;
+  left: 0;
+}
+button.dropdown-button.btn-week {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background: unset;
+    color: #545454;
+    border: solid 3px #545454;
+    font-weight: bold;
+}
+button.dropdown-button.btn--blue {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background: #8da4dc;
+    color: #fff;
+    border: solid 3px #8da4dc;
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+  .track:not(.time) {
+    flex: 1 0 calc(50% + 7px);
+  }
+}
+.month-nav,
+.calendar-head {
+   display: flex;
+   align-items: center;
+}
+.calendar-head {
+   justify-content: space-between;
+   border-bottom: solid 3px #ebebeb;
+}
 
     </style>
+
+    <script>
+      
+    </script>
   </main>
     <html>
