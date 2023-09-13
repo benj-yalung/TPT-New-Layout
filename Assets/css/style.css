@@ -110,7 +110,10 @@ button:focus-visible,
 input:focus-visible {
   outline: 2px dashed #5e7fcd;
 }
-
+li.mb-2.page-active a i,
+li.mb-2.page-active a{
+    color: #28edfc;
+}
 .custom-btn-white{
   text-decoration: none;
   color: var(--custom_primary) !important;

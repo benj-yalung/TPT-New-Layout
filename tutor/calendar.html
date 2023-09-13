@@ -73,7 +73,7 @@
                     <i class="icon fa fa-th-large" aria-hidden="true"></i>Dashboard
                   </a>
                 </li>
-                <li class="mb-2">
+                <li class="mb-2 page-active">
                   <a class="d-flex align-items-center navlink text-decoration-none" href="calendar.html">
                     <i class="icon fa fa-calendar" aria-hidden="true"></i>Calendar
                   </a>
@@ -471,14 +471,17 @@
   --time-width: 75px;
   --sticky-height: 40px;
 }
-
+.container {
+    padding: 0;
+    margin: 0;
+}
 body {
   background: var(--body-bg);
   overflow-x: hidden;
 }
-
 .wrapper {
-  max-width: 1080px;
+    max-width: 1240px;
+    padding-right: 10px;
 }
 .month-nav p {
     font-size: 25px;
@@ -534,7 +537,11 @@ h1 {
   display: flex;
   justify-content: flex-end;
   z-index: 1;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+}
+
+.entry:not(:last-of-type) {
+    border-bottom-style: solid !important;
 }
 .heading-num {
     display: flex;
@@ -555,6 +562,7 @@ h1 {
 
 .tracks {
   overflow: auto;
+  background: #fff !important;
 }
 .track.time.right-tracker {
     position: absolute;
@@ -580,10 +588,6 @@ h1 {
 
 .headers .time {
   z-index: 5;
-}
-
-.tracks .time {
-  box-shadow: 20px 0 50px rgba(0, 0, 0, 0.05);
 }
 
 time {
@@ -631,6 +635,7 @@ time {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: #fff;
 }
 .track .heading {
     background: unset;
@@ -674,8 +679,6 @@ time {
 .details {
   border-radius: 4px;
   background: #fff;
-  box-shadow: 0 15px 30px -10px rgba(0,0,0,0.50);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid #EBECEE;
   padding: 10px;
   border-left: 5px solid var(--theme-bg);
