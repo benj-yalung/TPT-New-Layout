@@ -885,6 +885,70 @@ padding-bottom: 1rem;
     width: 100%;
   }
 }
+@media only screen and (max-width: 425px) {
+main.w-100.main__grid--desktop.main-with-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+.infobar.mb-3 {
+    display: flex;
+    flex-direction: column;
+}
+.mb-3 p,
+.mb-3 h3 {
+    text-align : center;
+}
+.upcoming_lessons__list ,
+.upcoming_lessons.mt-3.p-relative {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchbar.mb-2.d-flex.justify-content-between.bg-light {
+    display: flex;
+    padding: 20px;
+    gap: 10px;
+}
+.create_task.mb-1.ms-2,
+.mylessons__container.mb-1.ms-2 {
+    padding: 20px;
+}
+li.upcoming_lesson.rounded-4.align-items-center.justify-content-start.w-100 {
+    margin-right: 0;
+    padding: 20px;
+}
+button.tasks__more-button,
+li.upcoming_lesson.rounded-4.align-items-center.justify-content-start.w-100 span {
+  display: none;
+}
+.d-flex.align-items-center.flex-wrap.ms-4.text-white {
+    display: flex;
+    justify-content: center;
+}
+h3#modal-trigger {
+    font-size: 20px;
+    padding: 10px 0;
+    margin-bottom: 5px;
+}
+.header {
+    padding: 1em 3rem;
+}
+img.mylessons__avatar.rounded-circle.me-4,
+.d-flex.align-items-center.flex-wrap.ms-4.text-white {
+    margin: 0 !important;
+}
+.mylessons__item.with-bg.w-100.px-4.py-4.rounded-5.text-white.d-flex.justify-content-start {
+    padding: 15px !important;
+}
+h3.upcoming_lessons__heading.fw-black.mb-3 {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+.upcoming_lessons.mt-3.p-relative {
+    padding-top: 30px;
+}
+}
 </style>
 
 <script>

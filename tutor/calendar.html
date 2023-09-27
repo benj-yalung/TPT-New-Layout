@@ -824,6 +824,16 @@ button.dropdown-button.btn--blue {
    border-bottom: solid 3px #ebebeb;
 }
 
+@media only screen and (max-width: 425px) {
+  main.w-100.main__grid--desktop.main-with-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+.track:not(.time) {
+    flex: 1 0 calc(0);
+}
+
+}
     </style>
 
     <script>
