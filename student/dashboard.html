@@ -1,281 +1,560 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Talent Pro Academy</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Dashboard | Talent Pro Academy</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous" />
+    <!-- Custom -->
+    <link rel="stylesheet" href="../Assets/css/reset.css" />
+    <link rel="stylesheet" href="../Assets/css/utilities.css" />
+    <link rel="stylesheet" href="../Assets/css/style.css" />
+    <!-- Components -->
+    <link rel="stylesheet" href="../Assets/css/components/mylessons.css" />
+    <link rel="stylesheet" href="../Assets/css/components/infobar.css" />
+    <link rel="stylesheet" href="../Assets/css/header.css" />
+    <link rel="stylesheet" href="../Assets/css/components/searchbar.css" />
+    <link rel="stylesheet" href="../Assets/css/components/calendar.css" />
+    <link
+      rel="stylesheet"
+      href="../Assets/css/components/upcomingclasses.css" />
+    <link rel="stylesheet" href="../Assets/css/components/tabinterface.css" />
+    <!-- Custom again -->
+    <link rel="stylesheet" href="../Assets/css/student/dashboard.css" />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="../Assets/img/logo-removebg-preview.png"
+      type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+    <!-- Google Font Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet" />
+    <!-- Scripts -->
+    <script src="../Assets/js/calendar.js" defer type="module"></script>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- Chart JS library -->
+    <script src="../plugins/chart.min.js" defer></script>
+    <!-- Icons library -->
+    <script src="../plugins/feather.min.js" defer></script>
+    <!-- Custom scripts -->
+    <script src="../Assets/js/dashboard.js" defer></script>
+    <script src="../Assets/js/header.js" defer></script>
+    <script
+      src="../Assets/js/student/dashboard.js"
+      defer
+      type="module"></script>
+  </head>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <!-- Custom -->
-  <link rel="stylesheet" href="../Assets/css/reset.css">
-  <link rel="stylesheet" href="../Assets/css/utilities.css">
-  <link rel="stylesheet" href="../Assets/css/style.css">
-  <!-- Components -->
-  <link rel="stylesheet" href="../Assets/css/components/mylessons.css">
-  <link rel="stylesheet" href="../Assets/css/components/infobar.css">
-  <link rel="stylesheet" href="../Assets/css/header.css">
-  <link rel="stylesheet" href="../Assets/css/components/searchbar.css">
-  <link rel="stylesheet" href="../Assets/css/components/calendar.css">
-  <link rel="stylesheet" href="../Assets/css/components/upcomingclasses.css">
-  <link rel="stylesheet" href="../Assets/css/components/tabinterface.css">
-  <!-- Custom again -->
-  <link rel="stylesheet" href="../Assets/css/student/dashboard.css">
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="../Assets/img/logo-removebg-preview.png" type="image/x-icon">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
-  <!-- Google Font Link for Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <!-- Scripts -->
-  <script src="../Assets/js/calendar.js" defer type="module"></script>
-  <!-- JQUERY -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <!-- Chart JS library -->
-  <script src="../plugins/chart.min.js" defer></script>
-  <!-- Icons library -->
-  <script src="../plugins/feather.min.js" defer></script>
-  <!-- Custom scripts -->
-  <script src="../Assets/js/dashboard.js" defer></script>
-  <script src="../Assets/js/header.js" defer></script>
-  <script src="../Assets/js/student/dashboard.js" defer type="module"></script>
-
-</head>
-
-<body class="page-dashboard dashboard">
-  <div class="flex__desktop align-items-start">
-    <!-- Sidebar -->
-    <header class="header w-100 flex-row-reverse align-items-center justify-content-between position-sticky" data-target="header">
-      <div></div>
-      <div class="header__logo">
-        <a href="./dashboard.html" title="Home">
-          <img src="../Assets/img/logo-removebg-preview.png" alt="Site Logo" width="100">
-        </a>
-      </div>
-      <nav class="d-block position-static">
-        <button class="navbar__hamburger bg-white rounded-circle" data-target="headerHamburger">
-          <svg xmlns="http://www.w3.org/2000/svg" width="27.967" height="19.515" viewBox="0 0 27.967 19.515">
-            <path id="hamburger" d="M1374.485,69.048a1.768,1.768,0,0,1,0-3.536h24.471a1.768,1.768,0,0,1,0,3.536Zm0-7.988a1.769,1.769,0,0,1,0-3.537h24.471a1.769,1.769,0,0,1,0,3.537Zm0-7.989a1.769,1.769,0,0,1,0-3.537h24.471a1.769,1.769,0,0,1,0,3.537Z" transform="translate(-1372.738 -49.533)" fill="#9f4bf8"/>
-          </svg>          
-          <span class="sr-only"></span>
-        </button>
-        <div class="navbar__content w-100">
-          <div class="navbar__content-inner">
-            <div class="navbar__block">
-              <h3 class="navbar__heading fs-5 mb-4">Menu</h3>
-              <ul class="navlist p-0">
-                <li class="mb-2">
-                  <a class="d-flex align-items-center navlink text-decoration-none" href="dashboard.html">
-                    <i class="icon fa fa-th-large" aria-hidden="true"></i>Dashboard
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a class="d-flex align-items-center navlink text-decoration-none" href="tutors.html">
-                    <i class="icon fa fa-user" aria-hidden="true"></i>Find Tutor
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a class="d-flex align-items-center navlink text-decoration-none" href="chats.html">
-                    <i class="icon fa fa-comment" aria-hidden="true"></i>Messages
-                  </a>
-                </li>
-                <li class="mb-2">
-                  <a class="d-flex align-items-center navlink text-decoration-none" href="help.html">
-                    <i class="icon fa fa-question" aria-hidden="true"></i>Help
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="navbar__block">
-              <h3 class="navbar__heading fs-5 mb-4">Account</h3>
-              <ul class="navlist p-0">
-                <li class="mb-2">
-                  <a class=" navlink text-decoration-none" href="settings.html">
-                    <i class="icon setting fa fa-wrench" aria-hidden="true"></i>Settings
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+  <body class="page-dashboard dashboard">
+    <div class="flex__desktop align-items-start">
+      <!-- Sidebar -->
+      <header
+        class="header w-100 flex-row-reverse align-items-center justify-content-between position-sticky"
+        data-target="header">
+        <div></div>
+        <div class="header__logo">
+          <a href="./dashboard.html" title="Home">
+            <img
+              src="../Assets/img/logo-removebg-preview.png"
+              alt="Site Logo"
+              width="100" />
+          </a>
         </div>
-      </nav>
-    </header>
-    <main class="w-100 main__grid--desktop">
-      <div class="bg__main--gray">
-        <div class="searchbar mb-2 d-flex justify-content-between bg-light">
-          <div class="search w-100">
-            <input class="search__input w-100 bg-white py-1 px-3" type="text" placeholder="Search" required>
-          </div>
-          <div class="d-flex align-items-center">
-            <div class="me-3">
-              <button class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center">
-                <span class="sr-only">To messages</span>
-                <svg aria-hidden="true" fill="#545454" height="18px" width="18px" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M26.8,25H5.2c-0.8,0-1.5-0.4-1.9-1.1c-0.4-0.7-0.3-1.5,0.1-2.2L4.5,20c1.8-2.7,2.7-5.8,2.7-9c0-3.7,2.4-7.1,5.9-8.3 C13.7,1.6,14.8,1,16,1s2.3,0.6,2.9,1.7c3.5,1.2,5.9,4.6,5.9,8.3c0,3.2,0.9,6.3,2.7,9l1.1,1.7c0.4,0.7,0.5,1.5,0.1,2.2 C28.4,24.6,27.6,25,26.8,25z"></path> </g> <path d="M11.1,27c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H11.1z"></path> </g></svg>
-              </button>
+        <nav class="d-block position-static">
+          <button
+            class="navbar__hamburger bg-white rounded-circle"
+            data-target="headerHamburger">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="27.967"
+              height="19.515"
+              viewBox="0 0 27.967 19.515">
+              <path
+                id="hamburger"
+                d="M1374.485,69.048a1.768,1.768,0,0,1,0-3.536h24.471a1.768,1.768,0,0,1,0,3.536Zm0-7.988a1.769,1.769,0,0,1,0-3.537h24.471a1.769,1.769,0,0,1,0,3.537Zm0-7.989a1.769,1.769,0,0,1,0-3.537h24.471a1.769,1.769,0,0,1,0,3.537Z"
+                transform="translate(-1372.738 -49.533)"
+                fill="#9f4bf8" />
+            </svg>
+            <span class="sr-only"></span>
+          </button>
+          <div class="navbar__content w-100">
+            <div class="navbar__content-inner">
+              <div class="navbar__block">
+                <h3 class="navbar__heading fs-5 mb-4">Menu</h3>
+                <ul class="navlist p-0">
+                  <li class="mb-2">
+                    <a
+                      class="d-flex align-items-center navlink text-decoration-none"
+                      href="dashboard.html">
+                      <i class="icon fa fa-th-large" aria-hidden="true"></i
+                      >Dashboard
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a
+                      class="d-flex align-items-center navlink text-decoration-none"
+                      href="calendar.html">
+                      <i class="icon fa fa-calendar" aria-hidden="true"></i
+                      >Calendar
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a
+                      class="d-flex align-items-center navlink text-decoration-none"
+                      href="tutors.html">
+                      <i class="icon fa fa-user" aria-hidden="true"></i>Find
+                      Tutor
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a
+                      class="d-flex align-items-center navlink text-decoration-none"
+                      href="chats.html">
+                      <i class="icon fa fa-comment" aria-hidden="true"></i
+                      >Messages
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a
+                      class="d-flex align-items-center navlink text-decoration-none"
+                      href="help.html">
+                      <i class="icon fa fa-question" aria-hidden="true"></i>Help
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navbar__block">
+                <h3 class="navbar__heading fs-5 mb-4">Account</h3>
+                <ul class="navlist p-0">
+                  <li class="mb-2">
+                    <a
+                      class="navlink text-decoration-none"
+                      href="settings.html">
+                      <i
+                        class="icon setting fa fa-wrench"
+                        aria-hidden="true"></i
+                      >Settings
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="me-3">
-              <button class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center">
-                <span class="sr-only">Messages</span>
-                <svg width="18px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 8.58527V17.0731C22 18.4389 20.8733 19.6097 19.4394 19.7072C17.2884 19.9023 14.3181 19.9999 12.0648 19.9999C9.81147 19.9999 6.84116 19.8048 4.69025 19.7072C3.25631 19.6097 2.12964 18.4389 2.12964 17.0731V8.58527L3.666 9.36576L10.7333 13.0731C11.143 13.2682 11.6551 13.3658 12.0648 13.3658C12.4745 13.3658 12.9866 13.2682 13.3963 13.0731L20.4636 9.36576L22 8.58527Z" fill="#545454"></path> <path d="M21.8976 6.43898C21.8976 6.6341 21.7952 6.92678 21.5903 7.02434L20.3612 7.60971L12.577 11.7073C12.1673 11.9024 11.7576 11.9024 11.3479 11.7073L2.33452 7.02434C2.12967 6.92678 1.92482 6.73166 2.02724 6.53654C2.23209 5.36581 3.25634 4.3902 4.58785 4.29264C6.73877 4.09752 9.70907 3.99995 11.9624 3.99995C14.2157 3.99995 17.2885 4.19508 19.337 4.29264C20.6685 4.3902 21.6927 5.26825 21.8976 6.43898Z" fill="#545454"></path> </g></svg>
-              </button>
+          </div>
+        </nav>
+      </header>
+      <main class="w-100 main__grid--desktop">
+        <div class="bg__main--gray">
+          <div class="searchbar mb-2 d-flex justify-content-between bg-light">
+            <div class="search w-100">
+              <input
+                class="search__input w-100 bg-white py-1 px-3"
+                type="text"
+                placeholder="Search"
+                required />
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="me-3">
+                <button
+                  class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center">
+                  <span class="sr-only">To messages</span>
+                  <svg
+                    aria-hidden="true"
+                    fill="#545454"
+                    height="18px"
+                    width="18px"
+                    version="1.1"
+                    id="Icons"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 32 32"
+                    xml:space="preserve">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <g>
+                        <path
+                          d="M26.8,25H5.2c-0.8,0-1.5-0.4-1.9-1.1c-0.4-0.7-0.3-1.5,0.1-2.2L4.5,20c1.8-2.7,2.7-5.8,2.7-9c0-3.7,2.4-7.1,5.9-8.3 C13.7,1.6,14.8,1,16,1s2.3,0.6,2.9,1.7c3.5,1.2,5.9,4.6,5.9,8.3c0,3.2,0.9,6.3,2.7,9l1.1,1.7c0.4,0.7,0.5,1.5,0.1,2.2 C28.4,24.6,27.6,25,26.8,25z"></path>
+                      </g>
+                      <path
+                        d="M11.1,27c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H11.1z"></path>
+                    </g>
+                  </svg>
+                </button>
+              </div>
+              <div class="me-3">
+                <button
+                  class="searchbar__button d-flex rounded-circle bg-white align-items-center justify-content-center">
+                  <span class="sr-only">Messages</span>
+                  <svg
+                    width="18px"
+                    height="18px"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                      id="SVGRepo_tracerCarrier"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <path
+                        d="M22 8.58527V17.0731C22 18.4389 20.8733 19.6097 19.4394 19.7072C17.2884 19.9023 14.3181 19.9999 12.0648 19.9999C9.81147 19.9999 6.84116 19.8048 4.69025 19.7072C3.25631 19.6097 2.12964 18.4389 2.12964 17.0731V8.58527L3.666 9.36576L10.7333 13.0731C11.143 13.2682 11.6551 13.3658 12.0648 13.3658C12.4745 13.3658 12.9866 13.2682 13.3963 13.0731L20.4636 9.36576L22 8.58527Z"
+                        fill="#545454"></path>
+                      <path
+                        d="M21.8976 6.43898C21.8976 6.6341 21.7952 6.92678 21.5903 7.02434L20.3612 7.60971L12.577 11.7073C12.1673 11.9024 11.7576 11.9024 11.3479 11.7073L2.33452 7.02434C2.12967 6.92678 1.92482 6.73166 2.02724 6.53654C2.23209 5.36581 3.25634 4.3902 4.58785 4.29264C6.73877 4.09752 9.70907 3.99995 11.9624 3.99995C14.2157 3.99995 17.2885 4.19508 19.337 4.29264C20.6685 4.3902 21.6927 5.26825 21.8976 6.43898Z"
+                        fill="#545454"></path>
+                    </g>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div>
-          <div class="mytasks mb-1 ms-2">
-            <h2 class="fw-black fs-4 mb-4">My Lessons</h2>
-            <div class="mytasks__inner with-bg w-100 ps-5 pe-4 pt-4 rounded-5 text-white d-flex justify-content-start">
-              <div class="tabinterface rounded-4 w-100">
-                <div class="tabs rounded-2 overflow-hidden">
-                  <div class="tabs__selections row mx-0 mb-3" role="tablist" aria-label="feature selection tabs" data-target="tabsSelection">
-                    <button class="tabs__choice col-3 fw-bold fs-6 py-2" role="tab" aria-selected="true" aria-controls="lessonSchedule" id="lesson-1" tabindex="0" data-index="0" data-target="tabsChoice">Upcoming</button>
-                    <button class="tabs__choice col-3 fw-bold fs-6 py-2" role="tab" aria-selected="false" aria-controls="lessonStudent" id="lesson-2" tabindex="-1" data-index="1" data-target="tabsChoice">Overdue</button>
-                    <button class="tabs__choice col-3 fw-bold fs-6 py-2" role="tab" aria-selected="false" aria-controls="lessonTasks" id="lesson-3" tabindex="-1" data-index="2" data-target="tabsChoice">Completed</button>
-                  </div>
-                  <div class="tabs__contents px-4 pe-0 w-100" id="lessonSchedule" role="tabpanel" tabindex="0" aria-labelledby="lesson-1" data-target="tabsContent" data-id="personalInformationTabContent">
-                    <div class="tabs__data px-2 pe-0 pb-3 w-100 p-relative" data-target="tabsData1">
-                      <div class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
-                        <p class="col-5 p-0 fs-4 fw-bold">Assignment 2</p>
-                        <p class="col-4 p-0 fs-17 fw-bold text-center">English Lesson 1</p>
-                        <p class="col-3 p-0 fs-17 fw-bold text-end">Today</p>
-                      </div>
-                      <div class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
-                        <p class="col-5 p-0 fs-4 fw-bold">Project 1</p>
-                        <p class="col-4 p-0 fs-17 fw-bold text-center">English Lesson 1</p>
-                        <p class="col-3 p-0 fs-17 fw-bold text-end">Tomorrow</p>
-                      </div>
-                      <div class="row p-0 ps-1 m-0 text-white align-items-center">
-                        <p class="col-5 p-0 fs-4 fw-bold">Assessment 1</p>
-                        <p class="col-4 p-0 fs-17 fw-bold text-center">Math Lesson 1</p>
-                        <p class="col-3 p-0 fs-17 fw-bold text-end">Aug 16</p>
-                      </div>
-                      <div class="px-1 mt-3">
-                        <a class="opacity-75 text-white text-decoration-underline fs-15" href="">Show more</a>
+          <div>
+            <div class="mytasks mb-1 ms-2">
+              <h2 class="fw-black fs-4 mb-4">My Lessons</h2>
+              <div
+                class="mytasks__inner with-bg w-100 ps-5 pe-4 pt-4 rounded-5 text-white d-flex justify-content-start">
+                <div class="tabinterface rounded-4 w-100">
+                  <div class="tabs rounded-2 overflow-hidden">
+                    <div
+                      class="tabs__selections row mx-0 mb-3"
+                      role="tablist"
+                      aria-label="feature selection tabs"
+                      data-target="tabsSelection">
+                      <button
+                        class="tabs__choice col-3 fw-bold fs-6 py-2"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="lessonSchedule"
+                        id="lesson-1"
+                        tabindex="0"
+                        data-index="0"
+                        data-target="tabsChoice">
+                        Upcoming
+                      </button>
+                      <button
+                        class="tabs__choice col-3 fw-bold fs-6 py-2"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="lessonStudent"
+                        id="lesson-2"
+                        tabindex="-1"
+                        data-index="1"
+                        data-target="tabsChoice">
+                        Overdue
+                      </button>
+                      <button
+                        class="tabs__choice col-3 fw-bold fs-6 py-2"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="lessonTasks"
+                        id="lesson-3"
+                        tabindex="-1"
+                        data-index="2"
+                        data-target="tabsChoice">
+                        Completed
+                      </button>
+                    </div>
+                    <div
+                      class="tabs__contents px-4 pe-0 w-100"
+                      id="lessonSchedule"
+                      role="tabpanel"
+                      tabindex="0"
+                      aria-labelledby="lesson-1"
+                      data-target="tabsContent"
+                      data-id="personalInformationTabContent">
+                      <div
+                        class="tabs__data px-2 pe-0 pb-3 w-100 p-relative"
+                        data-target="tabsData1">
+                        <div
+                          class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
+                          <p class="col-5 p-0 fs-4 fw-bold">Assignment 2</p>
+                          <p class="col-4 p-0 fs-17 fw-bold text-center">
+                            English Lesson 1
+                          </p>
+                          <p class="col-3 p-0 fs-17 fw-bold text-end">Today</p>
+                        </div>
+                        <div
+                          class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
+                          <p class="col-5 p-0 fs-4 fw-bold">Project 1</p>
+                          <p class="col-4 p-0 fs-17 fw-bold text-center">
+                            English Lesson 1
+                          </p>
+                          <p class="col-3 p-0 fs-17 fw-bold text-end">
+                            Tomorrow
+                          </p>
+                        </div>
+                        <div
+                          class="row p-0 ps-1 m-0 text-white align-items-center">
+                          <p class="col-5 p-0 fs-4 fw-bold">Assessment 1</p>
+                          <p class="col-4 p-0 fs-17 fw-bold text-center">
+                            Math Lesson 1
+                          </p>
+                          <p class="col-3 p-0 fs-17 fw-bold text-end">Aug 16</p>
+                        </div>
+                        <div class="px-1 mt-3">
+                          <a
+                            class="opacity-75 text-white text-decoration-underline fs-15"
+                            href=""
+                            >Show more</a
+                          >
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="tabs__contents px-4 pe-0 w-100 hidden" id="lessonStudent" role="tabpanel" tabindex="0" aria-labelledby="lesson-2" data-target="tabsContent" data-id="qualificationTabContent">
-                    <div class="tabs__data px-2 pe-0 pb-3 w-100 p-relative" data-target="tabsData2">
-                      <div class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
-                        <p class="col-5 p-0 fs-4 fw-bold">Assignment 3</p>
-                        <p class="col-4 p-0 fs-17 fw-bold text-center">English Lesson 2</p>
-                        <p class="col-3 p-0 fs-17 fw-bold text-end">Today</p>
-                      </div>
-                      <div class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
-                        <p class="col-5 p-0 fs-4 fw-bold">Project 2</p>
-                        <p class="col-4 p-0 fs-17 fw-bold text-center">English Lesson 2</p>
-                        <p class="col-3 p-0 fs-17 fw-bold text-end">Tomorrow</p>
-                      </div>
-                      <div class="row p-0 ps-1 m-0 text-white align-items-center">
-                        <p class="col-5 p-0 fs-4 fw-bold">Assessment 2</p>
-                        <p class="col-4 p-0 fs-17 fw-bold text-center">Math Lesson 2</p>
-                        <p class="col-3 p-0 fs-17 fw-bold text-end">Aug 16</p>
-                      </div>
-                      <div class="px-1 mt-3">
-                        <a class="opacity-75 text-white text-decoration-underline fs-15" href="">Show more</a>
+                    <div
+                      class="tabs__contents px-4 pe-0 w-100 hidden"
+                      id="lessonStudent"
+                      role="tabpanel"
+                      tabindex="0"
+                      aria-labelledby="lesson-2"
+                      data-target="tabsContent"
+                      data-id="qualificationTabContent">
+                      <div
+                        class="tabs__data px-2 pe-0 pb-3 w-100 p-relative"
+                        data-target="tabsData2">
+                        <div
+                          class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
+                          <p class="col-5 p-0 fs-4 fw-bold">Assignment 3</p>
+                          <p class="col-4 p-0 fs-17 fw-bold text-center">
+                            English Lesson 2
+                          </p>
+                          <p class="col-3 p-0 fs-17 fw-bold text-end">Today</p>
+                        </div>
+                        <div
+                          class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
+                          <p class="col-5 p-0 fs-4 fw-bold">Project 2</p>
+                          <p class="col-4 p-0 fs-17 fw-bold text-center">
+                            English Lesson 2
+                          </p>
+                          <p class="col-3 p-0 fs-17 fw-bold text-end">
+                            Tomorrow
+                          </p>
+                        </div>
+                        <div
+                          class="row p-0 ps-1 m-0 text-white align-items-center">
+                          <p class="col-5 p-0 fs-4 fw-bold">Assessment 2</p>
+                          <p class="col-4 p-0 fs-17 fw-bold text-center">
+                            Math Lesson 2
+                          </p>
+                          <p class="col-3 p-0 fs-17 fw-bold text-end">Aug 16</p>
+                        </div>
+                        <div class="px-1 mt-3">
+                          <a
+                            class="opacity-75 text-white text-decoration-underline fs-15"
+                            href=""
+                            >Show more</a
+                          >
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="tabs__contents px-4 pe-0 w-100 hidden" id="lessonTasks" role="tabpanel" tabindex="0" aria-labelledby="lesson-3" data-target="tabsContent" data-id="scheduleTabContent">
-                    <div class="tabs__data px-2 pe-0 pb-3 w-100 p-relative" data-target="tabsData3">
-                      <div class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
-                        <p class="col-5 p-0 fs-4 fw-bold">Assignment 4</p>
-                        <p class="col-4 p-0 fs-17 fw-bold text-center">English Lesson 4</p>
-                        <p class="col-3 p-0 fs-17 fw-bold text-end">Today</p>
-                      </div>
-                      <div class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
-                        <p class="col-5 p-0 fs-4 fw-bold">Project 3</p>
-                        <p class="col-4 p-0 fs-17 fw-bold text-center">English Lesson 3</p>
-                        <p class="col-3 p-0 fs-17 fw-bold text-end">Tomorrow</p>
-                      </div>
-                      <div class="row p-0 ps-1 m-0 text-white align-items-center">
-                        <p class="col-5 p-0 fs-4 fw-bold">Assessment 1</p>
-                        <p class="col-4 p-0 fs-17 fw-bold text-center">Math Lesson 1</p>
-                        <p class="col-3 p-0 fs-17 fw-bold text-end">Aug 16</p>
-                      </div>
-                      <div class="px-1 mt-3">
-                        <a class="opacity-75 text-white text-decoration-underline fs-15" href="">Show more</a>
+                    <div
+                      class="tabs__contents px-4 pe-0 w-100 hidden"
+                      id="lessonTasks"
+                      role="tabpanel"
+                      tabindex="0"
+                      aria-labelledby="lesson-3"
+                      data-target="tabsContent"
+                      data-id="scheduleTabContent">
+                      <div
+                        class="tabs__data px-2 pe-0 pb-3 w-100 p-relative"
+                        data-target="tabsData3">
+                        <div
+                          class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
+                          <p class="col-5 p-0 fs-4 fw-bold">Assignment 4</p>
+                          <p class="col-4 p-0 fs-17 fw-bold text-center">
+                            English Lesson 4
+                          </p>
+                          <p class="col-3 p-0 fs-17 fw-bold text-end">Today</p>
+                        </div>
+                        <div
+                          class="row p-0 ps-1 m-0 text-white align-items-center mb-2">
+                          <p class="col-5 p-0 fs-4 fw-bold">Project 3</p>
+                          <p class="col-4 p-0 fs-17 fw-bold text-center">
+                            English Lesson 3
+                          </p>
+                          <p class="col-3 p-0 fs-17 fw-bold text-end">
+                            Tomorrow
+                          </p>
+                        </div>
+                        <div
+                          class="row p-0 ps-1 m-0 text-white align-items-center">
+                          <p class="col-5 p-0 fs-4 fw-bold">Assessment 1</p>
+                          <p class="col-4 p-0 fs-17 fw-bold text-center">
+                            Math Lesson 1
+                          </p>
+                          <p class="col-3 p-0 fs-17 fw-bold text-end">Aug 16</p>
+                        </div>
+                        <div class="px-1 mt-3">
+                          <a
+                            class="opacity-75 text-white text-decoration-underline fs-15"
+                            href=""
+                            >Show more</a
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="mytutors mb-1 ms-2">
-            <h2 class="fw-black fs-4 mb-4">My tutors</h2>
-            <div>
-              <ul>
-                <li class="tutor rounded-3 p-3 d-flex align-items-center mb-2">
-                  <img class="tutor__avatar rounded-circle me-4" src="../Assets/img/tutor.png" alt="Tammy Leigh">
-                  <h3 class="ps-3 fs-4 text-decoration-underline fw-bold">Tammy Leigh</h3>
-                  <a class="tutor__schedule d-block ms-auto fs-5 text-white d-flex align-items-center" href="#">
-                    <span class="py-1 px-3 rounded-5 me-4">Schedule meeting</span>
-                    <span id="next" class="rounded-circle material-symbols-rounded bg-white text-black fs-1 d-inline-flex align-items-center justify-content-center" >chevron_right</span>
-                  </a>
-                </li>
-                <li class="tutor rounded-3 p-3 d-flex align-items-center mb-2">
-                  <img class="tutor__avatar rounded-circle me-4" src="../Assets/img/tutor.png" alt="Tammy Leigh">
-                  <h3 class="ps-3 fs-4 text-decoration-underline fw-bold">Jackie Pamela</h3>
-                  <a class="tutor__schedule d-block ms-auto fs-5 text-white d-flex align-items-center" href="#">
-                    <span class="py-1 px-3 rounded-5 me-4">Schedule meeting</span>
-                    <span id="next" class="rounded-circle material-symbols-rounded bg-black text-white fs-1 d-inline-flex align-items-center justify-content-center" >chevron_right</span>
-                  </a>
-                </li>
-                <li class="tutor rounded-3 p-3 d-flex align-items-center mb-2">
-                  <img class="tutor__avatar rounded-circle me-4" src="../Assets/img/tutor.png" alt="Tammy Leigh">
-                  <h3 class="ps-3 fs-4 text-decoration-underline fw-bold">Jade Smith</h3>
-                  <a class="tutor__schedule d-block ms-auto fs-5 text-white d-flex align-items-center" href="#">
-                    <span class="py-1 px-3 rounded-5 me-4">Schedule meeting</span>
-                    <span id="next" class="rounded-circle material-symbols-rounded bg-black text-white fs-1 d-inline-flex align-items-center justify-content-center" >chevron_right</span>
-                  </a>
-                </li>
-              </ul>
-              <div class="findtutors d-flex align-items-center ps-4 py-4 pe-3 text-white rounded-2 mt-3">
-                <img class="me-5" src="../Assets/svg/Bulk/findtutors-ad.svg" alt="" aria-hidden="true">
-                <h3 class="fs-4 fw-bold">Find more tutors</h3>
-                <a class="findtutors__search d-block ms-auto py-2 fw-medium text-white" href="#">Search</a>
+            <div class="mytutors mb-1 ms-2">
+              <h2 class="fw-black fs-4 mb-4">My tutors</h2>
+              <div>
+                <ul>
+                  <li
+                    class="tutor rounded-3 p-3 d-flex align-items-center mb-2">
+                    <img
+                      class="tutor__avatar rounded-circle me-4"
+                      src="../Assets/img/tutor.png"
+                      alt="Tammy Leigh" />
+                    <h3 class="ps-3 fs-4 text-decoration-underline fw-bold">
+                      Tammy Leigh
+                    </h3>
+                    <a
+                      class="tutor__schedule d-block ms-auto fs-5 text-white d-flex align-items-center"
+                      href="#">
+                      <span class="py-1 px-3 rounded-5 me-4"
+                        >Schedule meeting</span
+                      >
+                      <span
+                        id="next"
+                        class="rounded-circle material-symbols-rounded bg-white text-black fs-1 d-inline-flex align-items-center justify-content-center"
+                        >chevron_right</span
+                      >
+                    </a>
+                  </li>
+                  <li
+                    class="tutor rounded-3 p-3 d-flex align-items-center mb-2">
+                    <img
+                      class="tutor__avatar rounded-circle me-4"
+                      src="../Assets/img/tutor.png"
+                      alt="Tammy Leigh" />
+                    <h3 class="ps-3 fs-4 text-decoration-underline fw-bold">
+                      Jackie Pamela
+                    </h3>
+                    <a
+                      class="tutor__schedule d-block ms-auto fs-5 text-white d-flex align-items-center"
+                      href="#">
+                      <span class="py-1 px-3 rounded-5 me-4"
+                        >Schedule meeting</span
+                      >
+                      <span
+                        id="next"
+                        class="rounded-circle material-symbols-rounded bg-black text-white fs-1 d-inline-flex align-items-center justify-content-center"
+                        >chevron_right</span
+                      >
+                    </a>
+                  </li>
+                  <li
+                    class="tutor rounded-3 p-3 d-flex align-items-center mb-2">
+                    <img
+                      class="tutor__avatar rounded-circle me-4"
+                      src="../Assets/img/tutor.png"
+                      alt="Tammy Leigh" />
+                    <h3 class="ps-3 fs-4 text-decoration-underline fw-bold">
+                      Jade Smith
+                    </h3>
+                    <a
+                      class="tutor__schedule d-block ms-auto fs-5 text-white d-flex align-items-center"
+                      href="#">
+                      <span class="py-1 px-3 rounded-5 me-4"
+                        >Schedule meeting</span
+                      >
+                      <span
+                        id="next"
+                        class="rounded-circle material-symbols-rounded bg-black text-white fs-1 d-inline-flex align-items-center justify-content-center"
+                        >chevron_right</span
+                      >
+                    </a>
+                  </li>
+                </ul>
+                <div
+                  class="findtutors d-flex align-items-center ps-4 py-4 pe-3 text-white rounded-2 mt-3">
+                  <img
+                    class="me-5"
+                    src="../Assets/svg/Bulk/findtutors-ad.svg"
+                    alt=""
+                    aria-hidden="true" />
+                  <h3 class="fs-4 fw-bold">Find more tutors</h3>
+                  <a
+                    class="findtutors__search d-block ms-auto py-2 fw-medium text-white"
+                    href="#"
+                    >Search</a
+                  >
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="py-4 px-4 bg__main-desktop--gray ms-1">
-        <div class="infobar mb-3">
-          <img class="infobar__avatar w-100 rounded-circle" src="../Assets/img/profile.png" alt="User profile">
-          <div class="infobar__block w-100">
-            <div class="mb-3">
-              <h3 class="fw-black">Natisha Wolf</h3>
-              <p class="mt-1 weight--medium">Student</p>
-            </div>
-            <div class="d-flex justify-content-between w-100">
-              <div class="infobar__course text-white rounded-4 text-center py-3">
-                <h3 class="text-white fw-bold">2</h3>
-                <p>Tutors hired</p>
+        <div class="py-4 px-4 bg__main-desktop--gray ms-1">
+          <div class="infobar mb-3">
+            <img
+              class="infobar__avatar w-100 rounded-circle"
+              src="../Assets/img/profile.png"
+              alt="User profile" />
+            <div class="infobar__block w-100">
+              <div class="mb-3">
+                <h3 class="fw-black">Natisha Wolf</h3>
+                <p class="mt-1 weight--medium">Student</p>
               </div>
-              <div class="infobar__course text-white rounded-4 text-center py-3">
-                <h3 class="text-white fw-bold">12</h3>
-                <p>Lessons Started</p>
+              <div class="d-flex justify-content-between w-100">
+                <div
+                  class="infobar__course text-white rounded-4 text-center py-3">
+                  <h3 class="text-white fw-bold">2</h3>
+                  <p>Tutors hired</p>
+                </div>
+                <div
+                  class="infobar__course text-white rounded-4 text-center py-3">
+                  <h3 class="text-white fw-bold">12</h3>
+                  <p>Lessons Started</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="calendar text-white rounded-5">
-          <header class="px-4 py-4 pb-3 calendar__header d-flex justify-content-between align-items-center">
-              <p class="calendar__current_date fw-medium" data-target="calenderCurrentDate"></p>
-              <div class="calendar__icons d-flex text-center" data-target="calendarIcons">
-                <span id="prev" class="rounded-circle material-symbols-rounded">chevron_left</span>
-                <span id="next" class="rounded-circle material-symbols-rounded">chevron_right</span>
+          <div class="calendar text-white rounded-5">
+            <header
+              class="px-4 py-4 pb-3 calendar__header d-flex justify-content-between align-items-center">
+              <p
+                class="calendar__current_date fw-medium"
+                data-target="calenderCurrentDate"></p>
+              <div
+                class="calendar__icons d-flex text-center"
+                data-target="calendarIcons">
+                <span id="prev" class="rounded-circle material-symbols-rounded"
+                  >chevron_left</span
+                >
+                <span id="next" class="rounded-circle material-symbols-rounded"
+                  >chevron_right</span
+                >
               </div>
-          </header>
-          <div class="p-3 pb-4">
-              <ul class="d-flex flex-wrap list-unstyled text-center fw-medium text-white">
+            </header>
+            <div class="p-3 pb-4">
+              <ul
+                class="d-flex flex-wrap list-unstyled text-center fw-medium text-white">
                 <li class="text-white">Sun</li>
                 <li class="text-white">Mon</li>
                 <li class="text-white">Tue</li>
@@ -284,61 +563,73 @@
                 <li class="text-white">Fri</li>
                 <li class="text-white">Sat</li>
               </ul>
-              <ul class="calendar__days mb-2 text-white d-flex flex-wrap list-unstyled text-center" data-target="calendarDays"></ul>
+              <ul
+                class="calendar__days mb-2 text-white d-flex flex-wrap list-unstyled text-center"
+                data-target="calendarDays"></ul>
+            </div>
+          </div>
+          <div class="upcoming_lessons mt-3 p-relative">
+            <h3 class="upcoming_lessons__heading fw-black mb-3">
+              Upcoming Lessons
+            </h3>
+            <ul class="upcoming_lessons__list">
+              <li
+                class="upcoming_lesson rounded-4 align-items-center justify-content-start w-100 mb-2">
+                <div
+                  class="upcoming_lesson__date py-2 rounded-2 text-center text-white">
+                  <p class="fw-bold fs-5 mb-1">04</p>
+                  <p class="fs-14">Mar</p>
+                </div>
+                <div class="upcoming_lesson__subject text-nowrap">
+                  <p class="fw-bold mb-1">English Lesson 1</p>
+                  <p class="fs-14">10:00 AM - 11:00 AM</p>
+                </div>
+                <a class="upcoming_lesson__link ms-auto" href="#">
+                  <span id="next" class="material-symbols-rounded text-white"
+                    >chevron_right</span
+                  >
+                </a>
+              </li>
+              <li
+                class="upcoming_lesson rounded-4 align-items-center justify-content-start w-100 mb-2">
+                <div
+                  class="upcoming_lesson__date py-2 rounded-2 text-center text-white">
+                  <p class="fw-bold fs-5 mb-1">05</p>
+                  <p class="fs-14">Mar</p>
+                </div>
+                <div class="upcoming_lesson__subject text-nowrap">
+                  <p class="fw-bold mb-1">History Lesson 1</p>
+                  <p class="fs-14">10:00 AM - 11:00 AM</p>
+                </div>
+                <!-- Change this into wrapping the whole container by a tag -->
+                <a class="upcoming_lesson__link ms-auto" href="#">
+                  <span id="next" class="material-symbols-rounded text-black"
+                    >chevron_right</span
+                  >
+                </a>
+              </li>
+              <li
+                class="upcoming_lesson rounded-4 align-items-center justify-content-start w-100">
+                <div
+                  class="upcoming_lesson__date py-2 rounded-2 text-center text-white">
+                  <p class="fw-bold fs-5 mb-1">07</p>
+                  <p class="fs-14">Mar</p>
+                </div>
+                <div class="upcoming_lesson__subject text-nowrap">
+                  <p class="fw-bold mb-1">History Lesson 2</p>
+                  <p class="fs-14">10:00 AM - 11:00 AM</p>
+                </div>
+                <!-- Change this into wrapping the whole container by a tag -->
+                <a class="upcoming_lesson__link ms-auto" href="#">
+                  <span id="next" class="material-symbols-rounded text-black"
+                    >chevron_right</span
+                  >
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="upcoming_lessons mt-3 p-relative">
-          <h3 class="upcoming_lessons__heading fw-black mb-3">Upcoming Lessons</h3>
-          <ul class="upcoming_lessons__list">
-            <li class="upcoming_lesson rounded-4 align-items-center justify-content-start w-100 mb-2">
-              <div class="upcoming_lesson__date py-2 rounded-2 text-center text-white">
-                <p class="fw-bold fs-5 mb-1">04</p>
-                <p class="fs-14">Mar</p>
-              </div>
-              <div class="upcoming_lesson__subject text-nowrap">
-                <p class="fw-bold mb-1">English Lesson 1
-                <p class="fs-14">10:00 AM - 11:00 AM</p>
-              </div>
-              <a class="upcoming_lesson__link ms-auto" href="#">
-                <span id="next" class="material-symbols-rounded text-white">chevron_right</span>
-              </a>
-            </li>
-            <li class="upcoming_lesson rounded-4 align-items-center justify-content-start w-100 mb-2">
-              <div class="upcoming_lesson__date py-2 rounded-2 text-center text-white">
-                <p class="fw-bold fs-5 mb-1">05</p>
-                <p class="fs-14">Mar</p>
-              </div>
-              <div class="upcoming_lesson__subject text-nowrap">
-                <p class="fw-bold mb-1">History Lesson 1</p>
-                <p class="fs-14">10:00 AM - 11:00 AM</p>
-              </div>
-              <!-- Change this into wrapping the whole container by a tag -->
-              <a class="upcoming_lesson__link ms-auto" href="#">
-                <span id="next" class="material-symbols-rounded text-black">chevron_right</span>
-              </a>
-            </li>
-            <li class="upcoming_lesson rounded-4 align-items-center justify-content-start w-100">
-              <div class="upcoming_lesson__date py-2 rounded-2 text-center text-white">
-                <p class="fw-bold fs-5 mb-1">07</p>
-                <p class="fs-14">Mar</p>
-              </div>
-              <div class="upcoming_lesson__subject text-nowrap">
-                <p class="fw-bold mb-1">History Lesson 2</p>
-                <p class="fs-14">10:00 AM - 11:00 AM</p>
-              </div>
-              <!-- Change this into wrapping the whole container by a tag -->
-              <a class="upcoming_lesson__link ms-auto" href="#">
-                <span id="next" class="material-symbols-rounded text-black">chevron_right</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </main>
-  </div>
-
-</body>
-
-
-
+      </main>
+    </div>
+  </body>
 </html>
