@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard | Talent Pro Academy</title>
-    <link rel="stylesheet" href="calendar.css" />
 
     <!-- Bootstrap -->
     <link
@@ -16,19 +15,24 @@
     <!-- Custom -->
     <link rel="stylesheet" href="../Assets/css/reset.css" />
     <link rel="stylesheet" href="../Assets/css/utilities.css" />
-    <link rel="stylesheet" href="../Assets/css/tutor/dashboard.css" />
     <link rel="stylesheet" href="../Assets/css/style.css" />
     <!-- Components -->
     <link rel="stylesheet" href="../Assets/css/components/mylessons.css" />
     <link rel="stylesheet" href="../Assets/css/components/infobar.css" />
-    <link rel="stylesheet" href="../Assets/css/components/course.css" />
     <link rel="stylesheet" href="../Assets/css/header.css" />
     <link rel="stylesheet" href="../Assets/css/components/searchbar.css" />
     <link rel="stylesheet" href="../Assets/css/components/calendar.css" />
     <link
       rel="stylesheet"
       href="../Assets/css/components/upcomingclasses.css" />
-
+    <link rel="stylesheet" href="../Assets/css/components/tabinterface.css" />
+    <!-- Custom again -->
+    <link rel="stylesheet" href="../Assets/css/student/dashboard.css" />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="../Assets/img/logo-removebg-preview.png"
+      type="image/x-icon" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -56,6 +60,10 @@
     <!-- Custom scripts -->
     <script src="../Assets/js/dashboard.js" defer></script>
     <script src="../Assets/js/header.js" defer></script>
+    <script
+      src="../Assets/js/student/dashboard.js"
+      defer
+      type="module"></script>
   </head>
 
   <body class="page-dashboard dashboard">
@@ -114,7 +122,15 @@
                   <li class="mb-2">
                     <a
                       class="d-flex align-items-center navlink text-decoration-none"
-                      href="messages.html">
+                      href="tutors.html">
+                      <i class="icon fa fa-user" aria-hidden="true"></i>Find
+                      Tutor
+                    </a>
+                  </li>
+                  <li class="mb-2">
+                    <a
+                      class="d-flex align-items-center navlink text-decoration-none"
+                      href="chats.html">
                       <i class="icon fa fa-comment" aria-hidden="true"></i
                       >Messages
                     </a>
@@ -123,7 +139,8 @@
                     <a
                       class="d-flex align-items-center navlink text-decoration-none"
                       href="profile.html">
-                      <i class="icon fa fa-user" aria-hidden="true"></i>Profile
+                      <i class="icon fa fa-user" aria-hidden="true"></i>
+                      Profile
                     </a>
                   </li>
                   <li class="mb-2">
@@ -131,14 +148,6 @@
                       class="d-flex align-items-center navlink text-decoration-none"
                       href="help.html">
                       <i class="icon fa fa-question" aria-hidden="true"></i>Help
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      class="d-flex align-items-center navlink text-decoration-none"
-                      href="payroll.html">
-                      <i class="icon fa fa-dollar" aria-hidden="true"></i>
-                      Payroll
                     </a>
                   </li>
                 </ul>
